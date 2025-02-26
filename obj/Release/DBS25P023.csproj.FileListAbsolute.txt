@@ -1,0 +1,13 @@
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Release\DBS25P023.exe.config
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Release\DBS25P023.exe
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Release\DBS25P023.pdb
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Release\FontAwesome.Sharp.dll
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.csproj.AssemblyReference.cache
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.Main.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.Properties.Resources.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.Splash.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.csproj.GenerateResource.cache
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.csproj.CoreCompileInputs.cache
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.csproj.Up2Date
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.exe
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Release\DBS25P023.pdb
