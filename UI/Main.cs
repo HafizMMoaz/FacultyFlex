@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DBS25P023
+namespace DBS25P023.UI
 {
     public partial class Main: Form
     {

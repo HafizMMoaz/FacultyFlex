@@ -2,12 +2,13 @@ E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Debug\DBS25P023.exe.c
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Debug\DBS25P023.exe
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Debug\DBS25P023.pdb
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.csproj.AssemblyReference.cache
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.Main.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Properties.Resources.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Splash.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.csproj.GenerateResource.cache
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.csproj.CoreCompileInputs.cache
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.exe
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.pdb
-E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Debug\FontAwesome.Sharp.dll
-E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.csproj.Up2Date
-E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Splash.resources
-E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Main.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.Login.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.LoginForm.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.ForgotPassword.resources

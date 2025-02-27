@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DBS25P023.UI;
 
 namespace DBS25P023
 {
@@ -17,17 +18,13 @@ namespace DBS25P023
             InitializeComponent();
         }
 
-        private void Splash_Load(object sender, EventArgs e) {
-            
-        }
-
         private void LoadingTimer_Tick(object sender, EventArgs e) {
-            LoadingBarHead.Width += 10;
+            LoadingBarHead.Width += 15;
             if(LoadingBarHead.Width >= LoadingBar.Width) {
                 LoadingTimer.Stop();
-                Main main = new Main();
-                main.Show();
-                this.Hide();
+                Login LoginScreen = new Login();
+                LoginScreen.Show();
+                this.Close();
             }
         }
     }

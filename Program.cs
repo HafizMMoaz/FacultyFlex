@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBS25P023.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace DBS25P023
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Splash());
+
+            Splash splash = new Splash();
+            splash.Show();
+
+            Application.Run();
         }
     }
 }

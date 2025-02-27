@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\ui\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:ui\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\ui\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:ui\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\ui\\login\\forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:ui\\login\\forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\splash.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:splash.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,57 +37,94 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 1883,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Splash.Designer.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.Designer.cs",
-              "RelativeDocumentMoniker": "Splash.Designer.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.Designer.cs*",
-              "RelativeToolTip": "Splash.Designer.cs*",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAewIUAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T17:43:05.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "Properties\\Resources.resx",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Properties\\Resources.resx",
-              "RelativeToolTip": "Properties\\Resources.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-02-26T17:38:40.082Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Splash.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.cs",
-              "RelativeDocumentMoniker": "Splash.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.cs*",
-              "RelativeToolTip": "Splash.cs*",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAewCAAAAAFAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T16:07:13.81Z",
+              "WhenOpened": "2025-02-27T18:41:35.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\Main.cs",
+              "RelativeDocumentMoniker": "UI\\Main.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\Main.cs [Design]",
+              "RelativeToolTip": "UI\\Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T18:40:24.819Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Splash.Designer.cs",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.Designer.cs",
+              "RelativeDocumentMoniker": "Splash.Designer.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.Designer.cs",
+              "RelativeToolTip": "Splash.Designer.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAewKUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T18:36:28.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Splash.cs",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.cs",
+              "RelativeDocumentMoniker": "Splash.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.cs",
+              "RelativeToolTip": "Splash.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAewBIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T18:36:15.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ForgotPassword.cs [Design]",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\Login\\ForgotPassword.cs",
+              "RelativeDocumentMoniker": "UI\\Login\\ForgotPassword.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\Login\\ForgotPassword.cs [Design]",
+              "RelativeToolTip": "UI\\Login\\ForgotPassword.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T18:31:55.221Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\Login\\Login.cs",
+              "RelativeDocumentMoniker": "UI\\Login\\Login.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\Login\\Login.cs [Design]",
+              "RelativeToolTip": "UI\\Login\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T18:30:45.954Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Splash.cs [Design]",
               "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.cs",
               "RelativeDocumentMoniker": "Splash.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.cs [Design]*",
-              "RelativeToolTip": "Splash.cs [Design]*",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Splash.cs [Design]",
+              "RelativeToolTip": "Splash.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T15:48:15.345Z",
+              "WhenOpened": "2025-02-27T18:19:00.257Z",
               "EditorCaption": " [Design]"
             }
           ]
