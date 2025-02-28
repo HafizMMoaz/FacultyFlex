@@ -150,9 +150,9 @@
             // SideBar
             // 
             this.SideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.SideBar.Controls.Add(this.ActivityIndicator);
             this.SideBar.Controls.Add(this.SettingBtn);
             this.SideBar.Controls.Add(this.ReportBtn);
-            this.SideBar.Controls.Add(this.ActivityIndicator);
             this.SideBar.Controls.Add(this.LogoutBtn);
             this.SideBar.Controls.Add(this.FacultyRequestBtn);
             this.SideBar.Controls.Add(this.ResourcesBtn);
@@ -180,7 +180,7 @@
             this.SettingBtn.Name = "SettingBtn";
             this.SettingBtn.Padding = new System.Windows.Forms.Padding(10, 0, 25, 0);
             this.SettingBtn.Size = new System.Drawing.Size(300, 60);
-            this.SettingBtn.TabIndex = 11;
+            this.SettingBtn.TabIndex = 1;
             this.SettingBtn.Text = "Settings";
             this.SettingBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SettingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -201,7 +201,7 @@
             this.ReportBtn.Name = "ReportBtn";
             this.ReportBtn.Padding = new System.Windows.Forms.Padding(10, 0, 25, 0);
             this.ReportBtn.Size = new System.Drawing.Size(300, 60);
-            this.ReportBtn.TabIndex = 10;
+            this.ReportBtn.TabIndex = 1;
             this.ReportBtn.Text = "Reports ";
             this.ReportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ReportBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -214,7 +214,7 @@
             this.ActivityIndicator.Location = new System.Drawing.Point(0, 105);
             this.ActivityIndicator.Name = "ActivityIndicator";
             this.ActivityIndicator.Size = new System.Drawing.Size(5, 60);
-            this.ActivityIndicator.TabIndex = 8;
+            this.ActivityIndicator.TabIndex = 2;
             // 
             // LogoutBtn
             // 
@@ -230,7 +230,7 @@
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Padding = new System.Windows.Forms.Padding(10, 0, 25, 0);
             this.LogoutBtn.Size = new System.Drawing.Size(300, 60);
-            this.LogoutBtn.TabIndex = 7;
+            this.LogoutBtn.TabIndex = 1;
             this.LogoutBtn.Text = "Logout";
             this.LogoutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LogoutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -251,7 +251,7 @@
             this.FacultyRequestBtn.Name = "FacultyRequestBtn";
             this.FacultyRequestBtn.Padding = new System.Windows.Forms.Padding(10, 0, 25, 0);
             this.FacultyRequestBtn.Size = new System.Drawing.Size(300, 60);
-            this.FacultyRequestBtn.TabIndex = 5;
+            this.FacultyRequestBtn.TabIndex = 1;
             this.FacultyRequestBtn.Text = "Faculty Requests";
             this.FacultyRequestBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.FacultyRequestBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -272,7 +272,7 @@
             this.ResourcesBtn.Name = "ResourcesBtn";
             this.ResourcesBtn.Padding = new System.Windows.Forms.Padding(10, 0, 25, 0);
             this.ResourcesBtn.Size = new System.Drawing.Size(300, 60);
-            this.ResourcesBtn.TabIndex = 4;
+            this.ResourcesBtn.TabIndex = 1;
             this.ResourcesBtn.Text = "Resource Allocation";
             this.ResourcesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ResourcesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -293,7 +293,7 @@
             this.WorkloadBtn.Name = "WorkloadBtn";
             this.WorkloadBtn.Padding = new System.Windows.Forms.Padding(10, 0, 25, 0);
             this.WorkloadBtn.Size = new System.Drawing.Size(300, 60);
-            this.WorkloadBtn.TabIndex = 3;
+            this.WorkloadBtn.TabIndex = 1;
             this.WorkloadBtn.Text = "Assign Workload";
             this.WorkloadBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.WorkloadBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -314,7 +314,7 @@
             this.UserBtn.Name = "UserBtn";
             this.UserBtn.Padding = new System.Windows.Forms.Padding(10, 0, 25, 0);
             this.UserBtn.Size = new System.Drawing.Size(300, 60);
-            this.UserBtn.TabIndex = 2;
+            this.UserBtn.TabIndex = 1;
             this.UserBtn.Text = "Users Management";
             this.UserBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.UserBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -444,9 +444,11 @@
             // 
             // Settings
             // 
+            this.Settings.BackColor = System.Drawing.Color.White;
             this.Settings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Settings.Location = new System.Drawing.Point(0, 0);
             this.Settings.Name = "Settings";
+            this.Settings.Padding = new System.Windows.Forms.Padding(10);
             this.Settings.Size = new System.Drawing.Size(780, 635);
             this.Settings.TabIndex = 0;
             // 
