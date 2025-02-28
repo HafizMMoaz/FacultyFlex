@@ -51,6 +51,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\MainScreens\SubForms\FacultyRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainScreens\SubForms\FacultyRequestForm.Designer.cs">
+      <DependentUpon>FacultyRequestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MainScreens\SubForms\AssignWorkLoad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainScreens\SubForms\AssignWorkLoad.resx">
       <DependentUpon>AssignWorkLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainScreens\SubForms\FacultyRequestForm.resx">
+      <DependentUpon>FacultyRequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainScreens\UserManagement.resx">
       <DependentUpon>UserManagement.cs</DependentUpon>

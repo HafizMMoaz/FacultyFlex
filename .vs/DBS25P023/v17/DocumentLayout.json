@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\ui\\mainscreens\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:ui\\mainscreens\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\ui\\mainscreens\\usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:ui\\mainscreens\\usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\ui\\mainscreens\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:ui\\mainscreens\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1883,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UserManagement.cs [Design]",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\MainScreens\\UserManagement.cs",
+              "RelativeDocumentMoniker": "UI\\MainScreens\\UserManagement.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\MainScreens\\UserManagement.cs [Design]",
+              "RelativeToolTip": "UI\\MainScreens\\UserManagement.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T18:02:09.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T18:14:35.998Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Settings.cs [Design]",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\MainScreens\\Settings.cs",
+              "RelativeDocumentMoniker": "UI\\MainScreens\\Settings.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\MainScreens\\Settings.cs [Design]",
+              "RelativeToolTip": "UI\\MainScreens\\Settings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T18:14:13.477Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\MainScreens\\Main.cs",
+              "RelativeDocumentMoniker": "UI\\MainScreens\\Main.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\UI\\MainScreens\\Main.cs [Design]",
+              "RelativeToolTip": "UI\\MainScreens\\Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T18:12:36.817Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },

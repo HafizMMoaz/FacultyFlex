@@ -192,6 +192,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AssignWorkLoad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AssignWorkLoad";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

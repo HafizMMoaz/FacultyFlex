@@ -418,9 +418,11 @@
             // 
             // FacultyWorkload
             // 
+            this.FacultyWorkload.BackColor = System.Drawing.Color.White;
             this.FacultyWorkload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FacultyWorkload.Location = new System.Drawing.Point(0, 0);
             this.FacultyWorkload.Name = "FacultyWorkload";
+            this.FacultyWorkload.Padding = new System.Windows.Forms.Padding(10);
             this.FacultyWorkload.Size = new System.Drawing.Size(780, 635);
             this.FacultyWorkload.TabIndex = 3;
             // 
@@ -450,9 +452,11 @@
             // 
             // FacultyRequests
             // 
+            this.FacultyRequests.BackColor = System.Drawing.Color.White;
             this.FacultyRequests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FacultyRequests.Location = new System.Drawing.Point(0, 0);
             this.FacultyRequests.Name = "FacultyRequests";
+            this.FacultyRequests.Padding = new System.Windows.Forms.Padding(10);
             this.FacultyRequests.Size = new System.Drawing.Size(780, 635);
             this.FacultyRequests.TabIndex = 6;
             // 

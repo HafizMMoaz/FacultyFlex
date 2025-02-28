@@ -20,3 +20,5 @@ E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.Se
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.UserManagement.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.FacultyRequests.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.MainScreens.AddFaculty.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.MainScreens.AssignWorkLoad.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.MainScreens.FacultyRequestForm.resources
