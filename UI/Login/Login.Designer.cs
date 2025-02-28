@@ -25,14 +25,14 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.FormPanel = new System.Windows.Forms.Panel();
-            this.LoginForm = new DBS25P023.UI.LoginForm();
-            this.ForgotPasswordForm = new DBS25P023.UI.ForgotPassword();
             this.CloseBtn = new System.Windows.Forms.PictureBox();
             this.InfoPanel = new System.Windows.Forms.Panel();
             this.LoginDash = new System.Windows.Forms.PictureBox();
             this.Para2 = new System.Windows.Forms.Label();
             this.Para1 = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
+            this.LoginForm = new DBS25P023.UI.LoginForm();
+            this.ForgotPasswordForm = new DBS25P023.UI.ForgotPassword();
             this.FormPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.InfoPanel.SuspendLayout();
@@ -49,20 +49,6 @@
             this.FormPanel.Name = "FormPanel";
             this.FormPanel.Size = new System.Drawing.Size(400, 500);
             this.FormPanel.TabIndex = 2;
-            // 
-            // LoginForm
-            // 
-            this.LoginForm.Location = new System.Drawing.Point(0, 54);
-            this.LoginForm.Name = "LoginForm";
-            this.LoginForm.Size = new System.Drawing.Size(400, 420);
-            this.LoginForm.TabIndex = 5;
-            // 
-            // ForgotPasswordForm
-            // 
-            this.ForgotPasswordForm.Location = new System.Drawing.Point(0, 59);
-            this.ForgotPasswordForm.Name = "ForgotPasswordForm";
-            this.ForgotPasswordForm.Size = new System.Drawing.Size(400, 420);
-            this.ForgotPasswordForm.TabIndex = 4;
             // 
             // CloseBtn
             // 
@@ -97,7 +83,7 @@
             // 
             // LoginDash
             // 
-            this.LoginDash.BackColor = System.Drawing.Color.Transparent;
+            this.LoginDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
             this.LoginDash.ErrorImage = global::DBS25P023.Properties.Resources.loginDashboard;
             this.LoginDash.Image = global::DBS25P023.Properties.Resources.loginDashboard;
             this.LoginDash.InitialImage = global::DBS25P023.Properties.Resources.loginDashboard;
@@ -145,6 +131,20 @@
             this.Title.Size = new System.Drawing.Size(408, 53);
             this.Title.TabIndex = 0;
             this.Title.Text = "Sign in to Faculty Flex";
+            // 
+            // LoginForm
+            // 
+            this.LoginForm.Location = new System.Drawing.Point(0, 54);
+            this.LoginForm.Name = "LoginForm";
+            this.LoginForm.Size = new System.Drawing.Size(400, 420);
+            this.LoginForm.TabIndex = 5;
+            // 
+            // ForgotPasswordForm
+            // 
+            this.ForgotPasswordForm.Location = new System.Drawing.Point(0, 59);
+            this.ForgotPasswordForm.Name = "ForgotPasswordForm";
+            this.ForgotPasswordForm.Size = new System.Drawing.Size(400, 420);
+            this.ForgotPasswordForm.TabIndex = 4;
             // 
             // Login
             // 

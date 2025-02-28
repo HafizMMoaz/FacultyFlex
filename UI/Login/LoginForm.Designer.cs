@@ -180,6 +180,7 @@
             this.SignIn.TabIndex = 1;
             this.SignIn.Text = "SIGN IN";
             this.SignIn.UseVisualStyleBackColor = false;
+            this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
             // 
             // LoginForm
             // 

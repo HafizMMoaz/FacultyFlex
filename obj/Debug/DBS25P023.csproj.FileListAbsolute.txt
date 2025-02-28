@@ -12,3 +12,11 @@ E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.pdb
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.Login.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.LoginForm.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.ForgotPassword.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.Dashboard.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.FacultyWorkload.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.Reports.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.ResourceAllocation.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.Settings.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.UserManagement.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.FacultyRequests.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.UI.MainScreens.AddFaculty.resources

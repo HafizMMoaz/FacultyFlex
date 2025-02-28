@@ -27,5 +27,14 @@ namespace DBS25P023.UI
         private void ViewPassword_Click(object sender, EventArgs e) {
             Password.PasswordChar = Password.PasswordChar == '*' ? '\0' : '*';
         }
+
+        private void SignIn_Click(object sender, EventArgs e) {
+            Login parentForm = this.FindForm() as Login;
+            if (parentForm != null) {
+                parentForm.Close();
+            }
+            Main main = new Main();
+            main.Show();
+        }
     }
 }
