@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DBS25P023.UI.MainScreens;
 
-namespace DBS25P023.UI
+namespace DBS25P023.UI.MainScreens
 {
-    public partial class FacultyWorkload: UserControl
+    public partial class AssignWorkLoad: Form
     {
-        public FacultyWorkload()
+        public AssignWorkLoad()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            AssignWorkLoad work = new AssignWorkLoad();
-            work.Show();
+            this.Close();
         }
     }
 }

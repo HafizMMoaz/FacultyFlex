@@ -407,9 +407,12 @@
             // 
             // UserManagement
             // 
+            this.UserManagement.BackColor = System.Drawing.Color.White;
             this.UserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserManagement.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserManagement.Location = new System.Drawing.Point(0, 0);
             this.UserManagement.Name = "UserManagement";
+            this.UserManagement.Padding = new System.Windows.Forms.Padding(10);
             this.UserManagement.Size = new System.Drawing.Size(780, 635);
             this.UserManagement.TabIndex = 4;
             // 
