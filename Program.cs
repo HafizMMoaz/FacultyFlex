@@ -21,9 +21,6 @@ namespace DBS25P023
             Splash splash = new Splash();
             splash.Show();
 
-            //Main main = new Main();
-            //main.Show();
-
             Application.Run();
         }
     }
