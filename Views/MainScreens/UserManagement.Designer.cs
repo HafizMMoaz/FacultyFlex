@@ -23,32 +23,32 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ActionBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Search = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ViewPassword = new System.Windows.Forms.PictureBox();
+            this.UserData = new System.Windows.Forms.DataGridView();
+            this.UserManagementControls = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.EditUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.ApproveFaculty = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.SearchBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserData)).BeginInit();
+            this.UserManagementControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,20 +86,20 @@
             this.panel1.Size = new System.Drawing.Size(760, 117);
             this.panel1.TabIndex = 2;
             // 
-            // button1
+            // ActionBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(15, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 55);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "REGISTER";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ActionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.ActionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ActionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ActionBtn.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActionBtn.ForeColor = System.Drawing.Color.White;
+            this.ActionBtn.Location = new System.Drawing.Point(15, 16);
+            this.ActionBtn.Name = "ActionBtn";
+            this.ActionBtn.Size = new System.Drawing.Size(142, 55);
+            this.ActionBtn.TabIndex = 3;
+            this.ActionBtn.Text = "REGISTER";
+            this.ActionBtn.UseVisualStyleBackColor = false;
+            this.ActionBtn.Click += new System.EventHandler(this.ActionBtn_Click);
             // 
             // panel2
             // 
@@ -119,132 +119,159 @@
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(251, 30);
             this.Search.TabIndex = 0;
+            this.Search.TextChanged += new System.EventHandler(this.Search_TextChanged);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.ActionBtn);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(10, 127);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(760, 100);
+            this.panel3.Size = new System.Drawing.Size(760, 84);
             this.panel3.TabIndex = 10;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.ViewPassword);
+            this.panel4.Controls.Add(this.SearchBtn);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(426, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(334, 100);
+            this.panel4.Size = new System.Drawing.Size(334, 84);
             this.panel4.TabIndex = 11;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.dataGridView1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(10, 227);
+            this.panel5.Controls.Add(this.UserData);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(10, 211);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(15);
-            this.panel5.Size = new System.Drawing.Size(760, 392);
+            this.panel5.Size = new System.Drawing.Size(760, 414);
             this.panel5.TabIndex = 11;
             // 
-            // dataGridView1
+            // UserData
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.UserData.AllowUserToAddRows = false;
+            this.UserData.AllowUserToDeleteRows = false;
+            this.UserData.AllowUserToResizeRows = false;
+            this.UserData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.UserData.BackgroundColor = System.Drawing.Color.White;
+            this.UserData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.UserData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.UserData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.UserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UserData.ContextMenuStrip = this.UserManagementControls;
+            this.UserData.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 15);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.RowHeadersWidth = 30;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(730, 362);
-            this.dataGridView1.TabIndex = 0;
+            this.UserData.DefaultCellStyle = dataGridViewCellStyle2;
+            this.UserData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.UserData.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.UserData.Location = new System.Drawing.Point(15, 15);
+            this.UserData.MultiSelect = false;
+            this.UserData.Name = "UserData";
+            this.UserData.ReadOnly = true;
+            this.UserData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.UserData.RowHeadersVisible = false;
+            this.UserData.RowHeadersWidth = 20;
+            this.UserData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.UserData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.UserData.Size = new System.Drawing.Size(730, 384);
+            this.UserData.TabIndex = 0;
+            this.UserData.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserData_CellMouseEnter);
             // 
-            // Column1
+            // UserManagementControls
             // 
-            this.Column1.HeaderText = "#";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserManagementControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditUser,
+            this.ApproveFaculty,
+            this.DeleteUser});
+            this.UserManagementControls.Name = "UserManagementControls";
+            this.UserManagementControls.Size = new System.Drawing.Size(162, 94);
             // 
-            // Column2
+            // EditUser
             // 
-            this.Column2.HeaderText = "Name";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EditUser.BackColor = System.Drawing.SystemColors.Control;
+            this.EditUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.EditUser.Image = global::DBS25P023.Properties.Resources.edit;
+            this.EditUser.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.EditUser.Name = "EditUser";
+            this.EditUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EditUser.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
+            this.EditUser.ShowShortcutKeys = false;
+            this.EditUser.Size = new System.Drawing.Size(161, 30);
+            this.EditUser.Text = "Edit";
+            this.EditUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.EditUser.Click += new System.EventHandler(this.EditUser_Click);
             // 
-            // Column3
+            // ApproveFaculty
             // 
-            this.Column3.HeaderText = "Email";
-            this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ApproveFaculty.BackColor = System.Drawing.SystemColors.Control;
+            this.ApproveFaculty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.ApproveFaculty.Image = global::DBS25P023.Properties.Resources.approve;
+            this.ApproveFaculty.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ApproveFaculty.Name = "ApproveFaculty";
+            this.ApproveFaculty.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ApproveFaculty.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+            this.ApproveFaculty.ShowShortcutKeys = false;
+            this.ApproveFaculty.Size = new System.Drawing.Size(161, 30);
+            this.ApproveFaculty.Text = "Approve Faculty";
+            this.ApproveFaculty.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.ApproveFaculty.Click += new System.EventHandler(this.ApproveFaculty_Click);
             // 
-            // Column4
+            // DeleteUser
             // 
-            this.Column4.HeaderText = "Contact";
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DeleteUser.BackColor = System.Drawing.SystemColors.Control;
+            this.DeleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.DeleteUser.Image = global::DBS25P023.Properties.Resources.del;
+            this.DeleteUser.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DeleteUser.Name = "DeleteUser";
+            this.DeleteUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DeleteUser.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.DeleteUser.ShowShortcutKeys = false;
+            this.DeleteUser.Size = new System.Drawing.Size(161, 30);
+            this.DeleteUser.Text = "Delete";
+            this.DeleteUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
-            // Column5
+            // SearchBtn
             // 
-            this.Column5.HeaderText = "Designation";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Action";
-            this.Column6.Name = "Column6";
-            // 
-            // ViewPassword
-            // 
-            this.ViewPassword.BackColor = System.Drawing.Color.Transparent;
-            this.ViewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ViewPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ViewPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ViewPassword.ErrorImage = global::DBS25P023.Properties.Resources.eye;
-            this.ViewPassword.Image = global::DBS25P023.Properties.Resources.search;
-            this.ViewPassword.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.ViewPassword.Location = new System.Drawing.Point(267, 21);
-            this.ViewPassword.Name = "ViewPassword";
-            this.ViewPassword.Padding = new System.Windows.Forms.Padding(10);
-            this.ViewPassword.Size = new System.Drawing.Size(50, 50);
-            this.ViewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ViewPassword.TabIndex = 8;
-            this.ViewPassword.TabStop = false;
+            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
+            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
+            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchBtn.TabIndex = 8;
+            this.SearchBtn.TabStop = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
@@ -253,6 +280,7 @@
             this.Name = "UserManagement";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(780, 635);
+            this.Load += new System.EventHandler(this.UserManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -260,8 +288,9 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserData)).EndInit();
+            this.UserManagementControls.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,19 +300,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ActionBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox Search;
-        private System.Windows.Forms.PictureBox ViewPassword;
+        private System.Windows.Forms.PictureBox SearchBtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewButtonColumn Column6;
+        private System.Windows.Forms.DataGridView UserData;
+        private System.Windows.Forms.ContextMenuStrip UserManagementControls;
+        private System.Windows.Forms.ToolStripMenuItem EditUser;
+        private System.Windows.Forms.ToolStripMenuItem ApproveFaculty;
+        private System.Windows.Forms.ToolStripMenuItem DeleteUser;
     }
 }

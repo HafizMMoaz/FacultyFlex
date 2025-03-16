@@ -1,4 +1,5 @@
 ﻿using DBS25P023.Views;
+using DBS25P023.Views.MainScreens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,10 @@ namespace DBS25P023
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Splash splash = new Splash();
-            splash.Show();
+            //Splash splash = new Splash();
+            //splash.Show();
+
+            new Main().Show();
 
             Application.Run();
         }

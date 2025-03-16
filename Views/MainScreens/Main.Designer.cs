@@ -383,13 +383,13 @@
             // Content
             // 
             this.Content.BackColor = System.Drawing.Color.White;
-            this.Content.Controls.Add(this.Dashboard);
             this.Content.Controls.Add(this.UserManagement);
             this.Content.Controls.Add(this.FacultyWorkload);
             this.Content.Controls.Add(this.ResourceAllocation);
             this.Content.Controls.Add(this.Reports);
             this.Content.Controls.Add(this.Settings);
             this.Content.Controls.Add(this.FacultyRequests);
+            this.Content.Controls.Add(this.Dashboard);
             this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Content.Location = new System.Drawing.Point(300, 85);
             this.Content.Name = "Content";
@@ -407,6 +407,7 @@
             // 
             // UserManagement
             // 
+            this.UserManagement.AutoScroll = true;
             this.UserManagement.BackColor = System.Drawing.Color.White;
             this.UserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserManagement.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -478,6 +479,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.TitleBar.ResumeLayout(false);
             this.TitleBar.PerformLayout();
             this.ControlButtons.ResumeLayout(false);

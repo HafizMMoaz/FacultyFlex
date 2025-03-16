@@ -14,7 +14,7 @@ namespace DBS25P023.Views.MainScreens
     {
         public string CurrentActivity = "Dashboard";
         private List<Button> menuButtons;
-        private bool isMenuCollapsed = false;
+        private bool isMenuCollapsed = true;
         private Dictionary<Button, string> buttonText;
         public Main()
         {
@@ -24,6 +24,18 @@ namespace DBS25P023.Views.MainScreens
             buttonText = new Dictionary<Button, string>();
             foreach (Button btn in menuButtons) {
                 buttonText[btn] = btn.Text;
+            }
+
+            
+        }
+
+
+        private void Main_Load(object sender, EventArgs e) {
+            SideBar.Width = 90;
+            SofwareTitle.Text = "F";
+            foreach (var btn in menuButtons) {
+                btn.Text = "";
+                btn.TextAlign = ContentAlignment.MiddleCenter;
             }
 
             SetActiveButton(DashboardBtn, "Dashboard");
@@ -117,6 +129,6 @@ namespace DBS25P023.Views.MainScreens
             isMenuCollapsed = !isMenuCollapsed;
         }
 
-
+        
     }
 }
