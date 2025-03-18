@@ -44,5 +44,27 @@ namespace DBS25P023.Controllers
             con.Close();
             return roles;
         }
+
+        public List<Designation> GetDesignations() {
+            List<Designation> designations = new List<Designation>();
+            MySqlConnection con;
+            string query = "SELECT * FROM lookup WHERE category = 'Designations'";
+
+            using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                int idx = 1;
+                while (reader.Read()) {
+                    designations.Add(new Designation
+                    {
+                        Id = idx,
+                        LookUp_Id = Convert.ToInt32(reader["lookup_id"]),
+                        Value = reader["value"].ToString()
+                    });
+                    idx++;
+                }
+            }
+
+            con.Close();
+            return designations;
+        }
     }
 }

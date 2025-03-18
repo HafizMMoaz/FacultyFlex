@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DBS25P023.Dialogs;
 using DBS25P023.Models;
 using DBS25P023.Controllers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DBS25P023.Views.MainScreens {
     public partial class UserManagement: UserControl
@@ -21,6 +22,7 @@ namespace DBS25P023.Views.MainScreens {
 
         private void ActionBtn_Click(object sender, EventArgs e) {
             new FacultyUserDialog("ADD").ShowDialog();
+            UserDataRender(null);
         }
 
         private void UserManagement_Load(object sender, EventArgs e) {
@@ -35,8 +37,7 @@ namespace DBS25P023.Views.MainScreens {
                 User_id = f.User_id,
                 Username = f.Username,
                 Email = f.Email,
-                Role = f.Role,
-                RoleName = f.RoleVal
+                Role = f.Role
             }).ToList();
 
             int idx = 1;
@@ -48,8 +49,7 @@ namespace DBS25P023.Views.MainScreens {
             UserData.Columns["SrNo"].HeaderText = "#";
             UserData.Columns["Username"].HeaderText = "USERNAME";
             UserData.Columns["Email"].HeaderText = "EMAIL";
-            UserData.Columns["RoleName"].HeaderText = "ROLE";
-            UserData.Columns["Role"].Visible = false;
+            UserData.Columns["Role"].HeaderText = "ROLE";
             UserData.Columns["User_id"].Visible = false;
 
             UserData.DefaultCellStyle.Font = new Font("Arial", 10);
@@ -72,13 +72,18 @@ namespace DBS25P023.Views.MainScreens {
                 DataGridViewRow selectedRow = UserData.SelectedRows[0];
 
                 int userId = Convert.ToInt32(selectedRow.Cells["User_id"].Value);
+                string username = selectedRow.Cells["Username"].Value.ToString();
+                string email = selectedRow.Cells["Email"].Value.ToString();
+                string roleName = selectedRow.Cells["Role"].Value.ToString();
+
+                Role selectedRole = LookUpControl.Instance.GetRoles().FirstOrDefault(r => r.Value == roleName);
 
                 var faculty = new Faculty
                 {
                     User_id = userId,
-                    Username = selectedRow.Cells["Username"].Value.ToString(),
-                    Email = selectedRow.Cells["Email"].Value.ToString(),
-                    Role = Convert.ToInt32(selectedRow.Cells["Role"].Value)
+                    Username = username,
+                    Email = email,
+                    Role = selectedRole
                 };
 
                 new FacultyUserDialog(faculty, "UPDATE").ShowDialog();
@@ -89,8 +94,19 @@ namespace DBS25P023.Views.MainScreens {
         
 
         private void ApproveFaculty_Click(object sender, EventArgs e) {
-            string search = Search.Text;
-            UserDataRender(search);
+            if(UserData.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = UserData.SelectedRows[0];
+                int userId = Convert.ToInt32(selectedRow.Cells["User_id"].Value);
+                string email = selectedRow.Cells["Email"].Value.ToString();
+
+                var faculty = new Faculty
+                {
+                    User_id = userId,
+                    Email = email
+                };
+
+                new FacultyApproveDialog("APPROVE", faculty).ShowDialog();
+            }
         }
 
         private void Search_TextChanged(object sender, EventArgs e) {
@@ -99,7 +115,8 @@ namespace DBS25P023.Views.MainScreens {
         }
 
         private void SearchBtn_Click(object sender, EventArgs e) {
-
+            string search = Search.Text;
+            UserDataRender(search);
         }
     }
 
@@ -108,7 +125,6 @@ namespace DBS25P023.Views.MainScreens {
         public int User_id { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
-        public int Role { get; set; }
-        public string RoleName { get; set; }
+        public Role Role { get; set; }
     }
 }

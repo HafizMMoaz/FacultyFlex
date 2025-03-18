@@ -45,13 +45,13 @@
             this.Header = new System.Windows.Forms.Panel();
             this.MenuToggle = new System.Windows.Forms.PictureBox();
             this.Content = new System.Windows.Forms.Panel();
-            this.Dashboard = new DBS25P023.Views.MainScreens.Dashboard();
             this.UserManagement = new DBS25P023.Views.MainScreens.UserManagement();
             this.FacultyWorkload = new DBS25P023.Views.MainScreens.FacultyWorkload();
             this.ResourceAllocation = new DBS25P023.Views.MainScreens.ResourceAllocation();
             this.Reports = new DBS25P023.Views.MainScreens.Reports();
             this.Settings = new DBS25P023.Views.MainScreens.Settings();
             this.FacultyRequests = new DBS25P023.Views.MainScreens.FacultyRequests();
+            this.Dashboard = new DBS25P023.Views.MainScreens.Dashboard();
             this.TitleBar.SuspendLayout();
             this.ControlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
@@ -396,15 +396,6 @@
             this.Content.Size = new System.Drawing.Size(780, 635);
             this.Content.TabIndex = 3;
             // 
-            // Dashboard
-            // 
-            this.Dashboard.BackColor = System.Drawing.Color.White;
-            this.Dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Dashboard.Location = new System.Drawing.Point(0, 0);
-            this.Dashboard.Name = "Dashboard";
-            this.Dashboard.Size = new System.Drawing.Size(780, 635);
-            this.Dashboard.TabIndex = 5;
-            // 
             // UserManagement
             // 
             this.UserManagement.AutoScroll = true;
@@ -462,6 +453,15 @@
             this.FacultyRequests.Padding = new System.Windows.Forms.Padding(10);
             this.FacultyRequests.Size = new System.Drawing.Size(780, 635);
             this.FacultyRequests.TabIndex = 6;
+            // 
+            // Dashboard
+            // 
+            this.Dashboard.BackColor = System.Drawing.Color.White;
+            this.Dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dashboard.Location = new System.Drawing.Point(0, 0);
+            this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Size = new System.Drawing.Size(780, 635);
+            this.Dashboard.TabIndex = 5;
             // 
             // Main
             // 

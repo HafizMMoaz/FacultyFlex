@@ -23,19 +23,21 @@ namespace DBS25P023.Controllers
         }
 
         public bool RegsiterFacultyUser(Faculty faculty) {
-            string query = $"INSERT INTO users(username, email, password_hash, role_id) VALUES ('{faculty.Username}','{faculty.Email}','{faculty.Password}',{faculty.Role})";
+            string query = $"INSERT INTO users(username, email, password_hash, role_id) VALUES ('{faculty.Username}','{faculty.Email}','{faculty.Password}',{faculty.Role.LookUp_Id})";
             if(DB.Instance.Update(query) == 1) {
                 return true;
             }
             return false;
         }
-        public bool SearchFacultyUser(Faculty faculty) {
-            string query = $"SELECT COUNT(*) FROM users WHERE email = '{faculty.Email}' OR username = '{faculty.Username}'";
+        public bool SearchFacultyUser(Faculty faculty, char type) {
+            string query = $"SELECT COUNT(*) FROM users WHERE (email = '{faculty.Email}' OR username = '{faculty.Username}')";
+            if (type == 'u')
+                query += $"AND user_id <> {faculty.User_id}";
             int count = DB.Instance.Scalar(query);
             return count > 0;
         }
         public bool UpdateFacultyUser(Faculty faculty) {
-            string query = $"UPDATE users SET username = '{faculty.Username}', email = '{faculty.Email}', password_hash = '{faculty.Password}', role_id = {faculty.Role} WHERE user_id = {faculty.User_id}";
+            string query = $"UPDATE users SET username = '{faculty.Username}', email = '{faculty.Email}', password_hash = '{faculty.Password}', role_id = {faculty.Role.LookUp_Id} WHERE user_id = {faculty.User_id}";
             if(DB.Instance.Update(query) == 1) {
                 return true;
             }
@@ -52,20 +54,36 @@ namespace DBS25P023.Controllers
                 query = $"SELECT * FROM users u JOIN lookup l ON u.role_id = l.lookup_id WHERE u.username LIKE '%{search}%' OR u.email LIKE '%{search}%' OR l.value LIKE '%{search}%'";
 
             using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
-                    while (reader.Read()) {
-                        facultyusers.Add(new Faculty
+                while (reader.Read()) {
+                    facultyusers.Add(new Faculty
+                    {
+                        User_id = Convert.ToInt32(reader["user_id"]),
+                        Username = reader["username"].ToString(),
+                        Email = reader["email"].ToString(),
+                        Role = new Role
                         {
-                            User_id = Convert.ToInt32(reader["user_id"]),
-                            Username = reader["username"].ToString(),
-                            Email = reader["email"].ToString(),
-                            Role = Convert.ToInt32(reader["role_id"]),
-                            RoleVal = reader["value"].ToString()
-                        });
-                    }
+                            LookUp_Id = Convert.ToInt32(reader["lookup_id"]),
+                            Value = reader["value"].ToString()
+                        }
+                    });
                 }
+            }
 
             con.Close();
             return facultyusers;
         }
+
+        public bool ApproveFaculty(Faculty faculty) {
+            string query = "INSERT INTO faculty (name, email, contact, designation_id, research_area, total_teaching_hours, user_id)" +
+                $"VALUES ('{faculty.Name}', '{faculty.Email}', '{faculty.Contact}', '{faculty.Designation.LookUp_Id}', '{faculty.ResearchArea}', '{faculty.TeachingHours}', '{faculty.User_id}')";
+
+            if (DB.Instance.Update(query) == 1) {
+                return true;
+            }
+
+            return false;
+        }
+
+
     }
 }

@@ -18,7 +18,7 @@ namespace DBS25P023.Dialogs
     public partial class FacultyUserDialog: Form
     {
         private string Action;
-        int selected_role = 0, selected_useid = -1;
+        Role selected_role = null; int selected_useid = -1;
         public FacultyUserDialog(string Action)
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace DBS25P023.Dialogs
             FacultyUsername.Text = faculty.Username;
             FacultyEmail.Text = faculty.Email;
             selected_role = faculty.Role;
-            FacultyRole.SelectedIndex = selected_role - 1;
+            FacultyRole.SelectedIndex = selected_role.Id - 1;
         }
 
         private void AddFaculty_Load(object sender, EventArgs e) {
@@ -53,7 +53,7 @@ namespace DBS25P023.Dialogs
 
         private void FacultyRole_SelectedIndexChanged(object sender, EventArgs e) {
             if (FacultyRole.SelectedItem is Role selectedRole) {
-                selected_role = selectedRole.LookUp_Id;
+                selected_role = selectedRole;
             }
         }
 
@@ -66,7 +66,8 @@ namespace DBS25P023.Dialogs
         }
 
         private void ActionBtn_Click(object sender, EventArgs e) {
-            if(selected_role == 0 || string.IsNullOrWhiteSpace(FacultyUsername.Text)
+            if(selected_role == null 
+                || string.IsNullOrWhiteSpace(FacultyUsername.Text)
                 || string.IsNullOrWhiteSpace(FacultyPassword.Text)
                 || string.IsNullOrWhiteSpace(FacultyConfirmPassword.Text)
                 || string.IsNullOrWhiteSpace(FacultyEmail.Text)) {
@@ -94,14 +95,14 @@ namespace DBS25P023.Dialogs
                 string username = FacultyUsername.Text;
                 string password = FacultyPassword.Text;
                 string email = mail.ToString();
-                int role = selected_role;
+                Role role = selected_role;
 
                 password = BCrypt.Net.BCrypt.HashPassword(password);
                 Faculty faculty = new Faculty(username, password, email, role);
                 faculty.User_id = selected_useid;
 
                 if (Action == "ADD") {
-                    if (FacultyControl.Instance.SearchFacultyUser(faculty)) {
+                    if (FacultyControl.Instance.SearchFacultyUser(faculty, 'l')) {
                         MessageBox.Show("Username or Email Already in use", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
@@ -114,6 +115,10 @@ namespace DBS25P023.Dialogs
                     }
                 }
                 else {
+                    if (FacultyControl.Instance.SearchFacultyUser(faculty, 'u')) {
+                        MessageBox.Show("Username or Email Already in use", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     if (FacultyControl.Instance.UpdateFacultyUser(faculty)) {
                         MessageBox.Show("Updated Successfully!", "UPDATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

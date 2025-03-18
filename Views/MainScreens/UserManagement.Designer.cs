@@ -34,21 +34,21 @@
             this.Search = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.SearchBtn = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.UserData = new System.Windows.Forms.DataGridView();
             this.UserManagementControls = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EditUser = new System.Windows.Forms.ToolStripMenuItem();
             this.ApproveFaculty = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.SearchBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserData)).BeginInit();
             this.UserManagementControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -141,6 +141,24 @@
             this.panel4.Size = new System.Drawing.Size(334, 84);
             this.panel4.TabIndex = 11;
             // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
+            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
+            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchBtn.TabIndex = 8;
+            this.SearchBtn.TabStop = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.UserData);
@@ -192,6 +210,7 @@
             this.UserData.RowHeadersWidth = 20;
             this.UserData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.UserData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.UserData.ShowEditingIcon = false;
             this.UserData.Size = new System.Drawing.Size(730, 384);
             this.UserData.TabIndex = 0;
             this.UserData.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserData_CellMouseEnter);
@@ -249,24 +268,6 @@
             this.DeleteUser.Text = "Delete";
             this.DeleteUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
-            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
-            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
-            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
-            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
-            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SearchBtn.TabIndex = 8;
-            this.SearchBtn.TabStop = false;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,10 +288,10 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UserData)).EndInit();
             this.UserManagementControls.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.ResumeLayout(false);
 
         }

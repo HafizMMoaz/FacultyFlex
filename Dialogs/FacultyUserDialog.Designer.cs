@@ -55,7 +55,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.FacultyUsername);
-            this.panel1.Location = new System.Drawing.Point(30, 108);
+            this.panel1.Location = new System.Drawing.Point(30, 105);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 50);
             this.panel1.TabIndex = 0;
@@ -76,7 +76,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.label1.Location = new System.Drawing.Point(32, 79);
+            this.label1.Location = new System.Drawing.Point(30, 80);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(83, 19);
@@ -101,7 +101,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.label4.Location = new System.Drawing.Point(403, 79);
+            this.label4.Location = new System.Drawing.Point(400, 80);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(50, 19);
@@ -112,7 +112,7 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.FacultyEmail);
-            this.panel3.Location = new System.Drawing.Point(401, 108);
+            this.panel3.Location = new System.Drawing.Point(400, 105);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(320, 50);
             this.panel3.TabIndex = 1;
@@ -134,7 +134,7 @@
             this.ActionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ActionBtn.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActionBtn.ForeColor = System.Drawing.Color.White;
-            this.ActionBtn.Location = new System.Drawing.Point(579, 299);
+            this.ActionBtn.Location = new System.Drawing.Point(578, 280);
             this.ActionBtn.Name = "ActionBtn";
             this.ActionBtn.Size = new System.Drawing.Size(142, 55);
             this.ActionBtn.TabIndex = 11;
@@ -146,7 +146,7 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.FacultyRole);
-            this.panel5.Location = new System.Drawing.Point(30, 299);
+            this.panel5.Location = new System.Drawing.Point(30, 285);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(320, 50);
             this.panel5.TabIndex = 4;
@@ -170,7 +170,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.label6.Location = new System.Drawing.Point(32, 270);
+            this.label6.Location = new System.Drawing.Point(30, 260);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(44, 19);
@@ -181,7 +181,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.FacultyPassword);
-            this.panel2.Location = new System.Drawing.Point(30, 204);
+            this.panel2.Location = new System.Drawing.Point(30, 195);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(272, 50);
             this.panel2.TabIndex = 2;
@@ -206,7 +206,7 @@
             this.ViewPassword.ErrorImage = global::DBS25P023.Properties.Resources.eye;
             this.ViewPassword.Image = global::DBS25P023.Properties.Resources.eye;
             this.ViewPassword.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.ViewPassword.Location = new System.Drawing.Point(300, 204);
+            this.ViewPassword.Location = new System.Drawing.Point(300, 195);
             this.ViewPassword.Name = "ViewPassword";
             this.ViewPassword.Size = new System.Drawing.Size(50, 50);
             this.ViewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -220,7 +220,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.label3.Location = new System.Drawing.Point(32, 177);
+            this.label3.Location = new System.Drawing.Point(30, 170);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(83, 19);
@@ -233,7 +233,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.label5.Location = new System.Drawing.Point(403, 177);
+            this.label5.Location = new System.Drawing.Point(400, 170);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(150, 19);
@@ -249,7 +249,7 @@
             this.ViewConfirmPassword.ErrorImage = global::DBS25P023.Properties.Resources.eye;
             this.ViewConfirmPassword.Image = global::DBS25P023.Properties.Resources.eye;
             this.ViewConfirmPassword.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.ViewConfirmPassword.Location = new System.Drawing.Point(671, 204);
+            this.ViewConfirmPassword.Location = new System.Drawing.Point(670, 195);
             this.ViewConfirmPassword.Name = "ViewConfirmPassword";
             this.ViewConfirmPassword.Size = new System.Drawing.Size(50, 50);
             this.ViewConfirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -261,7 +261,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.FacultyConfirmPassword);
-            this.panel4.Location = new System.Drawing.Point(401, 204);
+            this.panel4.Location = new System.Drawing.Point(400, 195);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(272, 50);
             this.panel4.TabIndex = 3;
@@ -277,12 +277,12 @@
             this.FacultyConfirmPassword.Size = new System.Drawing.Size(251, 30);
             this.FacultyConfirmPassword.TabIndex = 0;
             // 
-            // FacultyDialog
+            // FacultyUserDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(754, 392);
+            this.ClientSize = new System.Drawing.Size(754, 371);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.ViewConfirmPassword);
             this.Controls.Add(this.panel2);
@@ -299,7 +299,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FacultyDialog";
+            this.Name = "FacultyUserDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
