@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using DBS25P023.Dialogs;
 using DBS25P023.Models;
 using DBS25P023.Controllers;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DBS25P023.Views.MainScreens {
     public partial class UserManagement: UserControl
@@ -32,12 +31,18 @@ namespace DBS25P023.Views.MainScreens {
         private void UserDataRender(string search) {
             List<Faculty> facultyList = FacultyControl.Instance.GetFaculty(search);
 
-            List<FacultyViewModel> facultyViewModels = facultyList.Select(f => new FacultyViewModel
+            List<Faculty> facultyViewModels = facultyList.Select(f => new Faculty
             {
+                Id = f.Id,
                 User_id = f.User_id,
                 Username = f.Username,
+                Name = f.Name,
                 Email = f.Email,
-                Role = f.Role
+                Contact = f.Contact,
+                Role = f.Role,
+                Designation = f.Designation,
+                TeachingHours = f.TeachingHours,
+                ResearchArea = f.ResearchArea
             }).ToList();
 
             int idx = 1;
@@ -48,21 +53,44 @@ namespace DBS25P023.Views.MainScreens {
             UserData.DataSource = facultyViewModels;
             UserData.Columns["SrNo"].HeaderText = "#";
             UserData.Columns["Username"].HeaderText = "USERNAME";
+            UserData.Columns["Name"].HeaderText = "NAME";
             UserData.Columns["Email"].HeaderText = "EMAIL";
+            UserData.Columns["Contact"].HeaderText = "CONTACT";
             UserData.Columns["Role"].HeaderText = "ROLE";
+            UserData.Columns["Designation"].HeaderText = "DESIGNATION";
             UserData.Columns["User_id"].Visible = false;
+            UserData.Columns["Id"].Visible = false;
+            UserData.Columns["Password"].Visible = false;
+            UserData.Columns["TeachingHours"].Visible = false;
+            UserData.Columns["ResearchArea"].Visible = false;
 
             UserData.DefaultCellStyle.Font = new Font("Arial", 10);
             UserData.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
             UserData.RowTemplate.Height = 30;
             UserData.EnableHeadersVisualStyles = false;
             UserData.ColumnHeadersHeight = 50;
+
+            UserData.Columns["SrNo"].Width = 40;
         }
 
         private void UserData_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0) {
-                // Select the row under the mouse
                 UserData.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        private void UserData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            if (UserData.Columns[e.ColumnIndex].Name == "Name") {
+                var name = e.Value.ToString();
+                var id = Convert.ToInt32(UserData.Rows[e.RowIndex].Cells["Id"].Value);
+                if (name == "Not Approved" && id == 0) {
+                    e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else {
+                    e.CellStyle.BackColor = UserData.DefaultCellStyle.BackColor;
+                    e.CellStyle.ForeColor = UserData.DefaultCellStyle.ForeColor;
+                }
             }
         }
 
@@ -105,7 +133,33 @@ namespace DBS25P023.Views.MainScreens {
                     Email = email
                 };
 
-                new FacultyApproveDialog("APPROVE", faculty).ShowDialog();
+                new FacultyDialog("APPROVE", faculty).ShowDialog();
+                UserDataRender(null);
+            }
+        }
+
+        private void EditFaculty_Click(object sender, EventArgs e) {
+            if (UserData.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = UserData.SelectedRows[0];
+                int Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string name = selectedRow.Cells["Name"].Value.ToString();
+                string research = selectedRow.Cells["ResearchArea"].Value.ToString();
+                int teaching_hours = Convert.ToInt32(selectedRow.Cells["TeachingHours"].Value);
+
+                string designationVal = selectedRow.Cells["Designation"].Value.ToString();
+                Designation designation = LookUpControl.Instance.GetDesignations().FirstOrDefault(d => d.Value == designationVal);
+
+                var faculty = new Faculty
+                {
+                    Id = Id,
+                    Name = name,
+                    TeachingHours = teaching_hours,
+                    ResearchArea = research,
+                    Designation = designation
+                };
+
+                new FacultyDialog("UPDATE", faculty).ShowDialog();
+                UserDataRender(null);
             }
         }
 
@@ -118,13 +172,29 @@ namespace DBS25P023.Views.MainScreens {
             string search = Search.Text;
             UserDataRender(search);
         }
-    }
 
-    public class FacultyViewModel {
-        public int SrNo { get; set; }
-        public int User_id { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public Role Role { get; set; }
+        private void UserData_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e) {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0) {
+                UserData.ClearSelection();
+                UserData.Rows[e.RowIndex].Selected = true;
+
+                var name = UserData.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
+                var id = Convert.ToInt32(UserData.Rows[e.RowIndex].Cells["Id"].Value);
+
+                ApproveFaculty.Click -= ApproveFaculty_Click;
+                ApproveFaculty.Click -= EditFaculty_Click;
+
+                if (name == "Not Approved" && id == 0) {
+                    ApproveFaculty.Text = "Approve Faculty";
+                    ApproveFaculty.Click += ApproveFaculty_Click;
+                    ApproveFaculty.Image = DBS25P023.Properties.Resources.approve;
+                }
+                else {
+                    ApproveFaculty.Text = "Update Faculty";
+                    ApproveFaculty.Image = DBS25P023.Properties.Resources.edit;
+                    ApproveFaculty.Click += EditFaculty_Click;
+                }
+            }
+        }
     }
 }

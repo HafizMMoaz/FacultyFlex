@@ -47,24 +47,35 @@ namespace DBS25P023.Controllers
             List<Faculty> facultyusers = new List<Faculty>();
             MySqlConnection con;
 
-            string query;
-            if (string.IsNullOrEmpty(search))
-                query = "SELECT * FROM users u JOIN lookup l ON u.role_id = l.lookup_id";
-            else
-                query = $"SELECT * FROM users u JOIN lookup l ON u.role_id = l.lookup_id WHERE u.username LIKE '%{search}%' OR u.email LIKE '%{search}%' OR l.value LIKE '%{search}%'";
+            string query = "SELECT U.user_id, U.username, F.faculty_id, F.Name, U.email, F.contact, U.role_id , L1.value as role, F.designation_id, L2.value as designation, F.total_teaching_hours, F.research_area FROM users U LEFT JOIN faculty F using(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id LEFT JOIN lookup L2 ON L2.lookup_id = F.designation_id";
+            
+            if (!string.IsNullOrEmpty(search))
+                query = query + $" WHERE U.username LIKE '%{search}%' OR U.email LIKE '%{search}%' OR L1.value LIKE '%{search}%' OR L2.value LIKE '%{search}%' OR F.Name LIKE '%{search}%' OR F.contact LIKE '%{search}%'";
+
+            query = query + " ORDER BY user_id ASC";
 
             using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
                 while (reader.Read()) {
                     facultyusers.Add(new Faculty
                     {
+                        Id = reader["faculty_id"] == DBNull.Value ? 0 : Convert.ToInt32(reader["faculty_id"]),
                         User_id = Convert.ToInt32(reader["user_id"]),
                         Username = reader["username"].ToString(),
+                        Name = reader["Name"] == DBNull.Value ? "Not Approved" : reader["Name"].ToString(),
                         Email = reader["email"].ToString(),
                         Role = new Role
                         {
-                            LookUp_Id = Convert.ToInt32(reader["lookup_id"]),
-                            Value = reader["value"].ToString()
-                        }
+                            LookUp_Id = Convert.ToInt32(reader["role_id"]),
+                            Value = reader["role"].ToString()
+                        },
+                        Contact = reader["contact"] == DBNull.Value ? "-" : reader["contact"].ToString(),
+                        Designation = new Designation
+                        {
+                            LookUp_Id = reader["designation_id"] == DBNull.Value ? 0 : Convert.ToInt32(reader["designation_id"]),
+                            Value = reader["designation"] == DBNull.Value ? "-" : reader["designation"].ToString()
+                        },
+                        TeachingHours = reader["total_teaching_hours"] == DBNull.Value ? 0 : Convert.ToInt32(reader["total_teaching_hours"]),
+                        ResearchArea = reader["research_area"] == DBNull.Value ? "-" : reader["research_area"].ToString()
                     });
                 }
             }

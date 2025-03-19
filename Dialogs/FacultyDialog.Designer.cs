@@ -1,5 +1,5 @@
 ﻿namespace DBS25P023.Dialogs {
-    partial class FacultyApproveDialog {
+    partial class FacultyDialog {
         /// <summary>
         /// Required designer variable.
         /// </summary>

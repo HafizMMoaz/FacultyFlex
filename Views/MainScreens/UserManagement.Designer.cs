@@ -213,6 +213,8 @@
             this.UserData.ShowEditingIcon = false;
             this.UserData.Size = new System.Drawing.Size(730, 384);
             this.UserData.TabIndex = 0;
+            this.UserData.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.UserData_CellFormatting);
+            this.UserData.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.UserData_CellMouseDown);
             this.UserData.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserData_CellMouseEnter);
             // 
             // UserManagementControls
@@ -222,7 +224,7 @@
             this.ApproveFaculty,
             this.DeleteUser});
             this.UserManagementControls.Name = "UserManagementControls";
-            this.UserManagementControls.Size = new System.Drawing.Size(162, 94);
+            this.UserManagementControls.Size = new System.Drawing.Size(189, 116);
             // 
             // EditUser
             // 
@@ -234,8 +236,8 @@
             this.EditUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EditUser.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
             this.EditUser.ShowShortcutKeys = false;
-            this.EditUser.Size = new System.Drawing.Size(161, 30);
-            this.EditUser.Text = "Edit";
+            this.EditUser.Size = new System.Drawing.Size(188, 30);
+            this.EditUser.Text = "Update Credentials";
             this.EditUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.EditUser.Click += new System.EventHandler(this.EditUser_Click);
             // 
@@ -249,10 +251,9 @@
             this.ApproveFaculty.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ApproveFaculty.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
             this.ApproveFaculty.ShowShortcutKeys = false;
-            this.ApproveFaculty.Size = new System.Drawing.Size(161, 30);
+            this.ApproveFaculty.Size = new System.Drawing.Size(188, 30);
             this.ApproveFaculty.Text = "Approve Faculty";
             this.ApproveFaculty.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.ApproveFaculty.Click += new System.EventHandler(this.ApproveFaculty_Click);
             // 
             // DeleteUser
             // 
@@ -264,8 +265,8 @@
             this.DeleteUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DeleteUser.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.DeleteUser.ShowShortcutKeys = false;
-            this.DeleteUser.Size = new System.Drawing.Size(161, 30);
-            this.DeleteUser.Text = "Delete";
+            this.DeleteUser.Size = new System.Drawing.Size(188, 30);
+            this.DeleteUser.Text = "Delete User";
             this.DeleteUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // UserManagement

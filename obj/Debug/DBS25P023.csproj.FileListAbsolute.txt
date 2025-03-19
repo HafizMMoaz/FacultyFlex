@@ -56,5 +56,5 @@ E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Debug\System.Numerics
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.csproj.Up2Date
-E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.FacultyApproveDialog.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.FacultyUserDialog.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.FacultyDialog.resources

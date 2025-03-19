@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace DBS25P023.Dialogs
 {
-    public partial class FacultyApproveDialog: Form
+    public partial class FacultyDialog: Form
     {
         private string Action;
         Designation selected_Designation = null;
         int User_id; string Email;
-        public FacultyApproveDialog(string Action, Faculty facutlty)
+        public FacultyDialog(string Action, Faculty facutlty)
         {
             InitializeComponent();
             this.Action = Action;

@@ -109,11 +109,11 @@
     <Compile Include="Controllers\FacultyControl.cs" />
     <Compile Include="Controllers\LookUpControl.cs" />
     <Compile Include="DB.cs" />
-    <Compile Include="Dialogs\FacultyApproveDialog.cs">
+    <Compile Include="Dialogs\FacultyDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\FacultyApproveDialog.Designer.cs">
-      <DependentUpon>FacultyApproveDialog.cs</DependentUpon>
+    <Compile Include="Dialogs\FacultyDialog.Designer.cs">
+      <DependentUpon>FacultyDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Dialogs\FacultyRequestForm.cs">
@@ -208,8 +208,8 @@
     <Compile Include="Views\MainScreens\UserManagement.Designer.cs">
       <DependentUpon>UserManagement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dialogs\FacultyApproveDialog.resx">
-      <DependentUpon>FacultyApproveDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\FacultyDialog.resx">
+      <DependentUpon>FacultyDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainScreens\FacultyRequests.resx">
       <DependentUpon>FacultyRequests.cs</DependentUpon>

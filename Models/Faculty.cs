@@ -8,6 +8,7 @@ namespace DBS25P023.Models
 {
     public class Faculty
     {
+        public int SrNo {  get; set; }
         public int Id { get; set; }
         public int User_id { get; set; }
         public string Name { get; set; }
