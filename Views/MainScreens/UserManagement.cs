@@ -144,6 +144,7 @@ namespace DBS25P023.Views.MainScreens {
                 int Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
                 string name = selectedRow.Cells["Name"].Value.ToString();
                 string research = selectedRow.Cells["ResearchArea"].Value.ToString();
+                string contact = selectedRow.Cells["Contact"].Value.ToString();
                 int teaching_hours = Convert.ToInt32(selectedRow.Cells["TeachingHours"].Value);
 
                 string designationVal = selectedRow.Cells["Designation"].Value.ToString();
@@ -155,7 +156,8 @@ namespace DBS25P023.Views.MainScreens {
                     Name = name,
                     TeachingHours = teaching_hours,
                     ResearchArea = research,
-                    Designation = designation
+                    Designation = designation,
+                    Contact = contact
                 };
 
                 new FacultyDialog("UPDATE", faculty).ShowDialog();

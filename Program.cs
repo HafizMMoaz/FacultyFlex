@@ -19,10 +19,9 @@ namespace DBS25P023
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Splash splash = new Splash();
-            new Splash().Show();
+            //new Splash().Show();
 
-            //new Main().Show();
+            new Main().Show();
 
             Application.Run();
         }

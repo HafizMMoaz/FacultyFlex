@@ -95,6 +95,16 @@ namespace DBS25P023.Controllers
             return false;
         }
 
+        public bool UpdateFaculty(Faculty faculty) {
+            string query = $"UPDATE faculty SET name = '{faculty.Name}', contact = '{faculty.Contact}', designation_id = '{faculty.Designation.LookUp_Id}', total_teaching_hours = {faculty.TeachingHours}, research_area = '{faculty.ResearchArea}' WHERE faculty_id = {faculty.Id}";
+
+            if (DB.Instance.Update(query) == 1) {
+                return true;
+            }
+
+            return false;
+        }
+
 
     }
 }

@@ -17,6 +17,8 @@ namespace DBS25P023.Dialogs
         private string Action;
         Designation selected_Designation = null;
         int User_id; string Email;
+
+        Faculty selectedFaculty = null;
         public FacultyDialog(string Action, Faculty facutlty)
         {
             InitializeComponent();
@@ -24,6 +26,17 @@ namespace DBS25P023.Dialogs
             this.User_id = facutlty.User_id;
             this.Email = facutlty.Email;
             PopulateDesignations();
+
+
+            if(Action == "UPDATE") {
+                selectedFaculty = facutlty;
+                FacultyName.Text = selectedFaculty.Name;
+                FacultyContact.Text = selectedFaculty.Contact;
+                FacultyTeachingHours.Text = selectedFaculty.TeachingHours.ToString();
+                FacultyResearchArea.Text = selectedFaculty.ResearchArea;
+                FacultyDesignation.SelectedIndex = selectedFaculty.Designation.Id - 1;
+            }
+            
         }
 
         private void PopulateDesignations() {
@@ -58,7 +71,6 @@ namespace DBS25P023.Dialogs
                 MessageBox.Show("Please Enter Integer in Teaching Hours", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             string Name = FacultyName.Text;
             string Contact = FacultyContact.Text;
             string ResearchArea = FacultyResearchArea.Text;
@@ -67,13 +79,31 @@ namespace DBS25P023.Dialogs
             int User_id = this.User_id;
             string Email = this.Email;
 
-            Faculty ToApproveFaculty = new Faculty(User_id, Name, Email, Contact, Designation, ResearchArea, TeachingHours);
+            Faculty faculty = new Faculty
+            {
+                Name = Name,
+                Contact = Contact,
+                ResearchArea = ResearchArea,
+                TeachingHours = TeachingHours,
+                Designation = Designation
+            };
 
-            if (FacultyControl.Instance.ApproveFaculty(ToApproveFaculty)) {
-                MessageBox.Show("Approved Successfully!", "Faculty Approval", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(Action == "APPROVE") {
+                if (FacultyControl.Instance.ApproveFaculty(faculty)) {
+                    MessageBox.Show("Approved Successfully!", "Faculty Approval", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("Something Went Wrong! Please Try Again", "Faculty Approval", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else {
-                MessageBox.Show("Something Went Wrong! Please Try Again", "Faculty Approval", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                faculty.Id = selectedFaculty.Id;
+                if (FacultyControl.Instance.UpdateFaculty(faculty)) {
+                    MessageBox.Show("Updated Successfully!", "Faculty Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("Something Went Wrong! Please Try Again", "Faculty Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
             this.Close();
