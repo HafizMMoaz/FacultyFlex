@@ -68,9 +68,12 @@ namespace DBS25P023.Dialogs
         private void ActionBtn_Click(object sender, EventArgs e) {
             if(selected_role == null 
                 || string.IsNullOrWhiteSpace(FacultyUsername.Text)
-                || string.IsNullOrWhiteSpace(FacultyPassword.Text)
-                || string.IsNullOrWhiteSpace(FacultyConfirmPassword.Text)
                 || string.IsNullOrWhiteSpace(FacultyEmail.Text)) {
+                MessageBox.Show("Please fill all Fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if((string.IsNullOrWhiteSpace(FacultyPassword.Text) || string.IsNullOrWhiteSpace(FacultyConfirmPassword.Text)) && Action == "ADD") {
                 MessageBox.Show("Please fill all Fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -85,7 +88,7 @@ namespace DBS25P023.Dialogs
                 return;
             }
 
-            if (FacultyPassword.Text.Length < 8) {
+            if (!string.IsNullOrWhiteSpace(FacultyPassword.Text) && FacultyPassword.Text.Length < 8) {
                 MessageBox.Show("Password Must be 8 or more character long.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -97,7 +100,11 @@ namespace DBS25P023.Dialogs
                 string email = mail.ToString();
                 Role role = selected_role;
 
-                password = BCrypt.Net.BCrypt.HashPassword(password);
+                if (!string.IsNullOrEmpty(password))
+                    password = BCrypt.Net.BCrypt.HashPassword(password);
+                else
+                    password = null;
+
                 Faculty faculty = new Faculty(username, password, email, role);
                 faculty.User_id = selected_useid;
 

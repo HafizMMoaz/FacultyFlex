@@ -85,7 +85,9 @@ namespace DBS25P023.Dialogs
                 Contact = Contact,
                 ResearchArea = ResearchArea,
                 TeachingHours = TeachingHours,
-                Designation = Designation
+                Designation = Designation,
+                Email = Email,
+                User_id = User_id
             };
 
             if(Action == "APPROVE") {

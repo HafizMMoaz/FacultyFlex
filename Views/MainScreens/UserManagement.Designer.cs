@@ -34,21 +34,21 @@
             this.Search = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.SearchBtn = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.UserData = new System.Windows.Forms.DataGridView();
             this.UserManagementControls = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EditUser = new System.Windows.Forms.ToolStripMenuItem();
             this.ApproveFaculty = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeleteUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SearchBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserData)).BeginInit();
             this.UserManagementControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -141,24 +141,6 @@
             this.panel4.Size = new System.Drawing.Size(334, 84);
             this.panel4.TabIndex = 11;
             // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
-            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
-            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
-            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
-            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
-            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SearchBtn.TabIndex = 8;
-            this.SearchBtn.TabStop = false;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.UserData);
@@ -222,7 +204,7 @@
             this.UserManagementControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EditUser,
             this.ApproveFaculty,
-            this.DeleteUser});
+            this.toolStripMenuItem1});
             this.UserManagementControls.Name = "UserManagementControls";
             this.UserManagementControls.Size = new System.Drawing.Size(189, 116);
             // 
@@ -234,7 +216,6 @@
             this.EditUser.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EditUser.Name = "EditUser";
             this.EditUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EditUser.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
             this.EditUser.ShowShortcutKeys = false;
             this.EditUser.Size = new System.Drawing.Size(188, 30);
             this.EditUser.Text = "Update Credentials";
@@ -249,25 +230,42 @@
             this.ApproveFaculty.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ApproveFaculty.Name = "ApproveFaculty";
             this.ApproveFaculty.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ApproveFaculty.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
             this.ApproveFaculty.ShowShortcutKeys = false;
             this.ApproveFaculty.Size = new System.Drawing.Size(188, 30);
             this.ApproveFaculty.Text = "Approve Faculty";
             this.ApproveFaculty.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
-            // DeleteUser
+            // toolStripMenuItem1
             // 
-            this.DeleteUser.BackColor = System.Drawing.SystemColors.Control;
-            this.DeleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.DeleteUser.Image = global::DBS25P023.Properties.Resources.del;
-            this.DeleteUser.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.DeleteUser.Name = "DeleteUser";
-            this.DeleteUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DeleteUser.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.DeleteUser.ShowShortcutKeys = false;
-            this.DeleteUser.Size = new System.Drawing.Size(188, 30);
-            this.DeleteUser.Text = "Delete User";
-            this.DeleteUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolStripMenuItem1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.toolStripMenuItem1.Image = global::DBS25P023.Properties.Resources.del;
+            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripMenuItem1.ShowShortcutKeys = false;
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(188, 30);
+            this.toolStripMenuItem1.Text = "Delete User";
+            this.toolStripMenuItem1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.DeleteUser_Click);
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
+            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
+            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchBtn.TabIndex = 8;
+            this.SearchBtn.TabStop = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // UserManagement
             // 
@@ -289,10 +287,10 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UserData)).EndInit();
             this.UserManagementControls.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,6 +311,6 @@
         private System.Windows.Forms.ContextMenuStrip UserManagementControls;
         private System.Windows.Forms.ToolStripMenuItem EditUser;
         private System.Windows.Forms.ToolStripMenuItem ApproveFaculty;
-        private System.Windows.Forms.ToolStripMenuItem DeleteUser;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

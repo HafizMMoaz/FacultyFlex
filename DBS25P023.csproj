@@ -300,6 +300,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Resources\reset.png" />
     <None Include="Resources\approve.png" />
     <None Include="Resources\del.png" />
     <None Include="Resources\edit.png" />

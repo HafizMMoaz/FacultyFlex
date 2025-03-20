@@ -18,13 +18,13 @@ namespace DBS25P023.Views.MainScreens {
         {
             InitializeComponent();
         }
+        private void UserManagement_Load(object sender, EventArgs e) {
+            UserDataRender(null);
+            UserData.ClearSelection();
+        }
 
         private void ActionBtn_Click(object sender, EventArgs e) {
             new FacultyUserDialog("ADD").ShowDialog();
-            UserDataRender(null);
-        }
-
-        private void UserManagement_Load(object sender, EventArgs e) {
             UserDataRender(null);
         }
 
@@ -71,6 +71,9 @@ namespace DBS25P023.Views.MainScreens {
             UserData.ColumnHeadersHeight = 50;
 
             UserData.Columns["SrNo"].Width = 40;
+
+            
+
         }
 
         private void UserData_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
@@ -91,6 +94,48 @@ namespace DBS25P023.Views.MainScreens {
                     e.CellStyle.BackColor = UserData.DefaultCellStyle.BackColor;
                     e.CellStyle.ForeColor = UserData.DefaultCellStyle.ForeColor;
                 }
+            }
+        }
+
+        private void UserData_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e) {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0) {
+                UserData.ClearSelection();
+                UserData.Rows[e.RowIndex].Selected = true;
+
+                var name = UserData.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
+                var id = Convert.ToInt32(UserData.Rows[e.RowIndex].Cells["Id"].Value);
+
+                ApproveFaculty.Click -= ApproveFaculty_Click;
+                ApproveFaculty.Click -= EditFaculty_Click;
+
+                if (name == "Not Approved" && id == 0) {
+                    ApproveFaculty.Text = "Approve Faculty";
+                    ApproveFaculty.Click += ApproveFaculty_Click;
+                    ApproveFaculty.Image = DBS25P023.Properties.Resources.approve;
+                }
+                else {
+                    ApproveFaculty.Text = "Update Faculty";
+                    ApproveFaculty.Image = DBS25P023.Properties.Resources.edit;
+                    ApproveFaculty.Click += EditFaculty_Click;
+                }
+            }
+        }
+
+        private void DeleteUser_Click(object sender, EventArgs e) {
+            if (UserData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = UserData.SelectedRows[0];
+
+                int userId = Convert.ToInt32(selectedRow.Cells["User_id"].Value);
+
+                if (FacultyControl.Instance.DeleteFaculty(userId)) {
+                    MessageBox.Show("Faculty Deleted Successfully", "Faculty Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UserDataRender(null);
+                }
+                else {
+                    MessageBox.Show("Something Went Wrong! Please Try Again", "Faculty Deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
             }
         }
 
@@ -118,8 +163,6 @@ namespace DBS25P023.Views.MainScreens {
                 UserDataRender(null);
             }
         }
-
-        
 
         private void ApproveFaculty_Click(object sender, EventArgs e) {
             if(UserData.SelectedRows.Count > 0) {
@@ -173,30 +216,6 @@ namespace DBS25P023.Views.MainScreens {
         private void SearchBtn_Click(object sender, EventArgs e) {
             string search = Search.Text;
             UserDataRender(search);
-        }
-
-        private void UserData_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e) {
-            if (e.Button == MouseButtons.Right && e.RowIndex >= 0) {
-                UserData.ClearSelection();
-                UserData.Rows[e.RowIndex].Selected = true;
-
-                var name = UserData.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
-                var id = Convert.ToInt32(UserData.Rows[e.RowIndex].Cells["Id"].Value);
-
-                ApproveFaculty.Click -= ApproveFaculty_Click;
-                ApproveFaculty.Click -= EditFaculty_Click;
-
-                if (name == "Not Approved" && id == 0) {
-                    ApproveFaculty.Text = "Approve Faculty";
-                    ApproveFaculty.Click += ApproveFaculty_Click;
-                    ApproveFaculty.Image = DBS25P023.Properties.Resources.approve;
-                }
-                else {
-                    ApproveFaculty.Text = "Update Faculty";
-                    ApproveFaculty.Image = DBS25P023.Properties.Resources.edit;
-                    ApproveFaculty.Click += EditFaculty_Click;
-                }
-            }
         }
     }
 }

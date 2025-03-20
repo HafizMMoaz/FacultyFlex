@@ -37,8 +37,13 @@ namespace DBS25P023.Controllers
             return count > 0;
         }
         public bool UpdateFacultyUser(Faculty faculty) {
-            string query = $"UPDATE users SET username = '{faculty.Username}', email = '{faculty.Email}', password_hash = '{faculty.Password}', role_id = {faculty.Role.LookUp_Id} WHERE user_id = {faculty.User_id}";
-            if(DB.Instance.Update(query) == 1) {
+            string query;
+            if (faculty.Password != null)
+                query = $"UPDATE users SET username = '{faculty.Username}', email = '{faculty.Email}', password_hash = '{faculty.Password}', role_id = {faculty.Role.LookUp_Id} WHERE user_id = {faculty.User_id}";
+            else
+                query = $"UPDATE users SET username = '{faculty.Username}', email = '{faculty.Email}', role_id = {faculty.Role.LookUp_Id} WHERE user_id = {faculty.User_id}";
+            
+            if (DB.Instance.Update(query) == 1) {
                 return true;
             }
             return false;
@@ -85,8 +90,17 @@ namespace DBS25P023.Controllers
         }
 
         public bool ApproveFaculty(Faculty faculty) {
+            // Check if the user_id exists in the users table before proceeding
+            string checkUserQuery = $"SELECT COUNT(*) FROM users WHERE user_id = {faculty.User_id}";
+            int userCount = DB.Instance.Scalar(checkUserQuery);
+
+            if (userCount == 0) {
+                throw new Exception($"User with user_id {faculty.User_id} does not exist in the users table.");
+            }
+
+            // Proceed with the normal faculty insertion if the user_id exists
             string query = "INSERT INTO faculty (name, email, contact, designation_id, research_area, total_teaching_hours, user_id)" +
-                $"VALUES ('{faculty.Name}', '{faculty.Email}', '{faculty.Contact}', '{faculty.Designation.LookUp_Id}', '{faculty.ResearchArea}', '{faculty.TeachingHours}', '{faculty.User_id}')";
+                           $"VALUES ('{faculty.Name}', '{faculty.Email}', '{faculty.Contact}', '{faculty.Designation.LookUp_Id}', '{faculty.ResearchArea}', '{faculty.TeachingHours}', '{faculty.User_id}')";
 
             if (DB.Instance.Update(query) == 1) {
                 return true;
@@ -95,6 +109,7 @@ namespace DBS25P023.Controllers
             return false;
         }
 
+
         public bool UpdateFaculty(Faculty faculty) {
             string query = $"UPDATE faculty SET name = '{faculty.Name}', contact = '{faculty.Contact}', designation_id = '{faculty.Designation.LookUp_Id}', total_teaching_hours = {faculty.TeachingHours}, research_area = '{faculty.ResearchArea}' WHERE faculty_id = {faculty.Id}";
 
@@ -102,6 +117,23 @@ namespace DBS25P023.Controllers
                 return true;
             }
 
+            return false;
+        }
+
+        public bool DeleteFaculty(int id) {
+
+            string query = $"SELECT COUNT(*) FROM faculty WHERE user_id = {id}";
+            int userCount = DB.Instance.Scalar(query);
+
+            if (userCount != 0) {
+                query = $"DELETE FROM faculty WHERE user_id = {id}";
+                DB.Instance.Update(query);
+            }
+
+            query = $"DELETE FROM users WHERE user_id = {id}";
+            if (DB.Instance.Update(query) == 1) {
+                    return true;
+            }
             return false;
         }
 
