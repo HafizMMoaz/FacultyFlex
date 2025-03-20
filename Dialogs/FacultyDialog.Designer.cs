@@ -238,12 +238,12 @@
             this.FacultyTeachingHours.Size = new System.Drawing.Size(300, 30);
             this.FacultyTeachingHours.TabIndex = 0;
             // 
-            // FacultyApproveDialog
+            // FacultyDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(754, 442);
+            this.ClientSize = new System.Drawing.Size(754, 441);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ActionBtn);
             this.Controls.Add(this.Title);
@@ -257,7 +257,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FacultyApproveDialog";
+            this.Name = "FacultyDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -294,7 +294,7 @@
             this.WorkloadBtn.Padding = new System.Windows.Forms.Padding(10, 0, 25, 0);
             this.WorkloadBtn.Size = new System.Drawing.Size(300, 60);
             this.WorkloadBtn.TabIndex = 1;
-            this.WorkloadBtn.Text = "Assign Workload";
+            this.WorkloadBtn.Text = "Manage Workload";
             this.WorkloadBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.WorkloadBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.WorkloadBtn.UseVisualStyleBackColor = true;

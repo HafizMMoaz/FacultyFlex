@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DBS25P023.Views.MainScreens.Dialogs;
+using DBS25P023.Dialogs;
+using DBS25P023.Models;
 
 namespace DBS25P023.Views.MainScreens {
     public partial class FacultyWorkload: UserControl
@@ -17,9 +18,18 @@ namespace DBS25P023.Views.MainScreens {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-            AssignWorkLoad work = new AssignWorkLoad();
-            work.Show();
+        private void NewCourse_Click(object sender, EventArgs e) {
+
+            Course course = new Course
+            {
+                Id = 1,
+                Name = "Database",
+                Type = "Theory",
+                CreditHours = 1,
+                ContactHours = 3
+            };
+
+            new NewCourseDialog("UPDATE", course).ShowDialog();
         }
     }
 }

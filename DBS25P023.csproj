@@ -106,6 +106,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CourseControl.cs" />
     <Compile Include="Controllers\FacultyControl.cs" />
     <Compile Include="Controllers\LookUpControl.cs" />
     <Compile Include="DB.cs" />
@@ -115,19 +116,14 @@
     <Compile Include="Dialogs\FacultyDialog.Designer.cs">
       <DependentUpon>FacultyDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\NewCourseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewCourseDialog.Designer.cs">
+      <DependentUpon>NewCourseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Faculty.cs" />
-    <Compile Include="Dialogs\FacultyRequestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\FacultyRequestForm.Designer.cs">
-      <DependentUpon>FacultyRequestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\AssignWorkLoad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\AssignWorkLoad.Designer.cs">
-      <DependentUpon>AssignWorkLoad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainScreens\FacultyRequests.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +207,9 @@
     <EmbeddedResource Include="Dialogs\FacultyDialog.resx">
       <DependentUpon>FacultyDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewCourseDialog.resx">
+      <DependentUpon>NewCourseDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainScreens\FacultyRequests.resx">
       <DependentUpon>FacultyRequests.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,12 +255,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\FacultyUserDialog.resx">
       <DependentUpon>FacultyUserDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\AssignWorkLoad.resx">
-      <DependentUpon>AssignWorkLoad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\FacultyRequestForm.resx">
-      <DependentUpon>FacultyRequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainScreens\UserManagement.resx">
       <DependentUpon>UserManagement.cs</DependentUpon>

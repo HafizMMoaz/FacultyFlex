@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DBS25P023.Views.MainScreens.Dialogs;
+using DBS25P023.Dialogs;
 
 namespace DBS25P023.Views.MainScreens {
     public partial class FacultyRequests: UserControl
@@ -18,8 +18,7 @@ namespace DBS25P023.Views.MainScreens {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            FacultyRequestForm faculty = new FacultyRequestForm();
-            faculty.Show();
+            
         }
     }
 }

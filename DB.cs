@@ -7,11 +7,11 @@ using MySql.Data.MySqlClient;
 namespace DBS25P023 {
     public class DB {
 
-        private String serverName = "127.0.0.1";
-        private String port = "3307";
-        private String databaseName = "midprojectdb";
-        private String databaseUser = "root";
-        private String databasePassword = "Hafiz...1452";
+        private readonly String serverName = "";
+        private readonly String port = "";
+        private readonly String databaseName = "";
+        private readonly String databaseUser = "";
+        private readonly String databasePassword = "";
 
         private static DB _instance;
 
