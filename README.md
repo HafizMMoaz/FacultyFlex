@@ -42,6 +42,27 @@ FacultyFlex is a Windows Forms Application built using **C# and MySQL** to strea
 
 ---
 
+## 📷 Screenshots
+
+Here are some screenshots of the application:
+
+### Dashboard
+![Dashboard](Screenshots/1.png)
+
+### Faculty Management
+![Faculty Management](Screenshots/2.png)
+
+### Workload Assignment
+![Workload Assignment](Screenshots/3.png)
+
+### Resource Allocation
+![Resource Allocation](Screenshots/4.png)
+
+### Settings
+![Settings](Screenshots/5.png)
+
+---
+
 ## 🚀 Installation Guide
 
 1. **Clone the Repository**  
