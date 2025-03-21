@@ -77,3 +77,7 @@ FacultyFlex is a Windows Forms Application built using **C# and MySQL** to strea
 - 📜 Faculty Request Fixes (some requests are not being processed correctly).
 - 🗓️ Faculty Course Scheduling (automated timetable generation).
 - 📜 Database Creation through Software
+
+## 📄 License
+
+This project is licensed under the terms of the **[MIT License](LICENSE.md)**.
