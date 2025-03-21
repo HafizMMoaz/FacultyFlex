@@ -19,6 +19,7 @@ namespace DBS25P023.Dialogs
         int User_id; string Email;
 
         Faculty selectedFaculty = null;
+
         public FacultyDialog(string Action, Faculty facutlty)
         {
             InitializeComponent();

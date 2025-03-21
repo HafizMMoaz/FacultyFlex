@@ -56,4 +56,6 @@ E:\University\Semester-2\DataBase\MidProject\DBS25P023\bin\Debug\System.Threadin
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.csproj.Up2Date
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.FacultyUserDialog.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.FacultyDialog.resources
-E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.NewCourseDialog.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.CourseDialog.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.ProjectDialog.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.SemesterDialog.resources

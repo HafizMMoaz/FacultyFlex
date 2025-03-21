@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace DBS25P023 {
+namespace DBS25P023.Models {
     public class DB {
 
         private readonly String serverName = "";

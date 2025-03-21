@@ -109,21 +109,34 @@
     <Compile Include="Controllers\CourseControl.cs" />
     <Compile Include="Controllers\FacultyControl.cs" />
     <Compile Include="Controllers\LookUpControl.cs" />
-    <Compile Include="DB.cs" />
+    <Compile Include="Controllers\ProjectControl.cs" />
+    <Compile Include="Controllers\SemesterControl.cs" />
+    <Compile Include="Dialogs\ProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ProjectDialog.Designer.cs">
+      <DependentUpon>ProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SemesterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SemesterDialog.Designer.cs">
+      <DependentUpon>SemesterDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB.cs" />
     <Compile Include="Dialogs\FacultyDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dialogs\FacultyDialog.Designer.cs">
       <DependentUpon>FacultyDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\NewCourseDialog.cs">
+    <Compile Include="Dialogs\CourseDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\NewCourseDialog.Designer.cs">
-      <DependentUpon>NewCourseDialog.cs</DependentUpon>
+    <Compile Include="Dialogs\CourseDialog.Designer.cs">
+      <DependentUpon>CourseDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\Models.cs" />
     <Compile Include="Views\MainScreens\FacultyRequests.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,8 +220,14 @@
     <EmbeddedResource Include="Dialogs\FacultyDialog.resx">
       <DependentUpon>FacultyDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\NewCourseDialog.resx">
-      <DependentUpon>NewCourseDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\CourseDialog.resx">
+      <DependentUpon>CourseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProjectDialog.resx">
+      <DependentUpon>ProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SemesterDialog.resx">
+      <DependentUpon>SemesterDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainScreens\FacultyRequests.resx">
       <DependentUpon>FacultyRequests.cs</DependentUpon>

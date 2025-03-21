@@ -1,5 +1,5 @@
 ﻿namespace DBS25P023.Dialogs {
-    partial class NewCourseDialog {
+    partial class CourseDialog {
         /// <summary>
         /// Required designer variable.
         /// </summary>

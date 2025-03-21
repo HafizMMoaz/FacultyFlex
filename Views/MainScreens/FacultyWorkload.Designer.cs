@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -35,75 +36,87 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Tabs = new System.Windows.Forms.TabControl();
-            this.Semester = new System.Windows.Forms.TabPage();
-            this.Project = new System.Windows.Forms.TabPage();
             this.AssignCourse = new System.Windows.Forms.TabPage();
-            this.AssignProject = new System.Windows.Forms.TabPage();
-            this.AssignAdminRole = new System.Windows.Forms.TabPage();
-            this.Schedule = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.UserData = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ActionBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.SearchBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Search = new System.Windows.Forms.TextBox();
+            this.AssignProject = new System.Windows.Forms.TabPage();
+            this.AssignAdminRole = new System.Windows.Forms.TabPage();
+            this.Schedule = new System.Windows.Forms.TabPage();
             this.Courses = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.CourseData = new System.Windows.Forms.DataGridView();
+            this.CourseControls = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.EditCourse = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteCourse = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
             this.NewCourse = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.CourseSearchBtn = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.CourseSearch = new System.Windows.Forms.TextBox();
+            this.Semester = new System.Windows.Forms.TabPage();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.SemesterData = new System.Windows.Forms.DataGridView();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.NewSemester = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.SemesterSearchBtn = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.SemesterSearch = new System.Windows.Forms.TextBox();
+            this.Project = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.ProjectData = new System.Windows.Forms.DataGridView();
+            this.ProjectControls = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.EditProject = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteProject = new System.Windows.Forms.ToolStripMenuItem();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.NewProject = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.ProjectSearchBtn = new System.Windows.Forms.PictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.SearchBtn = new System.Windows.Forms.PictureBox();
-            this.CourseSearchBtn = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ProjectSearch = new System.Windows.Forms.TextBox();
+            this.SemesterControls = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.EditSemester = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteSemester = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.Tabs.SuspendLayout();
-            this.Semester.SuspendLayout();
-            this.Project.SuspendLayout();
             this.AssignCourse.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserData)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.panel2.SuspendLayout();
             this.Courses.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CourseData)).BeginInit();
+            this.CourseControls.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CourseSearchBtn)).BeginInit();
             this.panel9.SuspendLayout();
+            this.Semester.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SemesterData)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SemesterSearchBtn)).BeginInit();
             this.panel13.SuspendLayout();
+            this.Project.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectData)).BeginInit();
+            this.ProjectControls.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectSearchBtn)).BeginInit();
             this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CourseSearchBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.SemesterControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -150,7 +163,7 @@
             this.Tabs.Controls.Add(this.Courses);
             this.Tabs.Controls.Add(this.Semester);
             this.Tabs.Controls.Add(this.Project);
-            this.Tabs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Tabs.Cursor = System.Windows.Forms.Cursors.Default;
             this.Tabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Tabs.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tabs.ItemSize = new System.Drawing.Size(50, 40);
@@ -162,28 +175,6 @@
             this.Tabs.Size = new System.Drawing.Size(760, 498);
             this.Tabs.TabIndex = 13;
             // 
-            // Semester
-            // 
-            this.Semester.Controls.Add(this.panel10);
-            this.Semester.Controls.Add(this.panel11);
-            this.Semester.Location = new System.Drawing.Point(4, 44);
-            this.Semester.Name = "Semester";
-            this.Semester.Size = new System.Drawing.Size(752, 450);
-            this.Semester.TabIndex = 1;
-            this.Semester.Text = "Semester";
-            this.Semester.UseVisualStyleBackColor = true;
-            // 
-            // Project
-            // 
-            this.Project.Controls.Add(this.panel14);
-            this.Project.Controls.Add(this.panel15);
-            this.Project.Location = new System.Drawing.Point(4, 44);
-            this.Project.Name = "Project";
-            this.Project.Size = new System.Drawing.Size(752, 450);
-            this.Project.TabIndex = 2;
-            this.Project.Text = "Project";
-            this.Project.UseVisualStyleBackColor = true;
-            // 
             // AssignCourse
             // 
             this.AssignCourse.Controls.Add(this.panel5);
@@ -194,33 +185,6 @@
             this.AssignCourse.TabIndex = 3;
             this.AssignCourse.Text = "Assign Course";
             this.AssignCourse.UseVisualStyleBackColor = true;
-            // 
-            // AssignProject
-            // 
-            this.AssignProject.Location = new System.Drawing.Point(4, 44);
-            this.AssignProject.Name = "AssignProject";
-            this.AssignProject.Size = new System.Drawing.Size(752, 450);
-            this.AssignProject.TabIndex = 4;
-            this.AssignProject.Text = "Assign Project";
-            this.AssignProject.UseVisualStyleBackColor = true;
-            // 
-            // AssignAdminRole
-            // 
-            this.AssignAdminRole.Location = new System.Drawing.Point(4, 44);
-            this.AssignAdminRole.Name = "AssignAdminRole";
-            this.AssignAdminRole.Size = new System.Drawing.Size(752, 450);
-            this.AssignAdminRole.TabIndex = 5;
-            this.AssignAdminRole.Text = "Assign Admin Role";
-            this.AssignAdminRole.UseVisualStyleBackColor = true;
-            // 
-            // Schedule
-            // 
-            this.Schedule.Location = new System.Drawing.Point(4, 44);
-            this.Schedule.Name = "Schedule";
-            this.Schedule.Size = new System.Drawing.Size(752, 450);
-            this.Schedule.TabIndex = 6;
-            this.Schedule.Text = "Schedule";
-            this.Schedule.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -310,6 +274,23 @@
             this.panel4.Size = new System.Drawing.Size(334, 84);
             this.panel4.TabIndex = 11;
             // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
+            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
+            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchBtn.TabIndex = 8;
+            this.SearchBtn.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -328,6 +309,33 @@
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(251, 30);
             this.Search.TabIndex = 0;
+            // 
+            // AssignProject
+            // 
+            this.AssignProject.Location = new System.Drawing.Point(4, 44);
+            this.AssignProject.Name = "AssignProject";
+            this.AssignProject.Size = new System.Drawing.Size(752, 450);
+            this.AssignProject.TabIndex = 4;
+            this.AssignProject.Text = "Assign Project";
+            this.AssignProject.UseVisualStyleBackColor = true;
+            // 
+            // AssignAdminRole
+            // 
+            this.AssignAdminRole.Location = new System.Drawing.Point(4, 44);
+            this.AssignAdminRole.Name = "AssignAdminRole";
+            this.AssignAdminRole.Size = new System.Drawing.Size(752, 450);
+            this.AssignAdminRole.TabIndex = 5;
+            this.AssignAdminRole.Text = "Assign Admin Role";
+            this.AssignAdminRole.UseVisualStyleBackColor = true;
+            // 
+            // Schedule
+            // 
+            this.Schedule.Location = new System.Drawing.Point(4, 44);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(752, 450);
+            this.Schedule.TabIndex = 6;
+            this.Schedule.Text = "Schedule";
+            this.Schedule.UseVisualStyleBackColor = true;
             // 
             // Courses
             // 
@@ -369,6 +377,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.CourseData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.CourseData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CourseData.ContextMenuStrip = this.CourseControls;
             this.CourseData.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -393,6 +402,35 @@
             this.CourseData.ShowEditingIcon = false;
             this.CourseData.Size = new System.Drawing.Size(722, 336);
             this.CourseData.TabIndex = 0;
+            this.CourseData.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseData_CellMouseEnter);
+            // 
+            // CourseControls
+            // 
+            this.CourseControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditCourse,
+            this.DeleteCourse});
+            this.CourseControls.Name = "CourseControls";
+            this.CourseControls.Size = new System.Drawing.Size(156, 64);
+            // 
+            // EditCourse
+            // 
+            this.EditCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.EditCourse.Image = global::DBS25P023.Properties.Resources.edit;
+            this.EditCourse.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.EditCourse.Name = "EditCourse";
+            this.EditCourse.Size = new System.Drawing.Size(155, 30);
+            this.EditCourse.Text = "Edit Course";
+            this.EditCourse.Click += new System.EventHandler(this.EditCourse_Click);
+            // 
+            // DeleteCourse
+            // 
+            this.DeleteCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.DeleteCourse.Image = global::DBS25P023.Properties.Resources.del;
+            this.DeleteCourse.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DeleteCourse.Name = "DeleteCourse";
+            this.DeleteCourse.Size = new System.Drawing.Size(155, 30);
+            this.DeleteCourse.Text = "Delete Course";
+            this.DeleteCourse.Click += new System.EventHandler(this.DeleteCourse_Click);
             // 
             // panel7
             // 
@@ -429,6 +467,24 @@
             this.panel8.Size = new System.Drawing.Size(334, 84);
             this.panel8.TabIndex = 11;
             // 
+            // CourseSearchBtn
+            // 
+            this.CourseSearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.CourseSearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.CourseSearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CourseSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CourseSearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
+            this.CourseSearchBtn.Image = global::DBS25P023.Properties.Resources.search;
+            this.CourseSearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
+            this.CourseSearchBtn.Location = new System.Drawing.Point(267, 21);
+            this.CourseSearchBtn.Name = "CourseSearchBtn";
+            this.CourseSearchBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.CourseSearchBtn.Size = new System.Drawing.Size(50, 50);
+            this.CourseSearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CourseSearchBtn.TabIndex = 8;
+            this.CourseSearchBtn.TabStop = false;
+            this.CourseSearchBtn.Click += new System.EventHandler(this.CourseSearchBtn_Click);
+            // 
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -447,10 +503,22 @@
             this.CourseSearch.Name = "CourseSearch";
             this.CourseSearch.Size = new System.Drawing.Size(251, 30);
             this.CourseSearch.TabIndex = 0;
+            this.CourseSearch.TextChanged += new System.EventHandler(this.CourseSearch_TextChanged);
+            // 
+            // Semester
+            // 
+            this.Semester.Controls.Add(this.panel10);
+            this.Semester.Controls.Add(this.panel11);
+            this.Semester.Location = new System.Drawing.Point(4, 44);
+            this.Semester.Name = "Semester";
+            this.Semester.Size = new System.Drawing.Size(752, 450);
+            this.Semester.TabIndex = 1;
+            this.Semester.Text = "Semester";
+            this.Semester.UseVisualStyleBackColor = true;
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.dataGridView2);
+            this.panel10.Controls.Add(this.SemesterData);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(0, 84);
             this.panel10.Name = "panel10";
@@ -458,15 +526,15 @@
             this.panel10.Size = new System.Drawing.Size(752, 366);
             this.panel10.TabIndex = 15;
             // 
-            // dataGridView2
+            // SemesterData
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.SemesterData.AllowUserToAddRows = false;
+            this.SemesterData.AllowUserToDeleteRows = false;
+            this.SemesterData.AllowUserToResizeRows = false;
+            this.SemesterData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.SemesterData.BackgroundColor = System.Drawing.Color.White;
+            this.SemesterData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SemesterData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -475,9 +543,10 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SemesterData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.SemesterData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SemesterData.ContextMenuStrip = this.SemesterControls;
+            this.SemesterData.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -485,26 +554,27 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 15);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 20;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.ShowEditingIcon = false;
-            this.dataGridView2.Size = new System.Drawing.Size(722, 336);
-            this.dataGridView2.TabIndex = 0;
+            this.SemesterData.DefaultCellStyle = dataGridViewCellStyle6;
+            this.SemesterData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SemesterData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.SemesterData.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SemesterData.Location = new System.Drawing.Point(15, 15);
+            this.SemesterData.MultiSelect = false;
+            this.SemesterData.Name = "SemesterData";
+            this.SemesterData.ReadOnly = true;
+            this.SemesterData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.SemesterData.RowHeadersVisible = false;
+            this.SemesterData.RowHeadersWidth = 20;
+            this.SemesterData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SemesterData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.SemesterData.ShowEditingIcon = false;
+            this.SemesterData.Size = new System.Drawing.Size(722, 336);
+            this.SemesterData.TabIndex = 0;
+            this.SemesterData.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.SemesterData_CellMouseEnter);
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.button2);
+            this.panel11.Controls.Add(this.NewSemester);
             this.panel11.Controls.Add(this.panel12);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
@@ -512,23 +582,24 @@
             this.panel11.Size = new System.Drawing.Size(752, 84);
             this.panel11.TabIndex = 14;
             // 
-            // button2
+            // NewSemester
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(15, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 55);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "REGISTER";
-            this.button2.UseVisualStyleBackColor = false;
+            this.NewSemester.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.NewSemester.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NewSemester.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewSemester.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewSemester.ForeColor = System.Drawing.Color.White;
+            this.NewSemester.Location = new System.Drawing.Point(15, 16);
+            this.NewSemester.Name = "NewSemester";
+            this.NewSemester.Size = new System.Drawing.Size(164, 55);
+            this.NewSemester.TabIndex = 3;
+            this.NewSemester.Text = "NEW SEMESTER";
+            this.NewSemester.UseVisualStyleBackColor = false;
+            this.NewSemester.Click += new System.EventHandler(this.NewSemester_Click);
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.pictureBox2);
+            this.panel12.Controls.Add(this.SemesterSearchBtn);
             this.panel12.Controls.Add(this.panel13);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel12.Location = new System.Drawing.Point(418, 0);
@@ -536,28 +607,58 @@
             this.panel12.Size = new System.Drawing.Size(334, 84);
             this.panel12.TabIndex = 11;
             // 
+            // SemesterSearchBtn
+            // 
+            this.SemesterSearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SemesterSearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SemesterSearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SemesterSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SemesterSearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
+            this.SemesterSearchBtn.Image = global::DBS25P023.Properties.Resources.search;
+            this.SemesterSearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
+            this.SemesterSearchBtn.Location = new System.Drawing.Point(267, 21);
+            this.SemesterSearchBtn.Name = "SemesterSearchBtn";
+            this.SemesterSearchBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.SemesterSearchBtn.Size = new System.Drawing.Size(50, 50);
+            this.SemesterSearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SemesterSearchBtn.TabIndex = 8;
+            this.SemesterSearchBtn.TabStop = false;
+            this.SemesterSearchBtn.Click += new System.EventHandler(this.SemesterSearchBtn_Click);
+            // 
             // panel13
             // 
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.textBox2);
+            this.panel13.Controls.Add(this.SemesterSearch);
             this.panel13.Location = new System.Drawing.Point(0, 21);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(272, 50);
             this.panel13.TabIndex = 9;
             // 
-            // textBox2
+            // SemesterSearch
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(9, 9);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 30);
-            this.textBox2.TabIndex = 0;
+            this.SemesterSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SemesterSearch.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemesterSearch.ForeColor = System.Drawing.Color.Black;
+            this.SemesterSearch.Location = new System.Drawing.Point(9, 9);
+            this.SemesterSearch.Name = "SemesterSearch";
+            this.SemesterSearch.Size = new System.Drawing.Size(251, 30);
+            this.SemesterSearch.TabIndex = 0;
+            this.SemesterSearch.TextChanged += new System.EventHandler(this.SemesterSearch_TextChanged);
+            // 
+            // Project
+            // 
+            this.Project.Controls.Add(this.panel14);
+            this.Project.Controls.Add(this.panel15);
+            this.Project.Location = new System.Drawing.Point(4, 44);
+            this.Project.Name = "Project";
+            this.Project.Size = new System.Drawing.Size(752, 450);
+            this.Project.TabIndex = 2;
+            this.Project.Text = "Project";
+            this.Project.UseVisualStyleBackColor = true;
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.dataGridView3);
+            this.panel14.Controls.Add(this.ProjectData);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(0, 84);
             this.panel14.Name = "panel14";
@@ -565,15 +666,15 @@
             this.panel14.Size = new System.Drawing.Size(752, 366);
             this.panel14.TabIndex = 15;
             // 
-            // dataGridView3
+            // ProjectData
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.ProjectData.AllowUserToAddRows = false;
+            this.ProjectData.AllowUserToDeleteRows = false;
+            this.ProjectData.AllowUserToResizeRows = false;
+            this.ProjectData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ProjectData.BackgroundColor = System.Drawing.Color.White;
+            this.ProjectData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProjectData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -582,9 +683,10 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProjectData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.ProjectData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProjectData.ContextMenuStrip = this.ProjectControls;
+            this.ProjectData.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -592,26 +694,55 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView3.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView3.Location = new System.Drawing.Point(15, 15);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowHeadersWidth = 20;
-            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.ShowEditingIcon = false;
-            this.dataGridView3.Size = new System.Drawing.Size(722, 336);
-            this.dataGridView3.TabIndex = 0;
+            this.ProjectData.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ProjectData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.ProjectData.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ProjectData.Location = new System.Drawing.Point(15, 15);
+            this.ProjectData.MultiSelect = false;
+            this.ProjectData.Name = "ProjectData";
+            this.ProjectData.ReadOnly = true;
+            this.ProjectData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.ProjectData.RowHeadersVisible = false;
+            this.ProjectData.RowHeadersWidth = 20;
+            this.ProjectData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ProjectData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProjectData.ShowEditingIcon = false;
+            this.ProjectData.Size = new System.Drawing.Size(722, 336);
+            this.ProjectData.TabIndex = 0;
+            this.ProjectData.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProjectData_CellMouseEnter);
+            // 
+            // ProjectControls
+            // 
+            this.ProjectControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditProject,
+            this.DeleteProject});
+            this.ProjectControls.Name = "ProjectControls";
+            this.ProjectControls.Size = new System.Drawing.Size(156, 64);
+            // 
+            // EditProject
+            // 
+            this.EditProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.EditProject.Image = global::DBS25P023.Properties.Resources.edit;
+            this.EditProject.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.EditProject.Name = "EditProject";
+            this.EditProject.Size = new System.Drawing.Size(155, 30);
+            this.EditProject.Text = "Edit Project";
+            this.EditProject.Click += new System.EventHandler(this.EditProject_Click);
+            // 
+            // DeleteProject
+            // 
+            this.DeleteProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.DeleteProject.Image = global::DBS25P023.Properties.Resources.del;
+            this.DeleteProject.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DeleteProject.Name = "DeleteProject";
+            this.DeleteProject.Size = new System.Drawing.Size(155, 30);
+            this.DeleteProject.Text = "Delete Project";
+            this.DeleteProject.Click += new System.EventHandler(this.DeleteProject_Click);
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.button3);
+            this.panel15.Controls.Add(this.NewProject);
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 0);
@@ -619,23 +750,24 @@
             this.panel15.Size = new System.Drawing.Size(752, 84);
             this.panel15.TabIndex = 14;
             // 
-            // button3
+            // NewProject
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(15, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 55);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "REGISTER";
-            this.button3.UseVisualStyleBackColor = false;
+            this.NewProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.NewProject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NewProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewProject.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewProject.ForeColor = System.Drawing.Color.White;
+            this.NewProject.Location = new System.Drawing.Point(15, 16);
+            this.NewProject.Name = "NewProject";
+            this.NewProject.Size = new System.Drawing.Size(142, 55);
+            this.NewProject.TabIndex = 3;
+            this.NewProject.Text = "NEW PROJECT";
+            this.NewProject.UseVisualStyleBackColor = false;
+            this.NewProject.Click += new System.EventHandler(this.NewProject_Click);
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.pictureBox3);
+            this.panel16.Controls.Add(this.ProjectSearchBtn);
             this.panel16.Controls.Add(this.panel17);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel16.Location = new System.Drawing.Point(418, 0);
@@ -643,92 +775,71 @@
             this.panel16.Size = new System.Drawing.Size(334, 84);
             this.panel16.TabIndex = 11;
             // 
+            // ProjectSearchBtn
+            // 
+            this.ProjectSearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ProjectSearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ProjectSearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ProjectSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProjectSearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
+            this.ProjectSearchBtn.Image = global::DBS25P023.Properties.Resources.search;
+            this.ProjectSearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
+            this.ProjectSearchBtn.Location = new System.Drawing.Point(267, 21);
+            this.ProjectSearchBtn.Name = "ProjectSearchBtn";
+            this.ProjectSearchBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.ProjectSearchBtn.Size = new System.Drawing.Size(50, 50);
+            this.ProjectSearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProjectSearchBtn.TabIndex = 8;
+            this.ProjectSearchBtn.TabStop = false;
+            this.ProjectSearchBtn.Click += new System.EventHandler(this.ProjectSearchBtn_Click);
+            // 
             // panel17
             // 
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel17.Controls.Add(this.textBox3);
+            this.panel17.Controls.Add(this.ProjectSearch);
             this.panel17.Location = new System.Drawing.Point(0, 21);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(272, 50);
             this.panel17.TabIndex = 9;
             // 
-            // textBox3
+            // ProjectSearch
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(9, 9);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(251, 30);
-            this.textBox3.TabIndex = 0;
+            this.ProjectSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProjectSearch.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectSearch.ForeColor = System.Drawing.Color.Black;
+            this.ProjectSearch.Location = new System.Drawing.Point(9, 9);
+            this.ProjectSearch.Name = "ProjectSearch";
+            this.ProjectSearch.Size = new System.Drawing.Size(251, 30);
+            this.ProjectSearch.TabIndex = 0;
+            this.ProjectSearch.TextChanged += new System.EventHandler(this.ProjectSearch_TextChanged);
             // 
-            // SearchBtn
+            // SemesterControls
             // 
-            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
-            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
-            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
-            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
-            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
-            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SearchBtn.TabIndex = 8;
-            this.SearchBtn.TabStop = false;
+            this.SemesterControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditSemester,
+            this.DeleteSemester});
+            this.SemesterControls.Name = "ProjectControls";
+            this.SemesterControls.Size = new System.Drawing.Size(189, 86);
             // 
-            // CourseSearchBtn
+            // EditSemester
             // 
-            this.CourseSearchBtn.BackColor = System.Drawing.Color.Transparent;
-            this.CourseSearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.CourseSearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CourseSearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CourseSearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
-            this.CourseSearchBtn.Image = global::DBS25P023.Properties.Resources.search;
-            this.CourseSearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.CourseSearchBtn.Location = new System.Drawing.Point(267, 21);
-            this.CourseSearchBtn.Name = "CourseSearchBtn";
-            this.CourseSearchBtn.Padding = new System.Windows.Forms.Padding(10);
-            this.CourseSearchBtn.Size = new System.Drawing.Size(50, 50);
-            this.CourseSearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CourseSearchBtn.TabIndex = 8;
-            this.CourseSearchBtn.TabStop = false;
+            this.EditSemester.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.EditSemester.Image = global::DBS25P023.Properties.Resources.edit;
+            this.EditSemester.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.EditSemester.Name = "EditSemester";
+            this.EditSemester.Size = new System.Drawing.Size(188, 30);
+            this.EditSemester.Text = "Edit Semester";
+            this.EditSemester.Click += new System.EventHandler(this.EditSemester_Click);
             // 
-            // pictureBox2
+            // DeleteSemester
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.ErrorImage = global::DBS25P023.Properties.Resources.eye;
-            this.pictureBox2.Image = global::DBS25P023.Properties.Resources.search;
-            this.pictureBox2.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.pictureBox2.Location = new System.Drawing.Point(267, 21);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.ErrorImage = global::DBS25P023.Properties.Resources.eye;
-            this.pictureBox3.Image = global::DBS25P023.Properties.Resources.search;
-            this.pictureBox3.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.pictureBox3.Location = new System.Drawing.Point(267, 21);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            this.DeleteSemester.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.DeleteSemester.Image = global::DBS25P023.Properties.Resources.del;
+            this.DeleteSemester.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DeleteSemester.Name = "DeleteSemester";
+            this.DeleteSemester.Size = new System.Drawing.Size(188, 30);
+            this.DeleteSemester.Text = "Delete Semester";
+            this.DeleteSemester.Click += new System.EventHandler(this.DeleteSemester_Click);
             // 
             // FacultyWorkload
             // 
@@ -740,41 +851,45 @@
             this.Name = "FacultyWorkload";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(780, 635);
+            this.Load += new System.EventHandler(this.FacultyWorkload_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Tabs.ResumeLayout(false);
-            this.Semester.ResumeLayout(false);
-            this.Project.ResumeLayout(false);
             this.AssignCourse.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UserData)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.Courses.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CourseData)).EndInit();
+            this.CourseControls.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CourseSearchBtn)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.Semester.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SemesterData)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SemesterSearchBtn)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.Project.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectData)).EndInit();
+            this.ProjectControls.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectSearchBtn)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CourseSearchBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.SemesterControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -808,20 +923,29 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox CourseSearch;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView SemesterData;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button NewSemester;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox SemesterSearchBtn;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox SemesterSearch;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView ProjectData;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button NewProject;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox ProjectSearchBtn;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ProjectSearch;
+        private System.Windows.Forms.ContextMenuStrip CourseControls;
+        private System.Windows.Forms.ToolStripMenuItem EditCourse;
+        private System.Windows.Forms.ToolStripMenuItem DeleteCourse;
+        private System.Windows.Forms.ContextMenuStrip ProjectControls;
+        private System.Windows.Forms.ToolStripMenuItem EditProject;
+        private System.Windows.Forms.ToolStripMenuItem DeleteProject;
+        private System.Windows.Forms.ContextMenuStrip SemesterControls;
+        private System.Windows.Forms.ToolStripMenuItem EditSemester;
+        private System.Windows.Forms.ToolStripMenuItem DeleteSemester;
     }
 }

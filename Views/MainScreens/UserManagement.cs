@@ -20,7 +20,6 @@ namespace DBS25P023.Views.MainScreens {
         }
         private void UserManagement_Load(object sender, EventArgs e) {
             UserDataRender(null);
-            UserData.ClearSelection();
         }
 
         private void ActionBtn_Click(object sender, EventArgs e) {
@@ -31,26 +30,12 @@ namespace DBS25P023.Views.MainScreens {
         private void UserDataRender(string search) {
             List<Faculty> facultyList = FacultyControl.Instance.GetFaculty(search);
 
-            List<Faculty> facultyViewModels = facultyList.Select(f => new Faculty
-            {
-                Id = f.Id,
-                User_id = f.User_id,
-                Username = f.Username,
-                Name = f.Name,
-                Email = f.Email,
-                Contact = f.Contact,
-                Role = f.Role,
-                Designation = f.Designation,
-                TeachingHours = f.TeachingHours,
-                ResearchArea = f.ResearchArea
-            }).ToList();
-
             int idx = 1;
-            foreach (var faculty in facultyViewModels) {
+            foreach (var faculty in facultyList) {
                 faculty.SrNo = idx++;
             }
 
-            UserData.DataSource = facultyViewModels;
+            UserData.DataSource = facultyList;
             UserData.Columns["SrNo"].HeaderText = "#";
             UserData.Columns["Username"].HeaderText = "USERNAME";
             UserData.Columns["Name"].HeaderText = "NAME";
@@ -71,8 +56,6 @@ namespace DBS25P023.Views.MainScreens {
             UserData.ColumnHeadersHeight = 50;
 
             UserData.Columns["SrNo"].Width = 40;
-
-            
 
         }
 

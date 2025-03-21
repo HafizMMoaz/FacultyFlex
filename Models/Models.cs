@@ -60,4 +60,27 @@ namespace DBS25P023.Models
             return Value;
         }
     }
+
+    public class Course {
+        public int SrNo { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public int CreditHours { get; set; }
+        public int ContactHours { get; set; }
+    }
+
+    public class Semester {
+        public int SrNo { get; set; }
+        public int Id { get; set; }
+        public string Term { get; set; }
+        public int Year { get; set; }
+    }
+
+    public class Project {
+        public int SrNo { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+    }
 }

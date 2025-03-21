@@ -29,6 +29,7 @@ namespace DBS25P023.Controllers
             }
             return false;
         }
+
         public bool SearchFacultyUser(Faculty faculty, char type) {
             string query = $"SELECT COUNT(*) FROM users WHERE (email = '{faculty.Email}' OR username = '{faculty.Username}')";
             if (type == 'u')
@@ -36,6 +37,7 @@ namespace DBS25P023.Controllers
             int count = DB.Instance.Scalar(query);
             return count > 0;
         }
+
         public bool UpdateFacultyUser(Faculty faculty) {
             string query;
             if (faculty.Password != null)
@@ -48,6 +50,7 @@ namespace DBS25P023.Controllers
             }
             return false;
         }
+
         public List<Faculty> GetFaculty(string search) {
             List<Faculty> facultyusers = new List<Faculty>();
             MySqlConnection con;
@@ -90,7 +93,6 @@ namespace DBS25P023.Controllers
         }
 
         public bool ApproveFaculty(Faculty faculty) {
-            // Check if the user_id exists in the users table before proceeding
             string checkUserQuery = $"SELECT COUNT(*) FROM users WHERE user_id = {faculty.User_id}";
             int userCount = DB.Instance.Scalar(checkUserQuery);
 
@@ -98,7 +100,6 @@ namespace DBS25P023.Controllers
                 throw new Exception($"User with user_id {faculty.User_id} does not exist in the users table.");
             }
 
-            // Proceed with the normal faculty insertion if the user_id exists
             string query = "INSERT INTO faculty (name, email, contact, designation_id, research_area, total_teaching_hours, user_id)" +
                            $"VALUES ('{faculty.Name}', '{faculty.Email}', '{faculty.Contact}', '{faculty.Designation.LookUp_Id}', '{faculty.ResearchArea}', '{faculty.TeachingHours}', '{faculty.User_id}')";
 
@@ -108,7 +109,6 @@ namespace DBS25P023.Controllers
 
             return false;
         }
-
 
         public bool UpdateFaculty(Faculty faculty) {
             string query = $"UPDATE faculty SET name = '{faculty.Name}', contact = '{faculty.Contact}', designation_id = '{faculty.Designation.LookUp_Id}', total_teaching_hours = {faculty.TeachingHours}, research_area = '{faculty.ResearchArea}' WHERE faculty_id = {faculty.Id}";
@@ -136,7 +136,6 @@ namespace DBS25P023.Controllers
             }
             return false;
         }
-
 
     }
 }

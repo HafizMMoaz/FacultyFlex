@@ -1,4 +1,5 @@
 ﻿using DBS25P023.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,8 +46,33 @@ namespace DBS25P023.Controllers {
             return false;
         }
 
+        public List<Course> GetCourse(string search) {
+            List<Course> courses = new List<Course>();
+            MySqlConnection con;
+            string query = "SELECT * FROM courses";
+
+            if (!string.IsNullOrEmpty(search))
+                query += $" WHERE course_name LIKE '%{search}%' OR course_type LIKE '%{search}%' OR credit_hours LIKE '%{search}%' OR contact_hours LIKE '%{search}%'";
+
+            using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                while (reader.Read()) {
+                    courses.Add(new Course
+                    {
+                        Id = Convert.ToInt32(reader["course_id"]),
+                        Name = reader["course_name"].ToString(),
+                        Type = reader["course_type"].ToString(),
+                        CreditHours = Convert.ToInt32(reader["credit_hours"]),
+                        ContactHours = Convert.ToInt32(reader["contact_hours"])
+                    });
+                }
+            }
+
+            con.Close();
+            return courses;
+        }
+
         public bool DeleteCourse(int id) {
-            string query = $"DELETE courses WHERE course_id = '{id}'";
+            string query = $"DELETE FROM courses WHERE course_id = '{id}'";
             if (DB.Instance.Update(query) == 1) {
                 return true;
             }

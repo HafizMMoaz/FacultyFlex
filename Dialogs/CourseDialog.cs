@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DBS25P023.Dialogs {
-    public partial class NewCourseDialog : Form {
+    public partial class CourseDialog : Form {
         private string Action;
         private int selected_course = -1;
-        public NewCourseDialog(string Action) {
+        public CourseDialog(string Action) {
             InitializeComponent();
             this.Action = Action;
         }
 
-        public NewCourseDialog(string Action, Course course) {
+        public CourseDialog(string Action, Course course) {
             InitializeComponent();
             this.Action = Action;
 
