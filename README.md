@@ -46,15 +46,15 @@ FacultyFlex is a Windows Forms Application built using **C# and MySQL** to strea
 
 1. **Clone the Repository**  
    ```sh
-   git clone https://github.com/yourusername/FacultyFlex.git
-   cd FacultyFlex
+   git clone https://github.com/HafizMMoaz/DBS25P023.git
+   cd DBS25P023
 
 2. **Set Up Database**
     - Import database_schema.sql into MySQL.
     - Update DB.cs with your MySQL credentials.
     - Run the Project
 
-    - Open FacultyFlex.sln in Visual Studio.
+    - Open DBS25P023.sln in Visual Studio.
     - Build and run the project.
 
     ```sh
@@ -65,7 +65,7 @@ FacultyFlex is a Windows Forms Application built using **C# and MySQL** to strea
     private readonly string databasePassword = "YourPasswordHere";
 
 3. **Run the Project**
-    - Open FacultyFlex.sln in Visual Studio.
+    - Open DBS25P023.sln in Visual Studio.
     - Build and run the project.
 
 
