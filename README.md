@@ -71,9 +71,9 @@ FacultyFlex is a Windows Forms Application built using **C# and MySQL** to strea
 
 ## 📝 To-Do (Remaining Work)
 
-    - ✅ Core features are implemented! However, a few tasks remain:
-    - 🛒 Consumables Inventory Management (track available resources).
-    - 👥 Multi-User Feature Distribution (better handling of simultaneous logins).
-    - 📜 Faculty Request Fixes (some requests are not being processed correctly).
-    - 🗓️ Faculty Course Scheduling (automated timetable generation).
-    - 📜 Database Creation through Software
+- ✅ Core features are implemented! However, a few tasks remain:
+- 🛒 Consumables Inventory Management (track available resources).
+- 👥 Multi-User Feature Distribution (better handling of simultaneous logins).
+- 📜 Faculty Request Fixes (some requests are not being processed correctly).
+- 🗓️ Faculty Course Scheduling (automated timetable generation).
+- 📜 Database Creation through Software
