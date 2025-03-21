@@ -20,9 +20,16 @@ namespace DBS25P023.Views.MainScreens {
         }
 
         private void FacultyWorkload_Load(object sender, EventArgs e) {
+            RefreshData();
+        }
+
+        public void RefreshData() {
+            AssignedCoursesRender(null);
             CourseDataRender(null);
             ProjectDataRender(null);
             SemesterDataRender(null);
+            AdminRoleDataRender(null);
+            AssignProjectDataRender(null);
         }
 
         #region Course
@@ -34,11 +41,6 @@ namespace DBS25P023.Views.MainScreens {
         private void CourseDataRender(string search) {
             List<Course> courses = CourseControl.Instance.GetCourse(search);
             CourseData.DataSource = courses;
-
-            int idx = 1;
-            foreach (var course in courses) {
-                course.SrNo = idx++;
-            }
 
             CourseData.Columns["SrNo"].HeaderText = "#";
             CourseData.Columns["Name"].HeaderText = "NAME";
@@ -125,11 +127,6 @@ namespace DBS25P023.Views.MainScreens {
             List<Project> projects = ProjectControl.Instance.GetProjects(search);
             ProjectData.DataSource = projects;
 
-            int idx = 1;
-            foreach (Project project in projects) { 
-                project.SrNo = idx++;
-            }
-
             ProjectData.Columns["SrNo"].HeaderText = "#";
             ProjectData.Columns["Title"].HeaderText = "TITLE";
             ProjectData.Columns["Description"].HeaderText = "DESCRIPTION";
@@ -208,10 +205,6 @@ namespace DBS25P023.Views.MainScreens {
         private void SemesterDataRender(string search) {
             List<Semester> semesters = SemesterControl.Instance.GetSemester(search);
             SemesterData.DataSource = semesters;
-            int idx = 1;
-            foreach (Semester semester in semesters) {
-                semester.SrNo = idx++;
-            }
 
             SemesterData.Columns["SrNo"].HeaderText = "#";
             SemesterData.Columns["Term"].HeaderText = "TERM";
@@ -280,6 +273,479 @@ namespace DBS25P023.Views.MainScreens {
         }
         #endregion
 
+        #region Assign Course
+        private void AssignCourseBtn_Click(object sender, EventArgs e) {
+            new AssignCourseDialog("ASSIGN").ShowDialog();
+            AssignedCoursesRender(null);
+        }
 
+        private void AssignedCoursesRender(string search) {
+            List<FacultyCourse> courses = CourseControl.Instance.GetAssignedCourses(search);
+            AssignedCoursesData.DataSource = courses;
+
+            AssignedCoursesData.Columns["SrNo"].HeaderText = "#";
+            AssignedCoursesData.Columns["faculty"].HeaderText = "FACULTY";
+            AssignedCoursesData.Columns["course"].HeaderText = "COURSE";
+            AssignedCoursesData.Columns["semester"].HeaderText = "SEMESTER";
+            AssignedCoursesData.Columns["Id"].Visible = false;
+
+            AssignedCoursesData.DefaultCellStyle.Font = new Font("Arial", 10);
+            AssignedCoursesData.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            AssignedCoursesData.RowTemplate.Height = 30;
+            AssignedCoursesData.EnableHeadersVisualStyles = false;
+            AssignedCoursesData.ColumnHeadersHeight = 50;
+        }
+
+        private void AssignedCoursesData_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex >= 0) {
+                AssignedCoursesData.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        private void AssignedCoursesData_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e) {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0) {
+                AssignedCoursesData.ClearSelection();
+                AssignedCoursesData.Rows[e.RowIndex].Selected = true;
+
+                var name = AssignedCoursesData.Rows[e.RowIndex].Cells["faculty"].Value?.ToString();
+
+                EditAssignedCourse.Click -= AssignCourseTeacher_Click;
+                EditAssignedCourse.Click -= EditAssignedCourse_Click;
+
+                if (name == "Not Assigned") {
+                    EditAssignedCourse.Text = "Assign Faculty To Course";
+                    EditAssignedCourse.Click += AssignCourseTeacher_Click;
+                    EditAssignedCourse.Image = DBS25P023.Properties.Resources.edit;
+                }
+                else {
+                    EditAssignedCourse.Text = "Update Faculty Course";
+                    EditAssignedCourse.Image = DBS25P023.Properties.Resources.edit;
+                    EditAssignedCourse.Click += EditAssignedCourse_Click;
+                }
+            }
+        }
+
+        private void AssignedCoursesData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            if (AssignedCoursesData.Columns[e.ColumnIndex].Name == "faculty") {
+                var name = e.Value.ToString();
+                if (name == "Not Assigned") {
+                    e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else {
+                    e.CellStyle.BackColor = AssignedCoursesData.DefaultCellStyle.BackColor;
+                    e.CellStyle.ForeColor = AssignedCoursesData.DefaultCellStyle.ForeColor;
+                }
+            }
+        }
+
+        private void AssignedCourseSearch_TextChanged(object sender, EventArgs e) {
+            string search = AssignedCourseSearch.Text;
+            AssignedCoursesRender(search);
+        }
+
+        private void AssignedCourseSearchBtn_Click(object sender, EventArgs e) {
+            string search = AssignedCourseSearch.Text;
+            AssignedCoursesRender(search);
+        }
+
+        private void EditAssignedCourse_Click(object sender, EventArgs e) {
+            if (AssignedCoursesData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AssignedCoursesData.SelectedRows[0];
+
+                int course_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                string facultyName = selectedRow.Cells["faculty"].Value.ToString();
+                Faculty faculty = FacultyControl.Instance.GetFaculty(null).FirstOrDefault(f => f.Name == facultyName);
+
+                string courseName = selectedRow.Cells["course"].Value.ToString();
+                Course course = CourseControl.Instance.GetCourse(null).FirstOrDefault(c => $"{c.Name} - {c.Type}" == courseName);
+
+                string semesterVal = selectedRow.Cells["semester"].Value.ToString();
+                Semester semester = SemesterControl.Instance.GetSemester(null).FirstOrDefault(s => $"{s.Term} - {s.Year}" == semesterVal);
+
+                var faculty_course = new FacultyCourse
+                {
+                    Id = course_id,
+                    faculty = faculty,
+                    course = course,
+                    semester = semester
+                };
+
+                new AssignCourseDialog(faculty_course, "UPDATE").ShowDialog();
+                AssignedCoursesRender(null);
+            }
+        }
+
+        private void AssignCourseTeacher_Click(object sender, EventArgs e) {
+            if (AssignedCoursesData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AssignedCoursesData.SelectedRows[0];
+
+                int course_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                Faculty faculty = null;
+
+                string courseName = selectedRow.Cells["course"].Value.ToString();
+                Course course = CourseControl.Instance.GetCourse(null).FirstOrDefault(c => $"{c.Name} - {c.Type}" == courseName);
+
+                string semesterVal = selectedRow.Cells["semester"].Value.ToString();
+                Semester semester = SemesterControl.Instance.GetSemester(null).FirstOrDefault(s => $"{s.Term} - {s.Year}" == semesterVal);
+
+                var faculty_course = new FacultyCourse
+                {
+                    Id = course_id,
+                    faculty = faculty,
+                    course = course,
+                    semester = semester
+                };
+
+                new AssignCourseDialog(faculty_course, "UPDATE").ShowDialog();
+                AssignedCoursesRender(null);
+            }
+        }
+
+        private void DeleteAssignedCourse_Click(object sender, EventArgs e) {
+            if (AssignedCoursesData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AssignedCoursesData.SelectedRows[0];
+
+                int course_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                if (CourseControl.Instance.DeleteAssignedCourse(course_id)) {
+                    MessageBox.Show("Course Deleted Successfully", "Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AssignedCoursesRender(null);
+                }
+                else {
+                    MessageBox.Show("Something Went Wrong! Please Try Again", "Deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        #endregion
+
+        #region Admin Roles
+        private void AssignRoleBtn_Click(object sender, EventArgs e) {
+            new AssignAdminRoleDialog("ASSIGN").ShowDialog();
+            AdminRoleDataRender(null);
+        }
+
+        private void AdminRoleDataRender(string search) {
+            List<AdminRole> roles = FacultyControl.Instance.GetAdminRoles(search);
+
+            AdminRolesData.DataSource = roles;
+
+            AdminRolesData.Columns["SrNo"].HeaderText = "#";
+            AdminRolesData.Columns["Name"].HeaderText = "ROLE NAME";
+            AdminRolesData.Columns["Faculty"].HeaderText = "FACULTY";
+            AdminRolesData.Columns["Semester"].HeaderText = "SEMESTER";
+            AdminRolesData.Columns["Id"].Visible = false;
+
+            AdminRolesData.DefaultCellStyle.Font = new Font("Arial", 10);
+            AdminRolesData.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            AdminRolesData.RowTemplate.Height = 30;
+            AdminRolesData.EnableHeadersVisualStyles = false;
+            AdminRolesData.ColumnHeadersHeight = 50;
+        }
+
+        private void AdminRolesData_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
+            if(e.RowIndex >= 0) {
+                AdminRolesData.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        private void RoleSearch_TextChanged(object sender, EventArgs e) {
+            string search = RoleSearch.Text;
+            AdminRoleDataRender(search);
+        }
+
+        private void RoleSearchBtn_Click(object sender, EventArgs e) {
+            string search = RoleSearch.Text;
+            AdminRoleDataRender(search);
+        }
+        
+        private void AdminRolesData_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e) {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0) {
+                AdminRolesData.ClearSelection();
+                AdminRolesData.Rows[e.RowIndex].Selected = true;
+
+                var name = AdminRolesData.Rows[e.RowIndex].Cells["Faculty"].Value?.ToString();
+
+                EditAdminRole.Click -= AssignTeacherAdminRole_Click;
+                EditAdminRole.Click -= EditAdminRole_Click;
+
+                if (name == "Not Assigned") {
+                    EditAdminRole.Text = "Assign Role To Faculty";
+                    EditAdminRole.Click += AssignTeacherAdminRole_Click;
+                    EditAdminRole.Image = DBS25P023.Properties.Resources.edit;
+                }
+                else {
+                    EditAdminRole.Text = "Update Admin Role";
+                    EditAdminRole.Image = DBS25P023.Properties.Resources.edit;
+                    EditAdminRole.Click += EditAdminRole_Click;
+                }
+            }
+        }
+
+        private void EditAdminRole_Click(object sender, EventArgs e) {
+            if (AdminRolesData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AdminRolesData.SelectedRows[0];
+
+                int role_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                string name = selectedRow.Cells["Name"].Value.ToString();
+
+                string facultyName = selectedRow.Cells["Faculty"].Value.ToString();
+                Faculty faculty = FacultyControl.Instance.GetFaculty(null).FirstOrDefault(f => f.Name == facultyName);
+
+                string semesterVal = selectedRow.Cells["Semester"].Value.ToString();
+                Semester semester = SemesterControl.Instance.GetSemester(null).FirstOrDefault(s => $"{s.Term} - {s.Year}" == semesterVal);
+
+                var role = new AdminRole
+                {
+                    Id = role_id,
+                    Name = name,
+                    Faculty = faculty,
+                    Semester = semester
+                };
+
+                new AssignAdminRoleDialog(role, "UPDATE").ShowDialog();
+                AdminRoleDataRender(null);
+            }
+        }
+
+        private void AssignTeacherAdminRole_Click(object sender, EventArgs e) {
+            if (AdminRolesData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AdminRolesData.SelectedRows[0];
+
+                int role_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                string name = selectedRow.Cells["Name"].Value.ToString();
+
+                Faculty faculty = null;
+
+                string semesterVal = selectedRow.Cells["Semester"].Value.ToString();
+                Semester semester = SemesterControl.Instance.GetSemester(null).FirstOrDefault(s => $"{s.Term} - {s.Year}" == semesterVal);
+
+                var role = new AdminRole
+                {
+                    Id = role_id,
+                    Name = name,
+                    Faculty = faculty,
+                    Semester = semester
+                };
+
+                new AssignAdminRoleDialog(role, "UPDATE").ShowDialog();
+                AdminRoleDataRender(null);
+            }
+        }
+
+        private void DeleteAdminRole_Click(object sender, EventArgs e) {
+            if (AdminRolesData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AdminRolesData.SelectedRows[0];
+
+                int role_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                var role = new AdminRole
+                {
+                    Id = role_id
+                };
+
+                if (FacultyControl.Instance.DeleteAdminRole(role)) {
+                    MessageBox.Show("Admin Role Deleted Successfully", "Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AdminRoleDataRender(null);
+                }
+                else {
+                    MessageBox.Show("Something Went Wrong! Please Try Again", "Deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void AdminRolesData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            if (AdminRolesData.Columns[e.ColumnIndex].Name == "Faculty") {
+                var name = e.Value.ToString();
+                if (name == "Not Assigned") {
+                    e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else {
+                    e.CellStyle.BackColor = AdminRolesData.DefaultCellStyle.BackColor;
+                    e.CellStyle.ForeColor = AdminRolesData.DefaultCellStyle.ForeColor;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Assign Project
+        private void AssignProjectBtn_Click(object sender, EventArgs e) {
+            new AssignFacultyProject("ASSIGN").ShowDialog();
+            AssignProjectDataRender(null);
+        }
+
+        private void AssignProjectDataRender(string search) {
+            List<FacultyProject> project = ProjectControl.Instance.GetAssignedProjects(search);
+
+            AssignProjectData.DataSource = project;
+
+            AssignProjectData.Columns["SrNo"].HeaderText = "#";
+            AssignProjectData.Columns["Faculty"].HeaderText = "FACULTY";
+            AssignProjectData.Columns["Project"].HeaderText = "PROJECT";
+            AssignProjectData.Columns["Semester"].HeaderText = "SEMESTER";
+            AssignProjectData.Columns["SuperVisionHours"].HeaderText = "SUPERVISON HOURS";
+            AssignProjectData.Columns["Id"].Visible = false;
+
+            AssignProjectData.DefaultCellStyle.Font = new Font("Arial", 10);
+            AssignProjectData.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            AssignProjectData.RowTemplate.Height = 30;
+            AssignProjectData.EnableHeadersVisualStyles = false;
+            AssignProjectData.ColumnHeadersHeight = 50;
+        }
+
+        private void AssignProjectData_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex >= 0) {
+                AssignProjectData.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        private void AssignProjectData_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e) {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0) {
+                AssignProjectData.ClearSelection();
+                AssignProjectData.Rows[e.RowIndex].Selected = true;
+
+                var name = AssignProjectData.Rows[e.RowIndex].Cells["Faculty"].Value?.ToString();
+
+                EditAssignProject.Click -= AssignProjectSupervisor_Click;
+                EditAssignProject.Click -= EditAssignProject_Click;
+
+                if (name == "Not Assigned") {
+                    EditAssignProject.Text = "Assign Project To Faculty";
+                    EditAssignProject.Image = DBS25P023.Properties.Resources.edit;
+                    EditAssignProject.Click += AssignProjectSupervisor_Click;
+                }
+                else {
+                    EditAssignProject.Text = "Update Faculty Project";
+                    EditAssignProject.Image = DBS25P023.Properties.Resources.edit;
+                    EditAssignProject.Click += EditAssignProject_Click;
+                }
+            }
+        }
+
+        private void AssignProjectData_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            if (AssignProjectData.Columns[e.ColumnIndex].Name == "Faculty") {
+                var name = e.Value.ToString();
+                if (name == "Not Assigned") {
+                    e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else {
+                    e.CellStyle.BackColor = AssignProjectData.DefaultCellStyle.BackColor;
+                    e.CellStyle.ForeColor = AssignProjectData.DefaultCellStyle.ForeColor;
+                }
+            }
+        }
+
+        private void AssignProjectSearch_TextChanged(object sender, EventArgs e) {
+            string search = AssignProjectSearch.Text;
+            AssignProjectDataRender(search);
+        }
+
+        private void AssignProjectSearchBtn_Click(object sender, EventArgs e) {
+            string search = AssignProjectSearch.Text;
+            AssignProjectDataRender(search);
+        }
+
+        private void EditAssignProject_Click(object sender, EventArgs e) {
+            if (AssignProjectData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AssignProjectData.SelectedRows[0];
+
+                int project_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                string facultyName = selectedRow.Cells["Faculty"].Value.ToString();
+                Faculty faculty = FacultyControl.Instance.GetFaculty(null).FirstOrDefault(f => f.Name == facultyName);
+
+                string projectName = selectedRow.Cells["Project"].Value.ToString();
+                Project project = ProjectControl.Instance.GetProjects(null).FirstOrDefault(p => p.Title == projectName);
+
+                string semesterVal = selectedRow.Cells["Semester"].Value.ToString();
+                Semester semester = SemesterControl.Instance.GetSemester(null).FirstOrDefault(s => $"{s.Term} - {s.Year}" == semesterVal);
+
+                int hours = Convert.ToInt32(selectedRow.Cells["SuperVisionHours"].Value);
+
+                var faculty_project = new FacultyProject
+                {
+                    Id = project_id,
+                    Faculty = faculty,
+                    Semester = semester,
+                    Project = project,
+                    SuperVisionHours = hours
+                };
+
+                new AssignFacultyProject(faculty_project, "UPDATE").ShowDialog();
+                AssignProjectDataRender(null);
+            }
+        }
+
+        private void AssignProjectSupervisor_Click(object sender, EventArgs e) {
+            if (AssignProjectData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AssignProjectData.SelectedRows[0];
+
+                int project_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                Faculty faculty = null;
+
+                string projectName = selectedRow.Cells["Project"].Value.ToString();
+                Project project = ProjectControl.Instance.GetProjects(null).FirstOrDefault(p => p.Title == projectName);
+
+                string semesterVal = selectedRow.Cells["Semester"].Value.ToString();
+                Semester semester = SemesterControl.Instance.GetSemester(null).FirstOrDefault(s => $"{s.Term} - {s.Year}" == semesterVal);
+
+                int hours = Convert.ToInt32(selectedRow.Cells["SuperVisionHours"].Value);
+
+                var faculty_project = new FacultyProject
+                {
+                    Id = project_id,
+                    Faculty = faculty,
+                    Semester = semester,
+                    Project = project,
+                    SuperVisionHours = hours
+                };
+
+                new AssignFacultyProject(faculty_project, "UPDATE").ShowDialog();
+                AssignProjectDataRender(null);
+            }
+        }
+
+        private void DeleteAssignProject_Click(object sender, EventArgs e) {
+            if (AssignProjectData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AssignProjectData.SelectedRows[0];
+
+                int project_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                var project = new FacultyProject
+                {
+                    Id = project_id
+                };
+
+                if (ProjectControl.Instance.DeleteAssignedProject(project.Id)) {
+                    MessageBox.Show("Assigned Project Deleted Successfully", "Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AssignProjectDataRender(null);
+                }
+                else {
+                    MessageBox.Show("Something Went Wrong! Please Try Again", "Deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        #endregion
+
+        private void RefreshBtn_Click(object sender, EventArgs e) {
+            RefreshData();
+        }
     }
 }

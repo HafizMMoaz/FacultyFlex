@@ -55,13 +55,16 @@ namespace DBS25P023.Controllers {
                 query += $" WHERE term LIKE '%{search}%' OR year LIKE '%{search}%'";
 
             using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                int idx = 1;
                 while (reader.Read()) {
                     semesters.Add(new Semester
                     {
+                        SrNo = idx,
                         Id = Convert.ToInt32(reader["semester_id"]),
                         Term = reader["term"].ToString(),
                         Year = Convert.ToInt32(reader["year"])
                     });
+                    idx++;
                 }
             }
 

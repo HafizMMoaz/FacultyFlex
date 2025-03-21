@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace DBS25P023.Controllers
 {
@@ -22,6 +23,7 @@ namespace DBS25P023.Controllers
             }
         }
 
+        #region Faculty
         public bool RegsiterFacultyUser(Faculty faculty) {
             string query = $"INSERT INTO users(username, email, password_hash, role_id) VALUES ('{faculty.Username}','{faculty.Email}','{faculty.Password}',{faculty.Role.LookUp_Id})";
             if(DB.Instance.Update(query) == 1) {
@@ -100,8 +102,8 @@ namespace DBS25P023.Controllers
                 throw new Exception($"User with user_id {faculty.User_id} does not exist in the users table.");
             }
 
-            string query = "INSERT INTO faculty (name, email, contact, designation_id, research_area, total_teaching_hours, user_id)" +
-                           $"VALUES ('{faculty.Name}', '{faculty.Email}', '{faculty.Contact}', '{faculty.Designation.LookUp_Id}', '{faculty.ResearchArea}', '{faculty.TeachingHours}', '{faculty.User_id}')";
+            string query = "INSERT INTO faculty (name, email, contact, designation_id, research_area, user_id)" +
+                           $"VALUES ('{faculty.Name}', '{faculty.Email}', '{faculty.Contact}', '{faculty.Designation.LookUp_Id}', '{faculty.ResearchArea}', '{faculty.User_id}')";
 
             if (DB.Instance.Update(query) == 1) {
                 return true;
@@ -111,7 +113,7 @@ namespace DBS25P023.Controllers
         }
 
         public bool UpdateFaculty(Faculty faculty) {
-            string query = $"UPDATE faculty SET name = '{faculty.Name}', contact = '{faculty.Contact}', designation_id = '{faculty.Designation.LookUp_Id}', total_teaching_hours = {faculty.TeachingHours}, research_area = '{faculty.ResearchArea}' WHERE faculty_id = {faculty.Id}";
+            string query = $"UPDATE faculty SET name = '{faculty.Name}', contact = '{faculty.Contact}', designation_id = '{faculty.Designation.LookUp_Id}', research_area = '{faculty.ResearchArea}' WHERE faculty_id = {faculty.Id}";
 
             if (DB.Instance.Update(query) == 1) {
                 return true;
@@ -137,5 +139,97 @@ namespace DBS25P023.Controllers
             return false;
         }
 
+        public bool CalculateFacultyTeachingHours(int id) {
+            string query1 = $"SELECT SUM(contact_hours) FROM faculty_courses JOIN courses using (course_id) GROUP BY faculty_id HAVING faculty_id = {id}";
+            string query2 = $"SELECT SUM(supervision_hours) FROM faculty_projects GROUP BY faculty_id HAVING faculty_id = {id}";
+            int hours = DB.Instance.Scalar(query1) + DB.Instance.Scalar(query2);
+
+            string query = $"UPDATE faculty SET total_teaching_hours = '{hours}' WHERE faculty_id = {id}";
+            if (DB.Instance.Update(query) == 1) {
+                return true;
+            }
+
+            return false;
+        }
+        #endregion
+
+        #region Admin Roles
+        public bool AssignAdminRole(AdminRole role) {
+            string query = $"INSERT INTO faculty_admin_roles (role_name,semester_id) VALUES ('{role.Name}','{role.Semester.Id}')";
+            if (role.Faculty != null)
+                query = $"INSERT INTO faculty_admin_roles (faculty_id,role_name,semester_id) VALUES ('{role.Faculty.Id}','{role.Name}','{role.Semester.Id}')";
+
+            if (DB.Instance.Update(query) == 1) {
+                return true;
+            }
+            return false;
+        }
+        
+        public bool SearchAdminRole(AdminRole role, char type) {
+            string query = $"SELECT COUNT(*) FROM faculty_admin_roles WHERE role_name = '{role.Name}' AND semester_id = '{role.Semester.Id}'";
+            if (role.Faculty != null)
+                query = $"SELECT COUNT(*) FROM faculty_admin_roles WHERE role_name = '{role.Name}' AND semester_id = '{role.Semester.Id}' AND faculty_id = '{role.Faculty.Id}'";
+
+            if (type == 'u')
+                query += $" AND admin_role_id <> {role.Id}";
+            int count = DB.Instance.Scalar(query);
+            return count > 0;
+        }
+        
+        public bool UpdateAdminRole(AdminRole role) {
+            string query = $"UPDATE faculty_admin_roles SET role_name = '{role.Name}',semester_id = '{role.Semester.Id}' WHERE admin_role_id = '{role.Id}'";
+            if (role.Faculty != null)
+                query = $"UPDATE faculty_admin_roles SET faculty_id = '{role.Faculty.Id}',role_name = '{role.Name}',semester_id = '{role.Semester.Id}' WHERE admin_role_id = '{role.Id}'";
+            if (DB.Instance.Update(query) == 1) {
+                return true;
+            }
+            return false;
+        }
+        
+        public List<AdminRole> GetAdminRoles(string search) {
+            List<AdminRole> roles = new List<AdminRole>();
+            MySqlConnection con;
+            string query = "SELECT FR.*, F.Name, S.Term, S.Year FROM faculty_admin_roles FR LEFT JOIN faculty F using (faculty_id) JOIN semesters S using (semester_id)";
+
+            if (!string.IsNullOrEmpty(search))
+                query += $" WHERE F.Name LIKE '%{search}%' OR FR.role_name LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%'";
+
+            query += " ORDER BY admin_role_id ASC";
+
+            using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                int idx = 1;
+                while (reader.Read()) {
+                    roles.Add(new AdminRole
+                    {
+                        SrNo = idx++,
+                        Id = Convert.ToInt32(reader["admin_role_id"]),
+                        Name = reader["role_name"].ToString(),
+                        Faculty = new Faculty
+                        {
+                            Id = reader["faculty_id"] == DBNull.Value ? 0 : Convert.ToInt32(reader["faculty_id"]),
+                            Name = reader["Name"] == DBNull.Value ? "Not Assigned" : reader["Name"].ToString(),
+                        },
+                        Semester = new Semester
+                        {
+                            Id = Convert.ToInt32(reader["semester_id"]),
+                            Term = reader["Term"].ToString(),
+                            Year = Convert.ToInt32(reader["Year"])
+                        }
+                    });
+                }
+            }
+
+            con.Close();
+            return roles;
+        }
+        
+        public bool DeleteAdminRole(AdminRole role) {
+            string query = $"DELETE FROM faculty_admin_roles WHERE admin_role_id = {role.Id}";
+            if (DB.Instance.Update(query) == 1) {
+                return true;
+            }
+            return false;
+        }
+        #endregion
     }
 }

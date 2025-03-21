@@ -19,6 +19,10 @@ namespace DBS25P023.Views.MainScreens {
             InitializeComponent();
         }
         private void UserManagement_Load(object sender, EventArgs e) {
+            RefreshData();
+        }
+
+        public void RefreshData() {
             UserDataRender(null);
         }
 
@@ -92,11 +96,17 @@ namespace DBS25P023.Views.MainScreens {
                 ApproveFaculty.Click -= EditFaculty_Click;
 
                 if (name == "Not Approved" && id == 0) {
+                    AssignCourse.Visible = false;
+                    AssignProject.Visible = false;
+                    AllocateRoom.Visible = false;
                     ApproveFaculty.Text = "Approve Faculty";
                     ApproveFaculty.Click += ApproveFaculty_Click;
                     ApproveFaculty.Image = DBS25P023.Properties.Resources.approve;
                 }
                 else {
+                    AssignCourse.Visible = true;
+                    AssignProject.Visible = true;
+                    AllocateRoom.Visible = true;
                     ApproveFaculty.Text = "Update Faculty";
                     ApproveFaculty.Image = DBS25P023.Properties.Resources.edit;
                     ApproveFaculty.Click += EditFaculty_Click;
@@ -199,6 +209,116 @@ namespace DBS25P023.Views.MainScreens {
         private void SearchBtn_Click(object sender, EventArgs e) {
             string search = Search.Text;
             UserDataRender(search);
+        }
+
+        private void AssignCourse_Click(object sender, EventArgs e) {
+            if (UserData.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = UserData.SelectedRows[0];
+                int Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string name = selectedRow.Cells["Name"].Value.ToString();
+                string research = selectedRow.Cells["ResearchArea"].Value.ToString();
+                string contact = selectedRow.Cells["Contact"].Value.ToString();
+                int teaching_hours = Convert.ToInt32(selectedRow.Cells["TeachingHours"].Value);
+
+                string designationVal = selectedRow.Cells["Designation"].Value.ToString();
+                Designation designation = LookUpControl.Instance.GetDesignations().FirstOrDefault(d => d.Value == designationVal);
+
+                var faculty = new Faculty
+                {
+                    Id = Id,
+                    Name = name,
+                    TeachingHours = teaching_hours,
+                    ResearchArea = research,
+                    Designation = designation,
+                    Contact = contact
+                };
+
+                new AssignCourseDialog(faculty, "ASSIGN").ShowDialog();
+            }
+        }
+
+        private void AssignAdminRole_Click(object sender, EventArgs e) {
+            if (UserData.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = UserData.SelectedRows[0];
+                int Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string name = selectedRow.Cells["Name"].Value.ToString();
+                string research = selectedRow.Cells["ResearchArea"].Value.ToString();
+                string contact = selectedRow.Cells["Contact"].Value.ToString();
+                int teaching_hours = Convert.ToInt32(selectedRow.Cells["TeachingHours"].Value);
+
+                string designationVal = selectedRow.Cells["Designation"].Value.ToString();
+                Designation designation = LookUpControl.Instance.GetDesignations().FirstOrDefault(d => d.Value == designationVal);
+
+                var faculty = new Faculty
+                {
+                    Id = Id,
+                    Name = name,
+                    TeachingHours = teaching_hours,
+                    ResearchArea = research,
+                    Designation = designation,
+                    Contact = contact
+                };
+
+                new AssignAdminRoleDialog(faculty, "ASSIGN").ShowDialog();
+            }
+        }
+
+        private void AssignProject_Click(object sender, EventArgs e) {
+            if (UserData.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = UserData.SelectedRows[0];
+                int Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string name = selectedRow.Cells["Name"].Value.ToString();
+                string research = selectedRow.Cells["ResearchArea"].Value.ToString();
+                string contact = selectedRow.Cells["Contact"].Value.ToString();
+                int teaching_hours = Convert.ToInt32(selectedRow.Cells["TeachingHours"].Value);
+
+                string designationVal = selectedRow.Cells["Designation"].Value.ToString();
+                Designation designation = LookUpControl.Instance.GetDesignations().FirstOrDefault(d => d.Value == designationVal);
+
+                var faculty = new Faculty
+                {
+                    Id = Id,
+                    Name = name,
+                    TeachingHours = teaching_hours,
+                    ResearchArea = research,
+                    Designation = designation,
+                    Contact = contact
+                };
+
+                new AssignFacultyProject(faculty, "ASSIGN").ShowDialog();
+            }
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e) {
+            RefreshData();
+            new FacultyWorkload().RefreshData();
+            new ResourceAllocation().RefreshData();
+        }
+
+        private void AllocateRoom_Click(object sender, EventArgs e) {
+            if (UserData.SelectedRows.Count > 0) {
+                DataGridViewRow selectedRow = UserData.SelectedRows[0];
+                int Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string name = selectedRow.Cells["Name"].Value.ToString();
+                string research = selectedRow.Cells["ResearchArea"].Value.ToString();
+                string contact = selectedRow.Cells["Contact"].Value.ToString();
+                int teaching_hours = Convert.ToInt32(selectedRow.Cells["TeachingHours"].Value);
+
+                string designationVal = selectedRow.Cells["Designation"].Value.ToString();
+                Designation designation = LookUpControl.Instance.GetDesignations().FirstOrDefault(d => d.Value == designationVal);
+
+                var faculty = new Faculty
+                {
+                    Id = Id,
+                    Name = name,
+                    TeachingHours = teaching_hours,
+                    ResearchArea = research,
+                    Designation = designation,
+                    Contact = contact
+                };
+
+                new AssignRoomDialog(faculty, "ASSIGN").ShowDialog();
+            }
         }
     }
 }

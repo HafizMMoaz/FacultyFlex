@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace DBS25P023.Controllers {
     public class CourseControl {
@@ -55,9 +56,11 @@ namespace DBS25P023.Controllers {
                 query += $" WHERE course_name LIKE '%{search}%' OR course_type LIKE '%{search}%' OR credit_hours LIKE '%{search}%' OR contact_hours LIKE '%{search}%'";
 
             using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                int idx = 1;
                 while (reader.Read()) {
                     courses.Add(new Course
                     {
+                        SrNo = idx++,
                         Id = Convert.ToInt32(reader["course_id"]),
                         Name = reader["course_name"].ToString(),
                         Type = reader["course_type"].ToString(),
@@ -79,5 +82,109 @@ namespace DBS25P023.Controllers {
             return false;
         }
 
+        public bool AssignCourse(FacultyCourse course) {
+            string query = $"INSERT INTO faculty_courses (course_id,semester_id) VALUES ('{course.course.Id}','{course.semester.Id}')";
+            if(course.faculty != null)
+                query = $"INSERT INTO faculty_courses (faculty_id,course_id,semester_id) VALUES ('{course.faculty.Id}','{course.course.Id}','{course.semester.Id}')";
+
+            if (DB.Instance.Update(query) == 1) {
+                if (course.faculty != null) {
+                    if (FacultyControl.Instance.CalculateFacultyTeachingHours(course.faculty.Id)) {
+                        return true;
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+            return false;
+        }
+    
+        public bool SearchAssignedCourse(FacultyCourse course, char type) {
+            string query = $"SELECT COUNT(*) FROM faculty_courses WHERE course_id = '{course.course.Id}' AND semester_id = '{course.semester.Id}'";
+            if (course.faculty != null)
+                query = $"SELECT COUNT(*) FROM faculty_courses WHERE course_id = '{course.course.Id}' AND semester_id = '{course.semester.Id}' AND faculty_id = '{course.faculty.Id}'";
+            
+            if (type == 'u')
+                query += $" AND faculty_course_id <> {course.Id}";
+            int count = DB.Instance.Scalar(query);
+            return count > 0;
+        }
+
+        public bool UpdateAssignedCourse(FacultyCourse course) {
+            string query = $"UPDATE faculty_courses SET course_id = '{course.course.Id}',semester_id = '{course.semester.Id}' WHERE faculty_course_id = '{course.Id}'";
+            if (course.faculty != null)
+                query = $"UPDATE faculty_courses SET faculty_id = '{course.faculty.Id}',course_id = '{course.course.Id}',semester_id = '{course.semester.Id}' WHERE faculty_course_id = '{course.Id}'";
+            if (DB.Instance.Update(query) == 1) {
+                if (course.faculty != null) {
+                    if (FacultyControl.Instance.CalculateFacultyTeachingHours(course.faculty.Id)) {
+                        return true;
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public List<FacultyCourse> GetAssignedCourses(string search) { 
+            List<FacultyCourse> courses = new List<FacultyCourse>();
+            MySqlConnection con;
+            string query = "SELECT FC.*, F.Name, C.course_name, C.course_type, S.Term, S.Year FROM faculty_courses FC LEFT JOIN faculty F using (faculty_id) JOIN courses C using (course_id) JOIN semesters S using (semester_id)";
+
+            if (!string.IsNullOrEmpty(search))
+                query += $" WHERE F.Name LIKE '%{search}%' OR C.course_name LIKE '%{search}%' OR C.course_type LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%'";
+
+            query += " ORDER BY faculty_course_id ASC";
+
+            using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                int idx = 1;
+                while (reader.Read()) {
+                    courses.Add(new FacultyCourse
+                    {
+                        SrNo = idx++,
+                        Id = Convert.ToInt32(reader["faculty_course_id"]),
+                        faculty = new Faculty
+                        {
+                            Id = reader["faculty_id"] == DBNull.Value ? 0 : Convert.ToInt32(reader["faculty_id"]),
+                            Name = reader["Name"] == DBNull.Value ? "Not Assigned" : reader["Name"].ToString(),
+                        },
+                        course = new Course
+                        {
+                            Id = Convert.ToInt32(reader["course_id"]),
+                            Name = reader["course_name"].ToString(),
+                            Type = reader["course_type"].ToString(),
+                        },
+                        semester = new Semester
+                        {
+                            Id = Convert.ToInt32(reader["semester_id"]),
+                            Term = reader["Term"].ToString(),
+                            Year = Convert.ToInt32(reader["Year"])
+                        }
+                    });
+                }
+            }
+
+            con.Close();
+            return courses;
+        }
+    
+        public bool DeleteAssignedCourse(int course_id) {
+            string query = $"SELECT faculty_id FROM faculty_courses WHERE faculty_course_id = {course_id}";
+            int id = DB.Instance.Scalar(query);
+            query = $"DELETE FROM faculty_courses WHERE faculty_course_id = {course_id}";
+            if (DB.Instance.Update(query) == 1) {
+                if (id != 0) {
+                    if (FacultyControl.Instance.CalculateFacultyTeachingHours(id)) {
+                        return true;
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

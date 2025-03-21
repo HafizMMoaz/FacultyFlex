@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBS25P023.Views.MainScreens;
+using DBS25P023.Controllers;
 
-namespace DBS25P023.Views.Auth
-{
-    public partial class LoginForm: UserControl
-    {
-        public LoginForm()
-        {
+namespace DBS25P023.Views.Auth {
+    public partial class LoginForm : UserControl {
+        public LoginForm() {
             InitializeComponent();
         }
 
@@ -29,11 +20,27 @@ namespace DBS25P023.Views.Auth
         }
 
         private void SignIn_Click(object sender, EventArgs e) {
-            if (this.FindForm() is Login login) {
-                login.Close();
+            string username = Username.Text.Trim();
+            string password = Password.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password)) {
+                MessageBox.Show("Please fill all fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            Main main = new Main();
-            main.Show();
+
+            // Call the AuthControl Login function
+            bool isAuthenticated = AuthControl.Instance.Login(username, password);
+
+            if (isAuthenticated) {
+                if (this.FindForm() is Login login) {
+                    login.Close();
+                }
+                Main main = new Main();
+                main.Show();
+            }
+            else {
+                MessageBox.Show("Invalid credentials. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -52,9 +52,11 @@ namespace DBS25P023.Controllers {
                 query += $" WHERE title LIKE '%{search}%' OR description LIKE '%{search}%'";
 
             using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                int idx = 1;
                 while (reader.Read()) {
                     projects.Add(new Project
                     {
+                        SrNo = idx++,
                         Id = Convert.ToInt32(reader["project_id"]),
                         Title = reader["title"].ToString(),
                         Description = reader["description"].ToString()
@@ -74,5 +76,110 @@ namespace DBS25P023.Controllers {
             return false;
         }
 
+
+        public bool AssignProject(FacultyProject project) {
+            string query = $"INSERT INTO faculty_projects (project_id,semester_id,supervision_hours) VALUES ('{project.Project.Id}','{project.Semester.Id}','{project.SuperVisionHours}')";
+            if (project.Faculty != null)
+                query = $"INSERT INTO faculty_projects (faculty_id,project_id,semester_id,supervision_hours) VALUES ('{project.Faculty.Id}','{project.Project.Id}','{project.Semester.Id}','{project.SuperVisionHours}')";
+
+            if (DB.Instance.Update(query) == 1) {
+                if (project.Faculty != null) {
+                    if (FacultyControl.Instance.CalculateFacultyTeachingHours(project.Faculty.Id)) {
+                        return true;
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool SearchAssignedProject(FacultyProject project, char type) {
+            string query = $"SELECT COUNT(*) FROM faculty_projects WHERE project_id = '{project.Project.Id}' AND semester_id = '{project.Semester.Id}'";
+            if (project.Faculty != null)
+                query = $"SELECT COUNT(*) FROM faculty_projects WHERE project_id = '{project.Project.Id}' AND semester_id = '{project.Semester.Id}' AND faculty_id = '{project.Faculty.Id}'";
+
+            if (type == 'u')
+                query += $" AND faculty_project_id <> {project.Id}";
+            int count = DB.Instance.Scalar(query);
+            return count > 0;
+        }
+
+        public bool UpdateAssignedProject(FacultyProject project) {
+            string query = $"UPDATE faculty_projects SET project_id = '{project.Project.Id}',semester_id = '{project.Semester.Id}',supervision_hours = '{project.SuperVisionHours}'  WHERE faculty_project_id = '{project.Id}'";
+            if (project.Faculty != null)
+                query = $"UPDATE faculty_projects SET faculty_id = '{project.Faculty.Id}',project_id = '{project.Project.Id}',semester_id = '{project.Semester.Id}',supervision_hours = '{project.SuperVisionHours}' WHERE faculty_project_id = '{project.Id}'";
+            if (DB.Instance.Update(query) == 1) {
+                if (project.Faculty != null) {
+                    if (FacultyControl.Instance.CalculateFacultyTeachingHours(project.Faculty.Id)) {
+                        return true;
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public List<FacultyProject> GetAssignedProjects(string search) {
+            List<FacultyProject> projects = new List<FacultyProject>();
+            MySqlConnection con;
+            string query = "SELECT FP.*, F.Name, P.title, S.Term, S.Year FROM faculty_projects FP LEFT JOIN faculty F using (faculty_id) JOIN projects P using (project_id) JOIN semesters S using (semester_id)";
+
+            if (!string.IsNullOrEmpty(search))
+                query += $" WHERE F.Name LIKE '%{search}%' OR P.title LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%' OR supervision_hours LIKE '%{search}%'";
+
+            query += " ORDER BY faculty_project_id ASC";
+
+            using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                int idx = 1;
+                while (reader.Read()) {
+                    projects.Add(new FacultyProject
+                    {
+                        SrNo = idx++,
+                        Id = Convert.ToInt32(reader["faculty_project_id"]),
+                        Faculty = new Faculty
+                        {
+                            Id = reader["faculty_id"] == DBNull.Value ? 0 : Convert.ToInt32(reader["faculty_id"]),
+                            Name = reader["Name"] == DBNull.Value ? "Not Assigned" : reader["Name"].ToString(),
+                        },
+                        Project = new Project
+                        {
+                            Id = Convert.ToInt32(reader["project_id"]),
+                            Title = reader["title"].ToString()
+                        },
+                        Semester = new Semester
+                        {
+                            Id = Convert.ToInt32(reader["semester_id"]),
+                            Term = reader["Term"].ToString(),
+                            Year = Convert.ToInt32(reader["Year"])
+                        },
+                        SuperVisionHours = Convert.ToInt32(reader["supervision_hours"])
+                    });
+                }
+            }
+
+            con.Close();
+            return projects;
+        }
+
+        public bool DeleteAssignedProject(int project_id) {
+            string query = $"SELECT faculty_id FROM faculty_projects WHERE faculty_project_id = {project_id}";
+            int id = DB.Instance.Scalar(query);
+            query = $"DELETE FROM faculty_projects WHERE faculty_project_id = {project_id}";
+            if (DB.Instance.Update(query) == 1) {
+                if (id != 0) {
+                    if (FacultyControl.Instance.CalculateFacultyTeachingHours(id)) {
+                        return true;
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

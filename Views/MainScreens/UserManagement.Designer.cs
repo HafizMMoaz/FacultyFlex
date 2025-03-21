@@ -39,8 +39,13 @@
             this.UserManagementControls = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EditUser = new System.Windows.Forms.ToolStripMenuItem();
             this.ApproveFaculty = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.AssignCourse = new System.Windows.Forms.ToolStripMenuItem();
+            this.AssignAdminRole = new System.Windows.Forms.ToolStripMenuItem();
+            this.AssignProject = new System.Windows.Forms.ToolStripMenuItem();
+            this.AllocateRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchBtn = new System.Windows.Forms.PictureBox();
+            this.RefreshBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,6 +83,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.panel1.Controls.Add(this.RefreshBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -204,9 +210,13 @@
             this.UserManagementControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EditUser,
             this.ApproveFaculty,
-            this.toolStripMenuItem1});
+            this.DeleteUser,
+            this.AssignCourse,
+            this.AssignAdminRole,
+            this.AssignProject,
+            this.AllocateRoom});
             this.UserManagementControls.Name = "UserManagementControls";
-            this.UserManagementControls.Size = new System.Drawing.Size(189, 116);
+            this.UserManagementControls.Size = new System.Drawing.Size(189, 236);
             // 
             // EditUser
             // 
@@ -235,19 +245,60 @@
             this.ApproveFaculty.Text = "Approve Faculty";
             this.ApproveFaculty.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
-            // toolStripMenuItem1
+            // DeleteUser
             // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.toolStripMenuItem1.Image = global::DBS25P023.Properties.Resources.del;
-            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripMenuItem1.ShowShortcutKeys = false;
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(188, 30);
-            this.toolStripMenuItem1.Text = "Delete User";
-            this.toolStripMenuItem1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.DeleteUser_Click);
+            this.DeleteUser.BackColor = System.Drawing.SystemColors.Control;
+            this.DeleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.DeleteUser.Image = global::DBS25P023.Properties.Resources.del;
+            this.DeleteUser.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DeleteUser.Name = "DeleteUser";
+            this.DeleteUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DeleteUser.ShowShortcutKeys = false;
+            this.DeleteUser.Size = new System.Drawing.Size(188, 30);
+            this.DeleteUser.Text = "Delete User";
+            this.DeleteUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click);
+            // 
+            // AssignCourse
+            // 
+            this.AssignCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.AssignCourse.Image = global::DBS25P023.Properties.Resources.approve;
+            this.AssignCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AssignCourse.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AssignCourse.Name = "AssignCourse";
+            this.AssignCourse.Size = new System.Drawing.Size(188, 30);
+            this.AssignCourse.Text = "Assign Course";
+            this.AssignCourse.Click += new System.EventHandler(this.AssignCourse_Click);
+            // 
+            // AssignAdminRole
+            // 
+            this.AssignAdminRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.AssignAdminRole.Image = global::DBS25P023.Properties.Resources.approve;
+            this.AssignAdminRole.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AssignAdminRole.Name = "AssignAdminRole";
+            this.AssignAdminRole.Size = new System.Drawing.Size(188, 30);
+            this.AssignAdminRole.Text = "Assign Admin Role";
+            this.AssignAdminRole.Click += new System.EventHandler(this.AssignAdminRole_Click);
+            // 
+            // AssignProject
+            // 
+            this.AssignProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.AssignProject.Image = global::DBS25P023.Properties.Resources.approve;
+            this.AssignProject.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AssignProject.Name = "AssignProject";
+            this.AssignProject.Size = new System.Drawing.Size(188, 30);
+            this.AssignProject.Text = "Assign Project";
+            this.AssignProject.Click += new System.EventHandler(this.AssignProject_Click);
+            // 
+            // AllocateRoom
+            // 
+            this.AllocateRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.AllocateRoom.Image = global::DBS25P023.Properties.Resources.rooms;
+            this.AllocateRoom.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AllocateRoom.Name = "AllocateRoom";
+            this.AllocateRoom.Size = new System.Drawing.Size(188, 30);
+            this.AllocateRoom.Text = "Allocate Room";
+            this.AllocateRoom.Click += new System.EventHandler(this.AllocateRoom_Click);
             // 
             // SearchBtn
             // 
@@ -266,6 +317,20 @@
             this.SearchBtn.TabIndex = 8;
             this.SearchBtn.TabStop = false;
             this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RefreshBtn.AutoSize = true;
+            this.RefreshBtn.BackColor = System.Drawing.Color.White;
+            this.RefreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshBtn.Image = global::DBS25P023.Properties.Resources.reset;
+            this.RefreshBtn.Location = new System.Drawing.Point(705, 15);
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(40, 40);
+            this.RefreshBtn.TabIndex = 3;
+            this.RefreshBtn.UseVisualStyleBackColor = false;
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // UserManagement
             // 
@@ -311,6 +376,11 @@
         private System.Windows.Forms.ContextMenuStrip UserManagementControls;
         private System.Windows.Forms.ToolStripMenuItem EditUser;
         private System.Windows.Forms.ToolStripMenuItem ApproveFaculty;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem DeleteUser;
+        private System.Windows.Forms.ToolStripMenuItem AssignCourse;
+        private System.Windows.Forms.ToolStripMenuItem AssignAdminRole;
+        private System.Windows.Forms.ToolStripMenuItem AssignProject;
+        private System.Windows.Forms.Button RefreshBtn;
+        private System.Windows.Forms.ToolStripMenuItem AllocateRoom;
     }
 }

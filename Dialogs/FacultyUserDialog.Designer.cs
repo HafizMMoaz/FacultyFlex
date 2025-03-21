@@ -88,7 +88,7 @@
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.Title.Location = new System.Drawing.Point(280, 26);
+            this.Title.Location = new System.Drawing.Point(280, 25);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(117, 36);
             this.Title.TabIndex = 10;

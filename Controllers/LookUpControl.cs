@@ -66,5 +66,27 @@ namespace DBS25P023.Controllers
             con.Close();
             return designations;
         }
+
+        public List<RequestStatus> GetRequestStatus() {
+            List<RequestStatus> status = new List<RequestStatus>();
+            MySqlConnection con;
+            string query = "SELECT * FROM lookup WHERE category = 'RequestStatus'";
+
+            using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                int idx = 1;
+                while (reader.Read()) {
+                    status.Add(new RequestStatus
+                    {
+                        Id = idx,
+                        LookUp_Id = Convert.ToInt32(reader["lookup_id"]),
+                        Value = reader["value"].ToString()
+                    });
+                    idx++;
+                }
+            }
+
+            con.Close();
+            return status;
+        }
     }
 }
