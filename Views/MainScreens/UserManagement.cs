@@ -32,7 +32,7 @@ namespace DBS25P023.Views.MainScreens {
         }
 
         private void UserDataRender(string search) {
-            List<Faculty> facultyList = FacultyControl.Instance.GetFaculty(search);
+            List<Faculty> facultyList = FacultyControl.Instance.GetFaculty(search, 'f');
 
             int idx = 1;
             foreach (var faculty in facultyList) {
@@ -58,9 +58,6 @@ namespace DBS25P023.Views.MainScreens {
             UserData.RowTemplate.Height = 30;
             UserData.EnableHeadersVisualStyles = false;
             UserData.ColumnHeadersHeight = 50;
-
-            UserData.Columns["SrNo"].Width = 40;
-
         }
 
         private void UserData_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
@@ -99,6 +96,7 @@ namespace DBS25P023.Views.MainScreens {
                     AssignCourse.Visible = false;
                     AssignProject.Visible = false;
                     AllocateRoom.Visible = false;
+                    AssignAdminRole.Visible = false;
                     ApproveFaculty.Text = "Approve Faculty";
                     ApproveFaculty.Click += ApproveFaculty_Click;
                     ApproveFaculty.Image = DBS25P023.Properties.Resources.approve;
@@ -107,6 +105,7 @@ namespace DBS25P023.Views.MainScreens {
                     AssignCourse.Visible = true;
                     AssignProject.Visible = true;
                     AllocateRoom.Visible = true;
+                    AssignAdminRole.Visible = true;
                     ApproveFaculty.Text = "Update Faculty";
                     ApproveFaculty.Image = DBS25P023.Properties.Resources.edit;
                     ApproveFaculty.Click += EditFaculty_Click;

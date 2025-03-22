@@ -175,6 +175,12 @@
     <Compile Include="Dialogs\RequestDialog.Designer.cs">
       <DependentUpon>RequestDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\RequestStatusDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RequestStatusDialog.Designer.cs">
+      <DependentUpon>RequestStatusDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\RoomDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,7 @@
       <DependentUpon>CourseDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Models.cs" />
+    <Compile Include="Models\Session.cs" />
     <Compile Include="Views\MainScreens\FacultyRequests.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -308,6 +315,9 @@
     <EmbeddedResource Include="Dialogs\RequestDialog.resx">
       <DependentUpon>RequestDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RequestStatusDialog.resx">
+      <DependentUpon>RequestStatusDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\RoomDialog.resx">
       <DependentUpon>RoomDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +408,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Resources\request.png" />
     <None Include="Resources\rooms.png" />
     <None Include="Resources\room.png" />
     <None Include="Resources\plus.png" />

@@ -148,6 +148,10 @@ namespace DBS25P023.Models
         public int SrNo { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public override string ToString() {
+            return Name;
+        }
     }
 
     public class RequestStatus {
@@ -167,7 +171,7 @@ namespace DBS25P023.Models
         public Consumable Item { get; set; }
         public int Quantity { get; set; }
         public RequestStatus Status { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public string TimeStamp { get; set; }
     }
 
 }

@@ -43,15 +43,16 @@
             this.DashboardBtn = new System.Windows.Forms.Button();
             this.SofwareTitle = new System.Windows.Forms.Label();
             this.Header = new System.Windows.Forms.Panel();
+            this.LoggedInUser = new System.Windows.Forms.Label();
             this.MenuToggle = new System.Windows.Forms.PictureBox();
             this.Content = new System.Windows.Forms.Panel();
+            this.Dashboard = new DBS25P023.Views.MainScreens.Dashboard();
             this.UserManagement = new DBS25P023.Views.MainScreens.UserManagement();
             this.FacultyWorkload = new DBS25P023.Views.MainScreens.FacultyWorkload();
             this.ResourceAllocation = new DBS25P023.Views.MainScreens.ResourceAllocation();
             this.Reports = new DBS25P023.Views.MainScreens.Reports();
             this.Settings = new DBS25P023.Views.MainScreens.Settings();
             this.FacultyRequests = new DBS25P023.Views.MainScreens.FacultyRequests();
-            this.Dashboard = new DBS25P023.Views.MainScreens.Dashboard();
             this.TitleBar.SuspendLayout();
             this.ControlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
@@ -245,7 +246,7 @@
             this.FacultyRequestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FacultyRequestBtn.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacultyRequestBtn.ForeColor = System.Drawing.Color.White;
-            this.FacultyRequestBtn.Image = global::DBS25P023.Properties.Resources.reports;
+            this.FacultyRequestBtn.Image = global::DBS25P023.Properties.Resources.request;
             this.FacultyRequestBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.FacultyRequestBtn.Location = new System.Drawing.Point(0, 345);
             this.FacultyRequestBtn.Name = "FacultyRequestBtn";
@@ -358,12 +359,28 @@
             // 
             // Header
             // 
+            this.Header.AllowDrop = true;
+            this.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.Header.Controls.Add(this.LoggedInUser);
             this.Header.Controls.Add(this.MenuToggle);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(300, 35);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(780, 50);
             this.Header.TabIndex = 2;
+            // 
+            // LoggedInUser
+            // 
+            this.LoggedInUser.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LoggedInUser.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoggedInUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.LoggedInUser.Location = new System.Drawing.Point(313, 0);
+            this.LoggedInUser.Name = "LoggedInUser";
+            this.LoggedInUser.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.LoggedInUser.Size = new System.Drawing.Size(467, 50);
+            this.LoggedInUser.TabIndex = 1;
+            this.LoggedInUser.Text = "Hafiz M Moaz";
+            this.LoggedInUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MenuToggle
             // 
@@ -383,18 +400,27 @@
             // Content
             // 
             this.Content.BackColor = System.Drawing.Color.White;
+            this.Content.Controls.Add(this.Dashboard);
             this.Content.Controls.Add(this.UserManagement);
             this.Content.Controls.Add(this.FacultyWorkload);
             this.Content.Controls.Add(this.ResourceAllocation);
             this.Content.Controls.Add(this.Reports);
             this.Content.Controls.Add(this.Settings);
             this.Content.Controls.Add(this.FacultyRequests);
-            this.Content.Controls.Add(this.Dashboard);
             this.Content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Content.Location = new System.Drawing.Point(300, 85);
             this.Content.Name = "Content";
             this.Content.Size = new System.Drawing.Size(780, 635);
             this.Content.TabIndex = 3;
+            // 
+            // Dashboard
+            // 
+            this.Dashboard.BackColor = System.Drawing.Color.White;
+            this.Dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dashboard.Location = new System.Drawing.Point(0, 0);
+            this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Size = new System.Drawing.Size(780, 635);
+            this.Dashboard.TabIndex = 5;
             // 
             // UserManagement
             // 
@@ -423,6 +449,7 @@
             this.ResourceAllocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ResourceAllocation.Location = new System.Drawing.Point(0, 0);
             this.ResourceAllocation.Name = "ResourceAllocation";
+            this.ResourceAllocation.Padding = new System.Windows.Forms.Padding(10);
             this.ResourceAllocation.Size = new System.Drawing.Size(780, 635);
             this.ResourceAllocation.TabIndex = 2;
             // 
@@ -453,15 +480,6 @@
             this.FacultyRequests.Padding = new System.Windows.Forms.Padding(10);
             this.FacultyRequests.Size = new System.Drawing.Size(780, 635);
             this.FacultyRequests.TabIndex = 6;
-            // 
-            // Dashboard
-            // 
-            this.Dashboard.BackColor = System.Drawing.Color.White;
-            this.Dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Dashboard.Location = new System.Drawing.Point(0, 0);
-            this.Dashboard.Name = "Dashboard";
-            this.Dashboard.Size = new System.Drawing.Size(780, 635);
-            this.Dashboard.TabIndex = 5;
             // 
             // Main
             // 
@@ -526,6 +544,7 @@
         private System.Windows.Forms.Button SettingBtn;
         private System.Windows.Forms.Button ReportBtn;
         private FacultyRequests FacultyRequests;
+        private System.Windows.Forms.Label LoggedInUser;
     }
 }
 

@@ -357,7 +357,7 @@ namespace DBS25P023.Views.MainScreens {
                 int course_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
                 string facultyName = selectedRow.Cells["faculty"].Value.ToString();
-                Faculty faculty = FacultyControl.Instance.GetFaculty(null).FirstOrDefault(f => f.Name == facultyName);
+                Faculty faculty = FacultyControl.Instance.GetFaculty(null, 'a').FirstOrDefault(f => f.Name == facultyName);
 
                 string courseName = selectedRow.Cells["course"].Value.ToString();
                 Course course = CourseControl.Instance.GetCourse(null).FirstOrDefault(c => $"{c.Name} - {c.Type}" == courseName);
@@ -497,7 +497,7 @@ namespace DBS25P023.Views.MainScreens {
                 string name = selectedRow.Cells["Name"].Value.ToString();
 
                 string facultyName = selectedRow.Cells["Faculty"].Value.ToString();
-                Faculty faculty = FacultyControl.Instance.GetFaculty(null).FirstOrDefault(f => f.Name == facultyName);
+                Faculty faculty = FacultyControl.Instance.GetFaculty(null, 'a').FirstOrDefault(f => f.Name == facultyName);
 
                 string semesterVal = selectedRow.Cells["Semester"].Value.ToString();
                 Semester semester = SemesterControl.Instance.GetSemester(null).FirstOrDefault(s => $"{s.Term} - {s.Year}" == semesterVal);
@@ -666,7 +666,7 @@ namespace DBS25P023.Views.MainScreens {
                 int project_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
                 string facultyName = selectedRow.Cells["Faculty"].Value.ToString();
-                Faculty faculty = FacultyControl.Instance.GetFaculty(null).FirstOrDefault(f => f.Name == facultyName);
+                Faculty faculty = FacultyControl.Instance.GetFaculty(null, 'a').FirstOrDefault(f => f.Name == facultyName);
 
                 string projectName = selectedRow.Cells["Project"].Value.ToString();
                 Project project = ProjectControl.Instance.GetProjects(null).FirstOrDefault(p => p.Title == projectName);

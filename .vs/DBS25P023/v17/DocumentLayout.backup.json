@@ -3,56 +3,28 @@
   "WorkspaceRootPath": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\models\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:models\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\views\\mainscreens\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:views\\mainscreens\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\controllers\\authcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:controllers\\authcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\views\\mainscreens\\facultyworkload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:views\\mainscreens\\facultyworkload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\requestdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\requestdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\controllers\\facultycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:controllers\\facultycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\views\\auth\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:views\\auth\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\views\\mainscreens\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:views\\mainscreens\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\coursedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\coursedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\controllers\\consumablecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:controllers\\consumablecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\views\\mainscreens\\settings.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:views\\mainscreens\\settings.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\facultyuserdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\facultyuserdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\facultyuserdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\facultyuserdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\requestdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\requestdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\views\\auth\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:views\\auth\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\coursedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\coursedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\views\\auth\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:views\\auth\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -79,166 +51,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DB.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Models\\DB.cs",
-              "RelativeDocumentMoniker": "Models\\DB.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Models\\DB.cs",
-              "RelativeToolTip": "Models\\DB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Title": "Settings.cs [Design]",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\Settings.cs",
+              "RelativeDocumentMoniker": "Views\\MainScreens\\Settings.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\Settings.cs [Design]",
+              "RelativeToolTip": "Views\\MainScreens\\Settings.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T19:01:02.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RequestDialog.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\RequestDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\RequestDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\RequestDialog.cs",
-              "RelativeToolTip": "Dialogs\\RequestDialog.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:53:20.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FacultyUserDialog.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\FacultyUserDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\FacultyUserDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\FacultyUserDialog.cs",
-              "RelativeToolTip": "Dialogs\\FacultyUserDialog.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAGcAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:47:26.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FacultyUserDialog.cs [Design]",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\FacultyUserDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\FacultyUserDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\FacultyUserDialog.cs [Design]",
-              "RelativeToolTip": "Dialogs\\FacultyUserDialog.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:47:25.467Z",
+              "WhenOpened": "2025-03-22T21:46:47.587Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Models.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Models\\Models.cs",
-              "RelativeDocumentMoniker": "Models\\Models.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Models\\Models.cs",
-              "RelativeToolTip": "Models\\Models.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "FacultyWorkload.cs [Design]",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\FacultyWorkload.cs",
+              "RelativeDocumentMoniker": "Views\\MainScreens\\FacultyWorkload.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\FacultyWorkload.cs [Design]",
+              "RelativeToolTip": "Views\\MainScreens\\FacultyWorkload.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:45:43.287Z",
+              "WhenOpened": "2025-03-22T21:43:51.008Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Settings.Designer.cs",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\Settings.Designer.cs",
+              "RelativeDocumentMoniker": "Views\\MainScreens\\Settings.Designer.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\Settings.Designer.cs",
+              "RelativeToolTip": "Views\\MainScreens\\Settings.Designer.cs",
+              "ViewState": "AgIAAIABAAAAAAAAAAAAAI0BAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T21:41:28.778Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ConsumableControl.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\ConsumableControl.cs",
-              "RelativeDocumentMoniker": "Controllers\\ConsumableControl.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\ConsumableControl.cs",
-              "RelativeToolTip": "Controllers\\ConsumableControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
+              "Title": "FacultyUserDialog.cs",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\FacultyUserDialog.cs",
+              "RelativeDocumentMoniker": "Dialogs\\FacultyUserDialog.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\FacultyUserDialog.cs",
+              "RelativeToolTip": "Dialogs\\FacultyUserDialog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:43:37.142Z",
+              "WhenOpened": "2025-03-22T21:34:57.794Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthControl.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\AuthControl.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthControl.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\AuthControl.cs",
-              "RelativeToolTip": "Controllers\\AuthControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:42:44.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CourseDialog.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\CourseDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\CourseDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\CourseDialog.cs",
-              "RelativeToolTip": "Dialogs\\CourseDialog.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACgAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:41:43.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CourseDialog.cs [Design]",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\CourseDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\CourseDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\CourseDialog.cs [Design]",
-              "RelativeToolTip": "Dialogs\\CourseDialog.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:41:41.009Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\Auth\\LoginForm.cs",
-              "RelativeDocumentMoniker": "Views\\Auth\\LoginForm.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\Auth\\LoginForm.cs",
-              "RelativeToolTip": "Views\\Auth\\LoginForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAyAAAAAAAAAA==",
+              "Title": "Settings.cs",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\Settings.cs",
+              "RelativeDocumentMoniker": "Views\\MainScreens\\Settings.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\Settings.cs",
+              "RelativeToolTip": "Views\\MainScreens\\Settings.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwEEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:40:17.12Z",
+              "WhenOpened": "2025-03-22T21:33:05.568Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\Auth\\LoginForm.cs",
-              "RelativeDocumentMoniker": "Views\\Auth\\LoginForm.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\Auth\\LoginForm.cs [Design]",
-              "RelativeToolTip": "Views\\Auth\\LoginForm.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "FacultyControl.cs",
+              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\FacultyControl.cs",
+              "RelativeDocumentMoniker": "Controllers\\FacultyControl.cs",
+              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\FacultyControl.cs",
+              "RelativeToolTip": "Controllers\\FacultyControl.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAPYAAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:40:13.155Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\Auth\\Login.cs",
-              "RelativeDocumentMoniker": "Views\\Auth\\Login.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\Auth\\Login.cs [Design]",
-              "RelativeToolTip": "Views\\Auth\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:40:06.813Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RequestDialog.cs [Design]",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\RequestDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\RequestDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\RequestDialog.cs [Design]",
-              "RelativeToolTip": "Dialogs\\RequestDialog.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T18:39:38.491Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-22T21:22:58.745Z",
+              "EditorCaption": ""
             }
           ]
         },

@@ -53,11 +53,15 @@ namespace DBS25P023.Controllers
             return false;
         }
 
-        public List<Faculty> GetFaculty(string search) {
+        public List<Faculty> GetFaculty(string search, char mode) {
             List<Faculty> facultyusers = new List<Faculty>();
             MySqlConnection con;
 
-            string query = "SELECT U.user_id, U.username, F.faculty_id, F.Name, U.email, F.contact, U.role_id , L1.value as role, F.designation_id, L2.value as designation, F.total_teaching_hours, F.research_area FROM users U LEFT JOIN faculty F using(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id LEFT JOIN lookup L2 ON L2.lookup_id = F.designation_id";
+            string ext = " ";
+            if(mode == 'f')
+                ext = " LEFT ";
+
+            string query = $"SELECT U.user_id, U.username, F.faculty_id, F.Name, U.email, F.contact, U.role_id , L1.value as role, F.designation_id, L2.value as designation, F.total_teaching_hours, F.research_area FROM users U{ext}JOIN faculty F using(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id LEFT JOIN lookup L2 ON L2.lookup_id = F.designation_id";
             
             if (!string.IsNullOrEmpty(search))
                 query = query + $" WHERE U.username LIKE '%{search}%' OR U.email LIKE '%{search}%' OR L1.value LIKE '%{search}%' OR L2.value LIKE '%{search}%' OR F.Name LIKE '%{search}%' OR F.contact LIKE '%{search}%'";
@@ -231,5 +235,21 @@ namespace DBS25P023.Controllers
             return false;
         }
         #endregion
+
+        public bool UpdateProfile(Faculty faculty) {
+            string query;
+            if (faculty.Password != null)
+                query = $"UPDATE users SET username = '{faculty.Username}', email = '{faculty.Email}', password_hash = '{faculty.Password}' WHERE user_id = {faculty.User_id}";
+            else
+                query = $"UPDATE users SET username = '{faculty.Username}', email = '{faculty.Email}' WHERE user_id = {faculty.User_id}";
+
+            if (DB.Instance.Update(query) == 1) {
+                query = $"UPDATE faculty SET name = '{faculty.Name}', email = '{faculty.Email}, contact = '{faculty.Contact}' WHERE faculty_id = {faculty.Id}";
+                if (DB.Instance.Update(query) == 1) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace DBS25P023.Dialogs {
 
 
             for (int i = 0; i < FacultySelection.Items.Count; i++) {
-                var item = FacultySelection.Items[i] as Faculty; // Assuming FacultySelection contains Faculty objects
+                Faculty item = FacultySelection.Items[i] as Faculty; // Assuming FacultySelection contains Faculty objects
                 if (item != null && item.Id == faculty.Id) {
                     FacultySelection.SelectedIndex = i;
                     break; // Exit the loop once the item is selected
@@ -51,7 +51,7 @@ namespace DBS25P023.Dialogs {
             selected_faculty = role.Faculty;
             if (selected_faculty != null) {
                 for (int i = 0; i < FacultySelection.Items.Count; i++) {
-                    var item = FacultySelection.Items[i] as Faculty;
+                    Faculty item = FacultySelection.Items[i] as Faculty;
                     if (item != null && item.Id == role.Faculty.Id) {
                         FacultySelection.SelectedIndex = i;
                         break;
@@ -72,7 +72,7 @@ namespace DBS25P023.Dialogs {
 
         private void PopulateFaculty() {
             FacultySelection.Items.Clear();
-            List<Faculty> faculty = FacultyControl.Instance.GetFaculty(null);
+            List<Faculty> faculty = FacultyControl.Instance.GetFaculty(null,'a');
             FacultySelection.Items.AddRange(faculty.ToArray());
         }
 

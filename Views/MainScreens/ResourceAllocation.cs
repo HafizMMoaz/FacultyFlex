@@ -201,7 +201,7 @@ namespace DBS25P023.Views.MainScreens {
                 int allocationId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
                 string facultyName = selectedRow.Cells["Faculty"].Value.ToString();
-                Faculty faculty = FacultyControl.Instance.GetFaculty(null).FirstOrDefault(f => f.Name == facultyName);
+                Faculty faculty = FacultyControl.Instance.GetFaculty(null, 'a').FirstOrDefault(f => f.Name == facultyName);
 
                 string roomName = selectedRow.Cells["Room"].Value.ToString();
                 Room room = RoomControl.Instance.GetRoom(null).FirstOrDefault(r => r.Name == roomName);

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DBS25P023.Controllers;
+using DBS25P023.Models;
+using DBS25P023.Views.Auth;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +29,6 @@ namespace DBS25P023.Views.MainScreens
                 buttonText[btn] = btn.Text;
             }
 
-            
         }
 
 
@@ -40,6 +42,8 @@ namespace DBS25P023.Views.MainScreens
 
             SetActiveButton(DashboardBtn, "Dashboard");
             Dashboard.BringToFront();
+
+            LoggedInUser.Text = $"WELCOME, {Session.LoggedInFaculty.Name}";
         }
 
         private void DashboardBtn_Click(object sender, EventArgs e) {
@@ -78,6 +82,13 @@ namespace DBS25P023.Views.MainScreens
 
         private void LogoutBtn_Click(object sender, EventArgs e) {
             SetActiveButton(LogoutBtn, "Logout");
+            DialogResult result = MessageBox.Show("Do you want to Logout?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            bool userResponse = (result == DialogResult.Yes);
+            if (userResponse) {
+                Session.CloseSession();
+                this.Close();
+                new Login().Show();
+            }
         }
 
         private void Minimize_Click(object sender, EventArgs e) {

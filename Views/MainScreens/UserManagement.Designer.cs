@@ -29,11 +29,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.RefreshBtn = new System.Windows.Forms.Button();
             this.ActionBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Search = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.SearchBtn = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.UserData = new System.Windows.Forms.DataGridView();
             this.UserManagementControls = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -44,16 +46,14 @@
             this.AssignAdminRole = new System.Windows.Forms.ToolStripMenuItem();
             this.AssignProject = new System.Windows.Forms.ToolStripMenuItem();
             this.AllocateRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.SearchBtn = new System.Windows.Forms.PictureBox();
-            this.RefreshBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UserData)).BeginInit();
             this.UserManagementControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +91,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 117);
             this.panel1.TabIndex = 2;
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RefreshBtn.AutoSize = true;
+            this.RefreshBtn.BackColor = System.Drawing.Color.White;
+            this.RefreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshBtn.Image = global::DBS25P023.Properties.Resources.reset;
+            this.RefreshBtn.Location = new System.Drawing.Point(705, 15);
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(40, 40);
+            this.RefreshBtn.TabIndex = 3;
+            this.RefreshBtn.UseVisualStyleBackColor = false;
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // ActionBtn
             // 
@@ -146,6 +160,24 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(334, 84);
             this.panel4.TabIndex = 11;
+            // 
+            // SearchBtn
+            // 
+            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
+            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
+            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
+            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
+            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SearchBtn.TabIndex = 8;
+            this.SearchBtn.TabStop = false;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // panel5
             // 
@@ -216,7 +248,7 @@
             this.AssignProject,
             this.AllocateRoom});
             this.UserManagementControls.Name = "UserManagementControls";
-            this.UserManagementControls.Size = new System.Drawing.Size(189, 236);
+            this.UserManagementControls.Size = new System.Drawing.Size(183, 214);
             // 
             // EditUser
             // 
@@ -227,7 +259,7 @@
             this.EditUser.Name = "EditUser";
             this.EditUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.EditUser.ShowShortcutKeys = false;
-            this.EditUser.Size = new System.Drawing.Size(188, 30);
+            this.EditUser.Size = new System.Drawing.Size(182, 30);
             this.EditUser.Text = "Update Credentials";
             this.EditUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.EditUser.Click += new System.EventHandler(this.EditUser_Click);
@@ -241,7 +273,7 @@
             this.ApproveFaculty.Name = "ApproveFaculty";
             this.ApproveFaculty.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ApproveFaculty.ShowShortcutKeys = false;
-            this.ApproveFaculty.Size = new System.Drawing.Size(188, 30);
+            this.ApproveFaculty.Size = new System.Drawing.Size(182, 30);
             this.ApproveFaculty.Text = "Approve Faculty";
             this.ApproveFaculty.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
@@ -254,7 +286,7 @@
             this.DeleteUser.Name = "DeleteUser";
             this.DeleteUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DeleteUser.ShowShortcutKeys = false;
-            this.DeleteUser.Size = new System.Drawing.Size(188, 30);
+            this.DeleteUser.Size = new System.Drawing.Size(182, 30);
             this.DeleteUser.Text = "Delete User";
             this.DeleteUser.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click);
@@ -266,7 +298,7 @@
             this.AssignCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AssignCourse.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AssignCourse.Name = "AssignCourse";
-            this.AssignCourse.Size = new System.Drawing.Size(188, 30);
+            this.AssignCourse.Size = new System.Drawing.Size(182, 30);
             this.AssignCourse.Text = "Assign Course";
             this.AssignCourse.Click += new System.EventHandler(this.AssignCourse_Click);
             // 
@@ -276,7 +308,7 @@
             this.AssignAdminRole.Image = global::DBS25P023.Properties.Resources.approve;
             this.AssignAdminRole.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AssignAdminRole.Name = "AssignAdminRole";
-            this.AssignAdminRole.Size = new System.Drawing.Size(188, 30);
+            this.AssignAdminRole.Size = new System.Drawing.Size(182, 30);
             this.AssignAdminRole.Text = "Assign Admin Role";
             this.AssignAdminRole.Click += new System.EventHandler(this.AssignAdminRole_Click);
             // 
@@ -286,7 +318,7 @@
             this.AssignProject.Image = global::DBS25P023.Properties.Resources.approve;
             this.AssignProject.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AssignProject.Name = "AssignProject";
-            this.AssignProject.Size = new System.Drawing.Size(188, 30);
+            this.AssignProject.Size = new System.Drawing.Size(182, 30);
             this.AssignProject.Text = "Assign Project";
             this.AssignProject.Click += new System.EventHandler(this.AssignProject_Click);
             // 
@@ -296,41 +328,9 @@
             this.AllocateRoom.Image = global::DBS25P023.Properties.Resources.rooms;
             this.AllocateRoom.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AllocateRoom.Name = "AllocateRoom";
-            this.AllocateRoom.Size = new System.Drawing.Size(188, 30);
+            this.AllocateRoom.Size = new System.Drawing.Size(182, 30);
             this.AllocateRoom.Text = "Allocate Room";
             this.AllocateRoom.Click += new System.EventHandler(this.AllocateRoom_Click);
-            // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackColor = System.Drawing.Color.Transparent;
-            this.SearchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SearchBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SearchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchBtn.ErrorImage = global::DBS25P023.Properties.Resources.eye;
-            this.SearchBtn.Image = global::DBS25P023.Properties.Resources.search;
-            this.SearchBtn.InitialImage = global::DBS25P023.Properties.Resources.eye;
-            this.SearchBtn.Location = new System.Drawing.Point(267, 21);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Padding = new System.Windows.Forms.Padding(10);
-            this.SearchBtn.Size = new System.Drawing.Size(50, 50);
-            this.SearchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SearchBtn.TabIndex = 8;
-            this.SearchBtn.TabStop = false;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RefreshBtn.AutoSize = true;
-            this.RefreshBtn.BackColor = System.Drawing.Color.White;
-            this.RefreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshBtn.Image = global::DBS25P023.Properties.Resources.reset;
-            this.RefreshBtn.Location = new System.Drawing.Point(705, 15);
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(40, 40);
-            this.RefreshBtn.TabIndex = 3;
-            this.RefreshBtn.UseVisualStyleBackColor = false;
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // UserManagement
             // 
@@ -352,10 +352,10 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UserData)).EndInit();
             this.UserManagementControls.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SearchBtn)).EndInit();
             this.ResumeLayout(false);
 
         }

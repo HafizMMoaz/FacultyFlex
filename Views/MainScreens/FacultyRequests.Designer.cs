@@ -23,9 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Requests = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.SearchRequestBtn = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -36,55 +36,29 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Requests)).BeginInit();
+            this.Requests = new System.Windows.Forms.DataGridView();
+            this.RequestControls = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.EditRequest = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteRequest = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SearchRequestBtn)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Requests)).BeginInit();
+            this.RequestControls.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Requests
-            // 
-            this.Requests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Requests.BackgroundColor = System.Drawing.Color.White;
-            this.Requests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Requests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.Requests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Requests.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Requests.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Requests.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Requests.Location = new System.Drawing.Point(15, 15);
-            this.Requests.Name = "Requests";
-            this.Requests.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.Requests.RowHeadersWidth = 30;
-            this.Requests.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Requests.Size = new System.Drawing.Size(730, 362);
-            this.Requests.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.Requests);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(10, 227);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(15);
-            this.panel5.Size = new System.Drawing.Size(760, 392);
+            this.panel5.Size = new System.Drawing.Size(760, 398);
             this.panel5.TabIndex = 14;
             // 
             // SearchRequestBtn
@@ -103,6 +77,7 @@
             this.SearchRequestBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SearchRequestBtn.TabIndex = 8;
             this.SearchRequestBtn.TabStop = false;
+            this.SearchRequestBtn.Click += new System.EventHandler(this.SearchRequestBtn_Click);
             // 
             // panel3
             // 
@@ -127,7 +102,7 @@
             this.NewRequest.TabIndex = 3;
             this.NewRequest.Text = "REQUEST";
             this.NewRequest.UseVisualStyleBackColor = false;
-            this.NewRequest.Click += new System.EventHandler(this.button1_Click);
+            this.NewRequest.Click += new System.EventHandler(this.NewRequest_Click);
             // 
             // panel4
             // 
@@ -157,6 +132,7 @@
             this.SearchRequest.Name = "SearchRequest";
             this.SearchRequest.Size = new System.Drawing.Size(251, 30);
             this.SearchRequest.TabIndex = 0;
+            this.SearchRequest.TextChanged += new System.EventHandler(this.SearchRequest_TextChanged);
             // 
             // panel1
             // 
@@ -193,6 +169,92 @@
             this.label2.Text = "Register Consumables. Wait untill request is approved by Admin";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // Requests
+            // 
+            this.Requests.AllowUserToAddRows = false;
+            this.Requests.AllowUserToDeleteRows = false;
+            this.Requests.AllowUserToResizeRows = false;
+            this.Requests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Requests.BackgroundColor = System.Drawing.Color.White;
+            this.Requests.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Requests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Requests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Requests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Requests.ContextMenuStrip = this.RequestControls;
+            this.Requests.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Requests.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Requests.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Requests.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.Requests.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Requests.Location = new System.Drawing.Point(15, 15);
+            this.Requests.MultiSelect = false;
+            this.Requests.Name = "Requests";
+            this.Requests.ReadOnly = true;
+            this.Requests.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.Requests.RowHeadersVisible = false;
+            this.Requests.RowHeadersWidth = 20;
+            this.Requests.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Requests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Requests.ShowEditingIcon = false;
+            this.Requests.Size = new System.Drawing.Size(730, 368);
+            this.Requests.TabIndex = 1;
+            this.Requests.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Requests_CellMouseDown);
+            this.Requests.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Requests_CellMouseEnter);
+            // 
+            // RequestControls
+            // 
+            this.RequestControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditRequest,
+            this.DeleteRequest,
+            this.ChangeStatus});
+            this.RequestControls.Name = "RequestControls";
+            this.RequestControls.Size = new System.Drawing.Size(189, 116);
+            // 
+            // EditRequest
+            // 
+            this.EditRequest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.EditRequest.Image = global::DBS25P023.Properties.Resources.edit;
+            this.EditRequest.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.EditRequest.Name = "EditRequest";
+            this.EditRequest.Size = new System.Drawing.Size(188, 30);
+            this.EditRequest.Text = "Edit Request";
+            this.EditRequest.Click += new System.EventHandler(this.EditRequest_Click);
+            // 
+            // DeleteRequest
+            // 
+            this.DeleteRequest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.DeleteRequest.Image = global::DBS25P023.Properties.Resources.del;
+            this.DeleteRequest.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DeleteRequest.Name = "DeleteRequest";
+            this.DeleteRequest.Size = new System.Drawing.Size(188, 30);
+            this.DeleteRequest.Text = "Delete Request";
+            this.DeleteRequest.Click += new System.EventHandler(this.DeleteRequest_Click);
+            // 
+            // ChangeStatus
+            // 
+            this.ChangeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.ChangeStatus.Image = global::DBS25P023.Properties.Resources.approve;
+            this.ChangeStatus.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ChangeStatus.Name = "ChangeStatus";
+            this.ChangeStatus.Size = new System.Drawing.Size(188, 30);
+            this.ChangeStatus.Text = "Change Status";
+            this.ChangeStatus.Click += new System.EventHandler(this.ChangeStatus_Click);
+            // 
             // FacultyRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,7 +266,6 @@
             this.Name = "FacultyRequests";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(780, 635);
-            ((System.ComponentModel.ISupportInitialize)(this.Requests)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SearchRequestBtn)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -213,12 +274,13 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Requests)).EndInit();
+            this.RequestControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView Requests;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox SearchRequestBtn;
         private System.Windows.Forms.Panel panel3;
@@ -229,5 +291,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView Requests;
+        private System.Windows.Forms.ContextMenuStrip RequestControls;
+        private System.Windows.Forms.ToolStripMenuItem EditRequest;
+        private System.Windows.Forms.ToolStripMenuItem DeleteRequest;
+        private System.Windows.Forms.ToolStripMenuItem ChangeStatus;
     }
 }
