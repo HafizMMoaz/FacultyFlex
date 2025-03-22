@@ -153,5 +153,16 @@ namespace DBS25P023.Views.MainScreens {
                 RequestRender(null);
             }
         }
+
+        public void RefreshData() {
+            RequestRender(null);
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e) {
+            RefreshData();
+            new UserManagement().RefreshData();
+            new FacultyWorkload().RefreshData();
+            new ResourceAllocation().RefreshData();
+        }
     }
 }

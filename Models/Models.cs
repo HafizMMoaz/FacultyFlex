@@ -25,22 +25,22 @@ namespace DBS25P023.Models
 
         public Faculty() { }
 
-        public Faculty(string Username, string Password, string Email, Role Role) { 
-            this.Username = Username;
-            this.Password = Password;
-            this.Email = Email;
-            this.Role = Role;
-        }
+        //public Faculty(string Username, string Password, string Email, Role Role) { 
+        //    this.Username = Username;
+        //    this.Password = Password;
+        //    this.Email = Email;
+        //    this.Role = Role;
+        //}
 
-        public Faculty(int User_id, string Name, string Email, string Contact, Designation Designation, string ResearchArea, int TeachingHours) { 
-            this.User_id = User_id;
-            this.Name = Name;
-            this.Email = Email;
-            this.Contact = Contact;
-            this.Designation = Designation;
-            this.ResearchArea = ResearchArea;
-            this.TeachingHours = TeachingHours;
-        }
+        //public Faculty(int User_id, string Name, string Email, string Contact, Designation Designation, string ResearchArea, int TeachingHours) { 
+        //    this.User_id = User_id;
+        //    this.Name = Name;
+        //    this.Email = Email;
+        //    this.Contact = Contact;
+        //    this.Designation = Designation;
+        //    this.ResearchArea = ResearchArea;
+        //    this.TeachingHours = TeachingHours;
+        //}
 
         public override string ToString() {
             return Name;
@@ -83,9 +83,9 @@ namespace DBS25P023.Models
     public class FacultyCourse {
         public int SrNo { get; set; }
         public int Id { get; set; }
-        public Faculty faculty { get; set; }
-        public Course course { get; set; }
-        public Semester semester { get; set; }
+        public Faculty Faculty { get; set; }
+        public Course Course { get; set; }
+        public Semester Semester { get; set; }
     }
 
     public class Semester {

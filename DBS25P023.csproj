@@ -127,6 +127,7 @@
     <Compile Include="Controllers\AuthControl.cs" />
     <Compile Include="Controllers\ConsumableControl.cs" />
     <Compile Include="Controllers\CourseControl.cs" />
+    <Compile Include="Controllers\CourseScheduleControl.cs" />
     <Compile Include="Controllers\FacultyControl.cs" />
     <Compile Include="Controllers\LookUpControl.cs" />
     <Compile Include="Controllers\ProjectControl.cs" />
@@ -162,6 +163,12 @@
     </Compile>
     <Compile Include="Dialogs\ConsumableDialog.Designer.cs">
       <DependentUpon>ConsumableDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CourseScheduleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CourseScheduleDialog.Designer.cs">
+      <DependentUpon>CourseScheduleDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\ProjectDialog.cs">
       <SubType>Form</SubType>
@@ -302,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ConsumableDialog.resx">
       <DependentUpon>ConsumableDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CourseScheduleDialog.resx">
+      <DependentUpon>CourseScheduleDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\FacultyDialog.resx">
       <DependentUpon>FacultyDialog.cs</DependentUpon>

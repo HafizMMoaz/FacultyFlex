@@ -105,7 +105,12 @@ namespace DBS25P023.Dialogs
                 else
                     password = null;
 
-                Faculty faculty = new Faculty(username, password, email, role);
+                Faculty faculty = new Faculty { 
+                    Username = username, 
+                    Password = password, 
+                    Email = email, 
+                    Role = role 
+                };
                 faculty.User_id = selected_useid;
 
                 if (Action == "ADD") {

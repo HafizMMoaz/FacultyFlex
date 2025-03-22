@@ -50,22 +50,22 @@ namespace DBS25P023.Dialogs {
 
             selected_faculty_course = facultyCourse.Id;
 
-            selected_faculty = facultyCourse.faculty;
+            selected_faculty = facultyCourse.Faculty;
             if(selected_faculty != null) {
                 for (int i = 0; i < FacultySelection.Items.Count; i++) {
                     Faculty item = FacultySelection.Items[i] as Faculty; // Assuming FacultySelection contains Faculty objects
-                    if (item != null && item.Id == facultyCourse.faculty.Id) {
+                    if (item != null && item.Id == facultyCourse.Faculty.Id) {
                         FacultySelection.SelectedIndex = i;
                         break; // Exit the loop once the item is selected
                     }
                 }
             }
             
-            selected_course = facultyCourse.course;
-            CourseSelection.SelectedIndex = facultyCourse.course.SrNo - 1;
+            selected_course = facultyCourse.Course;
+            CourseSelection.SelectedIndex = facultyCourse.Course.SrNo - 1;
 
-            selected_semester = facultyCourse.semester;
-            SemesterSelection.SelectedIndex = facultyCourse.semester.SrNo - 1;
+            selected_semester = facultyCourse.Semester;
+            SemesterSelection.SelectedIndex = facultyCourse.Semester.SrNo - 1;
         }
 
         private void AssignCourseDialog_Load(object sender, EventArgs e) {
@@ -134,9 +134,9 @@ namespace DBS25P023.Dialogs {
 
             FacultyCourse course = new FacultyCourse
             {
-                faculty = selected_faculty,
-                course = selected_course,
-                semester = selected_semester
+                Faculty = selected_faculty,
+                Course = selected_course,
+                Semester = selected_semester
             };
 
             if(Action == "ASSIGN") {

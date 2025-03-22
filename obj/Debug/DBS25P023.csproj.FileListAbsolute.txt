@@ -67,3 +67,4 @@ E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialo
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.ConsumableDialog.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.RequestDialog.resources
 E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.RequestStatusDialog.resources
+E:\University\Semester-2\DataBase\MidProject\DBS25P023\obj\Debug\DBS25P023.Dialogs.CourseScheduleDialog.resources

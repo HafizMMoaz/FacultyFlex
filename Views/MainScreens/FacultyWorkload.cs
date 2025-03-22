@@ -368,9 +368,9 @@ namespace DBS25P023.Views.MainScreens {
                 var faculty_course = new FacultyCourse
                 {
                     Id = course_id,
-                    faculty = faculty,
-                    course = course,
-                    semester = semester
+                    Faculty = faculty,
+                    Course = course,
+                    Semester = semester
                 };
 
                 new AssignCourseDialog(faculty_course, "UPDATE").ShowDialog();
@@ -396,9 +396,9 @@ namespace DBS25P023.Views.MainScreens {
                 var faculty_course = new FacultyCourse
                 {
                     Id = course_id,
-                    faculty = faculty,
-                    course = course,
-                    semester = semester
+                    Faculty = faculty,
+                    Course = course,
+                    Semester = semester
                 };
 
                 new AssignCourseDialog(faculty_course, "UPDATE").ShowDialog();
@@ -746,6 +746,9 @@ namespace DBS25P023.Views.MainScreens {
 
         private void RefreshBtn_Click(object sender, EventArgs e) {
             RefreshData();
+            new FacultyRequests().RefreshData();
+            new UserManagement().RefreshData();
+            new ResourceAllocation().RefreshData();
         }
     }
 }

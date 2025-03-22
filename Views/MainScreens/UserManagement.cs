@@ -292,6 +292,7 @@ namespace DBS25P023.Views.MainScreens {
             RefreshData();
             new FacultyWorkload().RefreshData();
             new ResourceAllocation().RefreshData();
+            new FacultyRequests().RefreshData();
         }
 
         private void AllocateRoom_Click(object sender, EventArgs e) {
