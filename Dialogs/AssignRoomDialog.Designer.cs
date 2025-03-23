@@ -60,6 +60,7 @@
             this.ActionBtn.TabIndex = 36;
             this.ActionBtn.Text = "ASSIGN";
             this.ActionBtn.UseVisualStyleBackColor = false;
+            this.ActionBtn.Click += new System.EventHandler(this.ActionBtn_Click);
             // 
             // panel2
             // 
@@ -81,6 +82,7 @@
             this.SemesterSelection.Name = "SemesterSelection";
             this.SemesterSelection.Size = new System.Drawing.Size(300, 37);
             this.SemesterSelection.TabIndex = 0;
+            this.SemesterSelection.SelectedIndexChanged += new System.EventHandler(this.SemesterSelection_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -115,6 +117,7 @@
             this.RoomSelection.Name = "RoomSelection";
             this.RoomSelection.Size = new System.Drawing.Size(300, 37);
             this.RoomSelection.TabIndex = 0;
+            this.RoomSelection.SelectedIndexChanged += new System.EventHandler(this.RoomSelection_SelectedIndexChanged);
             // 
             // label1
             // 

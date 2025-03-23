@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.FormPanel = new System.Windows.Forms.Panel();
+            this.DebugLogin = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Password = new System.Windows.Forms.TextBox();
             this.ViewPassword = new System.Windows.Forms.PictureBox();
@@ -34,13 +35,12 @@
             this.ForgotPassword = new System.Windows.Forms.Label();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.SignIn = new System.Windows.Forms.Button();
-            this.DebugLogin = new System.Windows.Forms.PictureBox();
             this.FormPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DebugLogin)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewPassword)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DebugLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // FormPanel
@@ -60,6 +60,19 @@
             this.FormPanel.Name = "FormPanel";
             this.FormPanel.Size = new System.Drawing.Size(390, 420);
             this.FormPanel.TabIndex = 3;
+            // 
+            // DebugLogin
+            // 
+            this.DebugLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DebugLogin.Image = global::DBS25P023.Properties.Resources.plus;
+            this.DebugLogin.Location = new System.Drawing.Point(312, 90);
+            this.DebugLogin.Name = "DebugLogin";
+            this.DebugLogin.Size = new System.Drawing.Size(50, 50);
+            this.DebugLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.DebugLogin.TabIndex = 8;
+            this.DebugLogin.TabStop = false;
+            this.DebugLogin.Visible = false;
+            this.DebugLogin.Click += new System.EventHandler(this.DebugLogin_Click);
             // 
             // panel2
             // 
@@ -185,18 +198,6 @@
             this.SignIn.UseVisualStyleBackColor = false;
             this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
             // 
-            // DebugLogin
-            // 
-            this.DebugLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DebugLogin.Image = global::DBS25P023.Properties.Resources.plus;
-            this.DebugLogin.Location = new System.Drawing.Point(312, 90);
-            this.DebugLogin.Name = "DebugLogin";
-            this.DebugLogin.Size = new System.Drawing.Size(50, 50);
-            this.DebugLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.DebugLogin.TabIndex = 8;
-            this.DebugLogin.TabStop = false;
-            this.DebugLogin.Click += new System.EventHandler(this.DebugLogin_Click);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,13 +207,13 @@
             this.Size = new System.Drawing.Size(390, 420);
             this.FormPanel.ResumeLayout(false);
             this.FormPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DebugLogin)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewPassword)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DebugLogin)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -48,26 +48,36 @@ namespace DBS25P023.Views.MainScreens
 
         private void DashboardBtn_Click(object sender, EventArgs e) {
             SetActiveButton(DashboardBtn, "Dashboard");
+            Dashboard.Refresh();
+            Dashboard.RefreshData();
             Dashboard.BringToFront();
         }
 
         private void UserBtn_Click(object sender, EventArgs e) {
             SetActiveButton(UserBtn, "Users");
+            UserManagement.Refresh();
+            UserManagement.RefreshData();
             UserManagement.BringToFront();
         }
 
         private void WorkloadBtn_Click(object sender, EventArgs e) {
             SetActiveButton(WorkloadBtn, "Workload");
+            FacultyWorkload.Refresh();
+            FacultyWorkload.RefreshData();
             FacultyWorkload.BringToFront();
         }
 
         private void FacultyRequestBtn_Click(object sender, EventArgs e) {
             SetActiveButton(FacultyRequestBtn, "FacultyRequest");
+            FacultyRequests.Refresh();
+            FacultyRequests.RefreshData();
             FacultyRequests.BringToFront();
         }
 
         private void ResourcesBtn_Click(object sender, EventArgs e) {
             SetActiveButton(ResourcesBtn, "Resources");
+            ResourceAllocation.Refresh();
+            ResourceAllocation.RefreshData();
             ResourceAllocation.BringToFront();
         }
         private void ReportBtn_Click(object sender, EventArgs e) {

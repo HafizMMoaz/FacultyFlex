@@ -202,6 +202,8 @@ namespace DBS25P023.Views.MainScreens {
                 DataGridViewRow selectedRow = AssignedRoomsData.SelectedRows[0];
                 int allocationId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
+                int reserved_hours = Convert.ToInt32(selectedRow.Cells["ReservedHours"].Value);
+
                 string facultyName = selectedRow.Cells["Faculty"].Value.ToString();
                 Faculty faculty = FacultyControl.Instance.GetFaculty(null, 'a').FirstOrDefault(f => f.Name == facultyName);
 
@@ -216,7 +218,8 @@ namespace DBS25P023.Views.MainScreens {
                     Id = allocationId,
                     Faculty = faculty,
                     Room = room,
-                    Semester = semester
+                    Semester = semester,
+                    ReservedHours = reserved_hours
                 };
 
                 new AssignRoomDialog(facultyRoom, "UPDATE").ShowDialog();

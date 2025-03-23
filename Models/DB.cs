@@ -10,7 +10,7 @@ namespace DBS25P023.Models {
 
         private string serverName = Session.DBCred?.ServerName ?? "127.0.0.1";
         private string port = Session.DBCred?.Port ?? "3307";
-        private string databaseName = Session.DBCred?.DatabaseName ?? "midprojectdb";
+        private string databaseName = Session.DBCred?.DatabaseName ?? "facultyflex";
         private string databaseUser = Session.DBCred?.DatabaseUser ?? "root";
         private string databasePassword = Session.DBCred?.DatabasePassword ?? "Hafiz...1452";
 
