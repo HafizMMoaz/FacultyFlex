@@ -37,14 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.FacultyResearchArea = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.FacultyTeachingHours = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -206,38 +202,6 @@
             this.FacultyResearchArea.Size = new System.Drawing.Size(300, 120);
             this.FacultyResearchArea.TabIndex = 0;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.label3.Location = new System.Drawing.Point(30, 260);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(128, 19);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "TEACHING HOURS";
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.FacultyTeachingHours);
-            this.panel4.Location = new System.Drawing.Point(30, 285);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(320, 50);
-            this.panel4.TabIndex = 15;
-            // 
-            // FacultyTeachingHours
-            // 
-            this.FacultyTeachingHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FacultyTeachingHours.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacultyTeachingHours.ForeColor = System.Drawing.Color.Black;
-            this.FacultyTeachingHours.Location = new System.Drawing.Point(9, 9);
-            this.FacultyTeachingHours.Name = "FacultyTeachingHours";
-            this.FacultyTeachingHours.Size = new System.Drawing.Size(300, 30);
-            this.FacultyTeachingHours.TabIndex = 0;
-            // 
             // FacultyDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,8 +211,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ActionBtn);
             this.Controls.Add(this.Title);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
@@ -270,8 +232,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,8 +252,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox FacultyResearchArea;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox FacultyTeachingHours;
     }
 }

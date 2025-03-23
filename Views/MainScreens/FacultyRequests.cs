@@ -163,6 +163,7 @@ namespace DBS25P023.Views.MainScreens {
             new UserManagement().RefreshData();
             new FacultyWorkload().RefreshData();
             new ResourceAllocation().RefreshData();
+            new Dashboard().RefreshData();
         }
     }
 }

@@ -73,5 +73,25 @@ namespace DBS25P023.Controllers {
             con.Close();
             return requests;
         }
+
+        public List<FacultyRequest> GetRequestsForConsumable(int consumableId) {
+            List<FacultyRequest> requestDataList = new List<FacultyRequest>();
+
+            string query = $"SELECT fr.request_id, fr.quantity FROM faculty_requests fr WHERE fr.item_id = '{consumableId}' ORDER BY fr.request_id";
+
+            MySqlConnection con;
+            using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
+                while (reader.Read()) {
+                    requestDataList.Add(new FacultyRequest
+                    {
+                        Id = reader.GetInt32("request_id"),
+                        Quantity = reader.GetInt32("quantity"),
+                        Item = new Consumable { Id = consumableId }
+                    });
+                }
+            }
+
+            return requestDataList;
+        }
     }
 }

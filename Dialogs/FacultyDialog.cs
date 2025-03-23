@@ -33,7 +33,6 @@ namespace DBS25P023.Dialogs
                 selectedFaculty = facutlty;
                 FacultyName.Text = selectedFaculty.Name;
                 FacultyContact.Text = selectedFaculty.Contact;
-                FacultyTeachingHours.Text = selectedFaculty.TeachingHours.ToString();
                 FacultyResearchArea.Text = selectedFaculty.ResearchArea;
                 FacultyDesignation.SelectedIndex = selectedFaculty.Designation.Id - 1;
             }
@@ -62,20 +61,14 @@ namespace DBS25P023.Dialogs
             if (selected_Designation == null 
                 || string.IsNullOrEmpty(FacultyName.Text)
                 || string.IsNullOrEmpty(FacultyContact.Text) 
-                || string.IsNullOrEmpty(FacultyResearchArea.Text)
-                || string.IsNullOrEmpty(FacultyTeachingHours.Text)) {
+                || string.IsNullOrEmpty(FacultyResearchArea.Text)) {
                 MessageBox.Show("Please fill all Fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if(!int.TryParse(FacultyTeachingHours.Text, out int number)) {
-                MessageBox.Show("Please Enter Integer in Teaching Hours", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             string Name = FacultyName.Text;
             string Contact = FacultyContact.Text;
             string ResearchArea = FacultyResearchArea.Text;
-            int TeachingHours = Convert.ToInt32(FacultyTeachingHours.Text);
             Designation Designation = selected_Designation;
             int User_id = this.User_id;
             string Email = this.Email;
@@ -85,7 +78,6 @@ namespace DBS25P023.Dialogs
                 Name = Name,
                 Contact = Contact,
                 ResearchArea = ResearchArea,
-                TeachingHours = TeachingHours,
                 Designation = Designation,
                 Email = Email,
                 User_id = User_id

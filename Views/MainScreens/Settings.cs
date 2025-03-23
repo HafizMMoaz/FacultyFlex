@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DBS25P023.Models;
 using DBS25P023.Controllers;
 using System.Net.Mail;
+using System.IO;
 
 namespace DBS25P023.Views.MainScreens 
 {
@@ -28,6 +29,14 @@ namespace DBS25P023.Views.MainScreens
                 Username.Text = Session.LoggedInFaculty.Username;
                 Email.Text = Session.LoggedInFaculty.Email;
                 Contact.Text = Session.LoggedInFaculty.Contact;
+            }
+
+            if(Session.DBCred != null) {
+                Server.Text = Session.DBCred.ServerName;
+                Port.Text = Session.DBCred.Port;
+                DatabaseName.Text = Session.DBCred.DatabaseName;
+                DatabaseUsername.Text = Session.DBCred.DatabaseUser;
+                DatabasePassword.Text = Session.DBCred.DatabasePassword;
             }
 
         }
@@ -87,6 +96,37 @@ namespace DBS25P023.Views.MainScreens
             catch (FormatException) {
                 MessageBox.Show("Invalid Email Address", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void UpdateDBCreds_Click(object sender, EventArgs e) {
+            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FacultyFlex");
+
+            Directory.CreateDirectory(appDataPath);
+            string filePath = Path.Combine(appDataPath, "dbConfig.txt");
+
+            try {
+                string credentials = $"{Server.Text},{Port.Text},{DatabaseName.Text},{DatabaseUsername.Text},{DatabasePassword.Text}";
+
+                File.WriteAllText(filePath, credentials);
+
+                Console.WriteLine("Database credentials saved successfully.");
+
+            }
+            catch (Exception ex) {
+                Console.WriteLine($"An error occurred while saving the credentials or executing the script: {ex.Message}");
+            }
+        }
+
+        private void ViewPassword_Click(object sender, EventArgs e) {
+            Password.PasswordChar = Password.PasswordChar == '*' ? '\0' : '*';
+        }
+
+        private void ViewDBPassword_Click(object sender, EventArgs e) {
+            DatabasePassword.PasswordChar = Password.PasswordChar == '*' ? '\0' : '*';
+        }
+
+        private void ViewConfirmPassword_Click(object sender, EventArgs e) {
+            ConfirmPassword.PasswordChar = Password.PasswordChar == '*' ? '\0' : '*';
         }
     }
 }

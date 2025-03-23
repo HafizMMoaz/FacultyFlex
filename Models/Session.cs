@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DBS25P023.Models {
     public class Session {
-        public static Faculty LoggedInFaculty { get; private set; } = null;
-        public static DBCred DBCred { get; private set; } = null;
+        public static Faculty LoggedInFaculty { get; set; }
+        public static DBCred DBCred { get; set; }
 
         public static void StartSession(Faculty faculty) {
             LoggedInFaculty = faculty;

@@ -39,6 +39,7 @@ namespace DBS25P023.Views.MainScreens {
             new FacultyRequests().RefreshData();
             new UserManagement().RefreshData();
             new ResourceAllocation().RefreshData();
+            new Dashboard().RefreshData();
         }
 
         #region Course

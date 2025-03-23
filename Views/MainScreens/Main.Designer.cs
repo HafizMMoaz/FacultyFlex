@@ -46,13 +46,13 @@
             this.LoggedInUser = new System.Windows.Forms.Label();
             this.MenuToggle = new System.Windows.Forms.PictureBox();
             this.Content = new System.Windows.Forms.Panel();
-            this.Settings = new DBS25P023.Views.MainScreens.Settings();
-            this.FacultyRequests = new DBS25P023.Views.MainScreens.FacultyRequests();
             this.Dashboard = new DBS25P023.Views.MainScreens.Dashboard();
             this.UserManagement = new DBS25P023.Views.MainScreens.UserManagement();
             this.FacultyWorkload = new DBS25P023.Views.MainScreens.FacultyWorkload();
             this.ResourceAllocation = new DBS25P023.Views.MainScreens.ResourceAllocation();
             this.Reports = new DBS25P023.Views.MainScreens.Reports();
+            this.Settings = new DBS25P023.Views.MainScreens.Settings();
+            this.FacultyRequests = new DBS25P023.Views.MainScreens.FacultyRequests();
             this.TitleBar.SuspendLayout();
             this.ControlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
@@ -413,26 +413,6 @@
             this.Content.Size = new System.Drawing.Size(780, 635);
             this.Content.TabIndex = 3;
             // 
-            // Settings
-            // 
-            this.Settings.BackColor = System.Drawing.Color.White;
-            this.Settings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Settings.Location = new System.Drawing.Point(0, 0);
-            this.Settings.Name = "Settings";
-            this.Settings.Padding = new System.Windows.Forms.Padding(10);
-            this.Settings.Size = new System.Drawing.Size(780, 635);
-            this.Settings.TabIndex = 7;
-            // 
-            // FacultyRequests
-            // 
-            this.FacultyRequests.BackColor = System.Drawing.Color.White;
-            this.FacultyRequests.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FacultyRequests.Location = new System.Drawing.Point(0, 0);
-            this.FacultyRequests.Name = "FacultyRequests";
-            this.FacultyRequests.Padding = new System.Windows.Forms.Padding(10);
-            this.FacultyRequests.Size = new System.Drawing.Size(780, 635);
-            this.FacultyRequests.TabIndex = 6;
-            // 
             // Dashboard
             // 
             this.Dashboard.BackColor = System.Drawing.Color.White;
@@ -480,6 +460,26 @@
             this.Reports.Name = "Reports";
             this.Reports.Size = new System.Drawing.Size(780, 635);
             this.Reports.TabIndex = 1;
+            // 
+            // Settings
+            // 
+            this.Settings.BackColor = System.Drawing.Color.White;
+            this.Settings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Settings.Location = new System.Drawing.Point(0, 0);
+            this.Settings.Name = "Settings";
+            this.Settings.Padding = new System.Windows.Forms.Padding(10);
+            this.Settings.Size = new System.Drawing.Size(780, 635);
+            this.Settings.TabIndex = 7;
+            // 
+            // FacultyRequests
+            // 
+            this.FacultyRequests.BackColor = System.Drawing.Color.White;
+            this.FacultyRequests.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FacultyRequests.Location = new System.Drawing.Point(0, 0);
+            this.FacultyRequests.Name = "FacultyRequests";
+            this.FacultyRequests.Padding = new System.Windows.Forms.Padding(10);
+            this.FacultyRequests.Size = new System.Drawing.Size(780, 635);
+            this.FacultyRequests.TabIndex = 6;
             // 
             // Main
             // 

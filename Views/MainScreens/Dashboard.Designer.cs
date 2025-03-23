@@ -23,105 +23,102 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.TotalApprovedRequests = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.TotalCourses = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Card1 = new System.Windows.Forms.Panel();
-            this.FacultyMembersValue = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TotalFacultyMembers = new System.Windows.Forms.Label();
             this.FacultyMembers = new System.Windows.Forms.Label();
             this.Main = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.TotalApprovedFaculty = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.TotalCoursesWithoutAssignedFaculty = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.ResourcesChart = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.TotalCoursesWithAssignedFaculty = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.TotalAssignedSupervisors = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label31 = new System.Windows.Forms.Label();
+            this.TotalNotAssignedSupervisors = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.TotalAdminRolesAssigned = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.TotalPendingRequests = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.label33 = new System.Windows.Forms.Label();
+            this.TotalRejectedRequests = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.TotalFulfilledRequests = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.WorkLoadHours = new System.Windows.Forms.DataGridView();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.FacultyRequestsData = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ResourcesChart = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.RequestChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.Card1.SuspendLayout();
-            this.Main.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.Card1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Main.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.ResourcesChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkLoadHours)).BeginInit();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FacultyRequestsData)).BeginInit();
+            this.ResourcesChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RequestChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -129,8 +126,8 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(17, 301);
+            this.panel3.Controls.Add(this.TotalApprovedRequests);
+            this.panel3.Location = new System.Drawing.Point(17, 443);
             this.panel3.Margin = new System.Windows.Forms.Padding(7);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(219, 128);
@@ -147,41 +144,63 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Total Approved Faculty \r\nRequests";
             // 
-            // label5
+            // pictureBox4
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 78);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "10";
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox4.Location = new System.Drawing.Point(139, 9);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(63, 67);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // TotalApprovedRequests
+            // 
+            this.TotalApprovedRequests.AutoSize = true;
+            this.TotalApprovedRequests.BackColor = System.Drawing.Color.Transparent;
+            this.TotalApprovedRequests.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalApprovedRequests.ForeColor = System.Drawing.Color.White;
+            this.TotalApprovedRequests.Location = new System.Drawing.Point(3, 3);
+            this.TotalApprovedRequests.Name = "TotalApprovedRequests";
+            this.TotalApprovedRequests.Size = new System.Drawing.Size(97, 78);
+            this.TotalApprovedRequests.TabIndex = 1;
+            this.TotalApprovedRequests.Text = "10";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.TotalCourses);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(250, 17);
+            this.panel1.Location = new System.Drawing.Point(483, 17);
             this.panel1.Margin = new System.Windows.Forms.Padding(7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(219, 128);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // pictureBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 78);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "25";
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox2.Location = new System.Drawing.Point(139, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(63, 67);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // TotalCourses
+            // 
+            this.TotalCourses.AutoSize = true;
+            this.TotalCourses.BackColor = System.Drawing.Color.Transparent;
+            this.TotalCourses.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalCourses.ForeColor = System.Drawing.Color.White;
+            this.TotalCourses.Location = new System.Drawing.Point(3, 3);
+            this.TotalCourses.Name = "TotalCourses";
+            this.TotalCourses.Size = new System.Drawing.Size(97, 78);
+            this.TotalCourses.TabIndex = 1;
+            this.TotalCourses.Text = "25";
             // 
             // label2
             // 
@@ -198,7 +217,7 @@
             // 
             this.Card1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
             this.Card1.Controls.Add(this.pictureBox1);
-            this.Card1.Controls.Add(this.FacultyMembersValue);
+            this.Card1.Controls.Add(this.TotalFacultyMembers);
             this.Card1.Controls.Add(this.FacultyMembers);
             this.Card1.Location = new System.Drawing.Point(17, 17);
             this.Card1.Margin = new System.Windows.Forms.Padding(7);
@@ -206,17 +225,28 @@
             this.Card1.Size = new System.Drawing.Size(219, 128);
             this.Card1.TabIndex = 0;
             // 
-            // FacultyMembersValue
+            // pictureBox1
             // 
-            this.FacultyMembersValue.AutoSize = true;
-            this.FacultyMembersValue.BackColor = System.Drawing.Color.Transparent;
-            this.FacultyMembersValue.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacultyMembersValue.ForeColor = System.Drawing.Color.White;
-            this.FacultyMembersValue.Location = new System.Drawing.Point(3, 3);
-            this.FacultyMembersValue.Name = "FacultyMembersValue";
-            this.FacultyMembersValue.Size = new System.Drawing.Size(97, 78);
-            this.FacultyMembersValue.TabIndex = 1;
-            this.FacultyMembersValue.Text = "49";
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox1.Location = new System.Drawing.Point(132, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // TotalFacultyMembers
+            // 
+            this.TotalFacultyMembers.AutoSize = true;
+            this.TotalFacultyMembers.BackColor = System.Drawing.Color.Transparent;
+            this.TotalFacultyMembers.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalFacultyMembers.ForeColor = System.Drawing.Color.White;
+            this.TotalFacultyMembers.Location = new System.Drawing.Point(3, 3);
+            this.TotalFacultyMembers.Name = "TotalFacultyMembers";
+            this.TotalFacultyMembers.Size = new System.Drawing.Size(97, 78);
+            this.TotalFacultyMembers.TabIndex = 1;
+            this.TotalFacultyMembers.Text = "49";
             // 
             // FacultyMembers
             // 
@@ -233,20 +263,21 @@
             // 
             this.Main.AutoScroll = true;
             this.Main.Controls.Add(this.Card1);
+            this.Main.Controls.Add(this.panel4);
             this.Main.Controls.Add(this.panel1);
             this.Main.Controls.Add(this.panel8);
+            this.Main.Controls.Add(this.panel11);
             this.Main.Controls.Add(this.panel7);
+            this.Main.Controls.Add(this.panel13);
             this.Main.Controls.Add(this.panel9);
-            this.Main.Controls.Add(this.panel2);
+            this.Main.Controls.Add(this.panel12);
             this.Main.Controls.Add(this.panel3);
             this.Main.Controls.Add(this.panel14);
-            this.Main.Controls.Add(this.panel12);
-            this.Main.Controls.Add(this.panel13);
-            this.Main.Controls.Add(this.panel11);
-            this.Main.Controls.Add(this.panel4);
+            this.Main.Controls.Add(this.panel2);
             this.Main.Controls.Add(this.panel6);
             this.Main.Controls.Add(this.panel10);
             this.Main.Controls.Add(this.ResourcesChart);
+            this.Main.Controls.Add(this.panel5);
             this.Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Main.Location = new System.Drawing.Point(0, 0);
@@ -255,92 +286,59 @@
             this.Main.Size = new System.Drawing.Size(780, 635);
             this.Main.TabIndex = 0;
             // 
-            // panel7
+            // panel4
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.panel7.Controls.Add(this.label13);
-            this.panel7.Controls.Add(this.pictureBox8);
-            this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(17, 159);
-            this.panel7.Margin = new System.Windows.Forms.Padding(7);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(219, 128);
-            this.panel7.TabIndex = 0;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.pictureBox5);
+            this.panel4.Controls.Add(this.TotalApprovedFaculty);
+            this.panel4.Location = new System.Drawing.Point(250, 17);
+            this.panel4.Margin = new System.Windows.Forms.Padding(7);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(219, 128);
+            this.panel4.TabIndex = 0;
             // 
-            // label13
+            // label7
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(13, 77);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(124, 46);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Total Research \r\nSupervisions";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(13, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(184, 23);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Total Approved Faculty";
             // 
-            // label14
+            // pictureBox5
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(3, 3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 78);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "70";
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox5.Location = new System.Drawing.Point(139, 9);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(63, 67);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
             // 
-            // pictureBox1
+            // TotalApprovedFaculty
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox1.Location = new System.Drawing.Point(132, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox2.Location = new System.Drawing.Point(139, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox4.Location = new System.Drawing.Point(139, 9);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox8.Location = new System.Drawing.Point(139, 9);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 2;
-            this.pictureBox8.TabStop = false;
+            this.TotalApprovedFaculty.AutoSize = true;
+            this.TotalApprovedFaculty.BackColor = System.Drawing.Color.Transparent;
+            this.TotalApprovedFaculty.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalApprovedFaculty.ForeColor = System.Drawing.Color.White;
+            this.TotalApprovedFaculty.Location = new System.Drawing.Point(3, 3);
+            this.TotalApprovedFaculty.Name = "TotalApprovedFaculty";
+            this.TotalApprovedFaculty.Size = new System.Drawing.Size(97, 78);
+            this.TotalApprovedFaculty.TabIndex = 1;
+            this.TotalApprovedFaculty.Text = "10";
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
             this.panel8.Controls.Add(this.label15);
             this.panel8.Controls.Add(this.pictureBox9);
-            this.panel8.Controls.Add(this.label16);
-            this.panel8.Location = new System.Drawing.Point(483, 17);
+            this.panel8.Controls.Add(this.TotalCoursesWithoutAssignedFaculty);
+            this.panel8.Location = new System.Drawing.Point(17, 159);
             this.panel8.Margin = new System.Windows.Forms.Padding(7);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(219, 128);
@@ -368,25 +366,163 @@
             this.pictureBox9.TabIndex = 2;
             this.pictureBox9.TabStop = false;
             // 
-            // label16
+            // TotalCoursesWithoutAssignedFaculty
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(3, 3);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(97, 78);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "70";
+            this.TotalCoursesWithoutAssignedFaculty.AutoSize = true;
+            this.TotalCoursesWithoutAssignedFaculty.BackColor = System.Drawing.Color.Transparent;
+            this.TotalCoursesWithoutAssignedFaculty.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalCoursesWithoutAssignedFaculty.ForeColor = System.Drawing.Color.White;
+            this.TotalCoursesWithoutAssignedFaculty.Location = new System.Drawing.Point(3, 3);
+            this.TotalCoursesWithoutAssignedFaculty.Name = "TotalCoursesWithoutAssignedFaculty";
+            this.TotalCoursesWithoutAssignedFaculty.Size = new System.Drawing.Size(97, 78);
+            this.TotalCoursesWithoutAssignedFaculty.TabIndex = 1;
+            this.TotalCoursesWithoutAssignedFaculty.Text = "70";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.panel11.Controls.Add(this.label1);
+            this.panel11.Controls.Add(this.pictureBox6);
+            this.panel11.Controls.Add(this.TotalCoursesWithAssignedFaculty);
+            this.panel11.Location = new System.Drawing.Point(250, 159);
+            this.panel11.Margin = new System.Windows.Forms.Padding(7);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(219, 128);
+            this.panel11.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 46);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Total Courses With \r\nAssigned Faculty";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox6.Location = new System.Drawing.Point(139, 9);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(63, 67);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 2;
+            this.pictureBox6.TabStop = false;
+            // 
+            // TotalCoursesWithAssignedFaculty
+            // 
+            this.TotalCoursesWithAssignedFaculty.AutoSize = true;
+            this.TotalCoursesWithAssignedFaculty.BackColor = System.Drawing.Color.Transparent;
+            this.TotalCoursesWithAssignedFaculty.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalCoursesWithAssignedFaculty.ForeColor = System.Drawing.Color.White;
+            this.TotalCoursesWithAssignedFaculty.Location = new System.Drawing.Point(3, 3);
+            this.TotalCoursesWithAssignedFaculty.Name = "TotalCoursesWithAssignedFaculty";
+            this.TotalCoursesWithAssignedFaculty.Size = new System.Drawing.Size(97, 78);
+            this.TotalCoursesWithAssignedFaculty.TabIndex = 1;
+            this.TotalCoursesWithAssignedFaculty.Text = "10";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.panel7.Controls.Add(this.label13);
+            this.panel7.Controls.Add(this.pictureBox8);
+            this.panel7.Controls.Add(this.TotalAssignedSupervisors);
+            this.panel7.Location = new System.Drawing.Point(483, 159);
+            this.panel7.Margin = new System.Windows.Forms.Padding(7);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(219, 128);
+            this.panel7.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(13, 77);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 46);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Total Research \r\nSupervisions";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox8.Location = new System.Drawing.Point(139, 9);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(63, 67);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
+            // 
+            // TotalAssignedSupervisors
+            // 
+            this.TotalAssignedSupervisors.AutoSize = true;
+            this.TotalAssignedSupervisors.BackColor = System.Drawing.Color.Transparent;
+            this.TotalAssignedSupervisors.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAssignedSupervisors.ForeColor = System.Drawing.Color.White;
+            this.TotalAssignedSupervisors.Location = new System.Drawing.Point(3, 3);
+            this.TotalAssignedSupervisors.Name = "TotalAssignedSupervisors";
+            this.TotalAssignedSupervisors.Size = new System.Drawing.Size(97, 78);
+            this.TotalAssignedSupervisors.TabIndex = 1;
+            this.TotalAssignedSupervisors.Text = "70";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.panel13.Controls.Add(this.label30);
+            this.panel13.Controls.Add(this.pictureBox11);
+            this.panel13.Controls.Add(this.TotalNotAssignedSupervisors);
+            this.panel13.Location = new System.Drawing.Point(17, 301);
+            this.panel13.Margin = new System.Windows.Forms.Padding(7);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(219, 128);
+            this.panel13.TabIndex = 0;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(4, 80);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(191, 46);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Total Researches Super-\r\nvisors Not Assigned";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox11.Location = new System.Drawing.Point(139, 9);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(63, 67);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 2;
+            this.pictureBox11.TabStop = false;
+            // 
+            // TotalNotAssignedSupervisors
+            // 
+            this.TotalNotAssignedSupervisors.AutoSize = true;
+            this.TotalNotAssignedSupervisors.BackColor = System.Drawing.Color.Transparent;
+            this.TotalNotAssignedSupervisors.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalNotAssignedSupervisors.ForeColor = System.Drawing.Color.White;
+            this.TotalNotAssignedSupervisors.Location = new System.Drawing.Point(3, 3);
+            this.TotalNotAssignedSupervisors.Name = "TotalNotAssignedSupervisors";
+            this.TotalNotAssignedSupervisors.Size = new System.Drawing.Size(97, 78);
+            this.TotalNotAssignedSupervisors.TabIndex = 1;
+            this.TotalNotAssignedSupervisors.Text = "10";
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
             this.panel9.Controls.Add(this.label17);
             this.panel9.Controls.Add(this.pictureBox10);
-            this.panel9.Controls.Add(this.label18);
-            this.panel9.Location = new System.Drawing.Point(250, 159);
+            this.panel9.Controls.Add(this.TotalAdminRolesAssigned);
+            this.panel9.Location = new System.Drawing.Point(250, 301);
             this.panel9.Margin = new System.Windows.Forms.Padding(7);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(219, 128);
@@ -401,7 +537,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(167, 46);
             this.label17.TabIndex = 0;
-            this.label17.Text = "Total Administrative \r\nAssignments";
+            this.label17.Text = "Total Administrative \r\nUser Roles Assigned";
             // 
             // pictureBox10
             // 
@@ -414,354 +550,24 @@
             this.pictureBox10.TabIndex = 2;
             this.pictureBox10.TabStop = false;
             // 
-            // label18
+            // TotalAdminRolesAssigned
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(3, 3);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(97, 78);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "70";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(483, 159);
-            this.panel2.Margin = new System.Windows.Forms.Padding(7);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(219, 128);
-            this.panel2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 46);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Total Pending Workload \r\nAssignments";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox3.Location = new System.Drawing.Point(139, 9);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 78);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "70";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(483, 443);
-            this.panel4.Margin = new System.Windows.Forms.Padding(7);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(219, 128);
-            this.panel4.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(13, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(174, 46);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Total Pending Faculty \r\nRequests";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox5.Location = new System.Drawing.Point(139, 9);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 78);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "10";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label9);
-            this.panel6.Controls.Add(this.tableLayoutPanel2);
-            this.panel6.Location = new System.Drawing.Point(17, 593);
-            this.panel6.Margin = new System.Windows.Forms.Padding(7, 15, 7, 15);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(689, 232);
-            this.panel6.TabIndex = 6;
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(689, 30);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Total Workload Hours Assigned";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
-            this.tableLayoutPanel2.Controls.Add(this.label10, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label11, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label19, 2, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 37);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 15);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(689, 195);
-            this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(594, 1);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 70);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Admin Hours";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(104, 1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(381, 70);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Faculty Member Name";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(4, 1);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 70);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Sr#";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label19.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(492, 1);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(95, 70);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Teaching Hours";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label20);
-            this.panel10.Controls.Add(this.tableLayoutPanel3);
-            this.panel10.Location = new System.Drawing.Point(17, 855);
-            this.panel10.Margin = new System.Windows.Forms.Padding(7, 15, 7, 15);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(689, 232);
-            this.panel10.TabIndex = 6;
-            // 
-            // label20
-            // 
-            this.label20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label20.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.label20.Location = new System.Drawing.Point(0, 0);
-            this.label20.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(689, 30);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Total Workload Hours Assigned";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
-            this.tableLayoutPanel3.Controls.Add(this.label21, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label22, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label28, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label29, 2, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 37);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 15);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 5;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(689, 195);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label21.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(594, 1);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 70);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "Admin Hours";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(104, 1);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(381, 70);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "Faculty Member Name";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(4, 1);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(93, 70);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Sr#";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(492, 1);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(95, 70);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "Teaching Hours";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.panel11.Controls.Add(this.label24);
-            this.panel11.Controls.Add(this.pictureBox6);
-            this.panel11.Controls.Add(this.label25);
-            this.panel11.Location = new System.Drawing.Point(250, 443);
-            this.panel11.Margin = new System.Windows.Forms.Padding(7);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(219, 128);
-            this.panel11.TabIndex = 0;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(13, 76);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(174, 46);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Total Pending Faculty \r\nRequests";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox6.Location = new System.Drawing.Point(139, 9);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(3, 3);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(97, 78);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "10";
+            this.TotalAdminRolesAssigned.AutoSize = true;
+            this.TotalAdminRolesAssigned.BackColor = System.Drawing.Color.Transparent;
+            this.TotalAdminRolesAssigned.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalAdminRolesAssigned.ForeColor = System.Drawing.Color.White;
+            this.TotalAdminRolesAssigned.Location = new System.Drawing.Point(3, 3);
+            this.TotalAdminRolesAssigned.Name = "TotalAdminRolesAssigned";
+            this.TotalAdminRolesAssigned.Size = new System.Drawing.Size(97, 78);
+            this.TotalAdminRolesAssigned.TabIndex = 1;
+            this.TotalAdminRolesAssigned.Text = "70";
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
             this.panel12.Controls.Add(this.label26);
             this.panel12.Controls.Add(this.pictureBox7);
-            this.panel12.Controls.Add(this.label27);
+            this.panel12.Controls.Add(this.TotalPendingRequests);
             this.panel12.Location = new System.Drawing.Point(483, 301);
             this.panel12.Margin = new System.Windows.Forms.Padding(7);
             this.panel12.Name = "panel12";
@@ -790,27 +596,255 @@
             this.pictureBox7.TabIndex = 2;
             this.pictureBox7.TabStop = false;
             // 
-            // label27
+            // TotalPendingRequests
             // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(3, 3);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(97, 78);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "10";
+            this.TotalPendingRequests.AutoSize = true;
+            this.TotalPendingRequests.BackColor = System.Drawing.Color.Transparent;
+            this.TotalPendingRequests.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPendingRequests.ForeColor = System.Drawing.Color.White;
+            this.TotalPendingRequests.Location = new System.Drawing.Point(3, 3);
+            this.TotalPendingRequests.Name = "TotalPendingRequests";
+            this.TotalPendingRequests.Size = new System.Drawing.Size(97, 78);
+            this.TotalPendingRequests.TabIndex = 1;
+            this.TotalPendingRequests.Text = "10";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.panel14.Controls.Add(this.label32);
+            this.panel14.Controls.Add(this.pictureBox12);
+            this.panel14.Controls.Add(this.TotalRejectedRequests);
+            this.panel14.Location = new System.Drawing.Point(250, 443);
+            this.panel14.Margin = new System.Windows.Forms.Padding(7);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(219, 128);
+            this.panel14.TabIndex = 0;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(13, 76);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(178, 46);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Total Rejected Faculty \r\nRequests";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox12.Location = new System.Drawing.Point(139, 9);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(63, 67);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 2;
+            this.pictureBox12.TabStop = false;
+            // 
+            // TotalRejectedRequests
+            // 
+            this.TotalRejectedRequests.AutoSize = true;
+            this.TotalRejectedRequests.BackColor = System.Drawing.Color.Transparent;
+            this.TotalRejectedRequests.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalRejectedRequests.ForeColor = System.Drawing.Color.White;
+            this.TotalRejectedRequests.Location = new System.Drawing.Point(3, 3);
+            this.TotalRejectedRequests.Name = "TotalRejectedRequests";
+            this.TotalRejectedRequests.Size = new System.Drawing.Size(97, 78);
+            this.TotalRejectedRequests.TabIndex = 1;
+            this.TotalRejectedRequests.Text = "10";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.TotalFulfilledRequests);
+            this.panel2.Location = new System.Drawing.Point(483, 443);
+            this.panel2.Margin = new System.Windows.Forms.Padding(7);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(219, 128);
+            this.panel2.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(13, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(172, 46);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Total Fulfilled Faculty \r\nRequests";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::DBS25P023.Properties.Resources.people;
+            this.pictureBox3.Location = new System.Drawing.Point(139, 9);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(63, 67);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // TotalFulfilledRequests
+            // 
+            this.TotalFulfilledRequests.AutoSize = true;
+            this.TotalFulfilledRequests.BackColor = System.Drawing.Color.Transparent;
+            this.TotalFulfilledRequests.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalFulfilledRequests.ForeColor = System.Drawing.Color.White;
+            this.TotalFulfilledRequests.Location = new System.Drawing.Point(3, 3);
+            this.TotalFulfilledRequests.Name = "TotalFulfilledRequests";
+            this.TotalFulfilledRequests.Size = new System.Drawing.Size(97, 78);
+            this.TotalFulfilledRequests.TabIndex = 1;
+            this.TotalFulfilledRequests.Text = "70";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.WorkLoadHours);
+            this.panel6.Controls.Add(this.label9);
+            this.panel6.Location = new System.Drawing.Point(17, 593);
+            this.panel6.Margin = new System.Windows.Forms.Padding(7, 15, 7, 15);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(10);
+            this.panel6.Size = new System.Drawing.Size(689, 232);
+            this.panel6.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.label9.Location = new System.Drawing.Point(10, 10);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(669, 30);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Total Workload Hours Assigned";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // WorkLoadHours
+            // 
+            this.WorkLoadHours.AllowUserToAddRows = false;
+            this.WorkLoadHours.AllowUserToDeleteRows = false;
+            this.WorkLoadHours.AllowUserToResizeRows = false;
+            this.WorkLoadHours.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.WorkLoadHours.BackgroundColor = System.Drawing.Color.White;
+            this.WorkLoadHours.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.WorkLoadHours.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WorkLoadHours.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.WorkLoadHours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.WorkLoadHours.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.WorkLoadHours.DefaultCellStyle = dataGridViewCellStyle2;
+            this.WorkLoadHours.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorkLoadHours.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.WorkLoadHours.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.WorkLoadHours.Location = new System.Drawing.Point(10, 40);
+            this.WorkLoadHours.MultiSelect = false;
+            this.WorkLoadHours.Name = "WorkLoadHours";
+            this.WorkLoadHours.ReadOnly = true;
+            this.WorkLoadHours.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.WorkLoadHours.RowHeadersVisible = false;
+            this.WorkLoadHours.RowHeadersWidth = 20;
+            this.WorkLoadHours.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.WorkLoadHours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.WorkLoadHours.ShowEditingIcon = false;
+            this.WorkLoadHours.Size = new System.Drawing.Size(669, 182);
+            this.WorkLoadHours.TabIndex = 3;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.FacultyRequestsData);
+            this.panel10.Controls.Add(this.label4);
+            this.panel10.Location = new System.Drawing.Point(17, 855);
+            this.panel10.Margin = new System.Windows.Forms.Padding(7, 15, 7, 15);
+            this.panel10.Name = "panel10";
+            this.panel10.Padding = new System.Windows.Forms.Padding(10);
+            this.panel10.Size = new System.Drawing.Size(689, 232);
+            this.panel10.TabIndex = 7;
+            // 
+            // FacultyRequestsData
+            // 
+            this.FacultyRequestsData.AllowUserToAddRows = false;
+            this.FacultyRequestsData.AllowUserToDeleteRows = false;
+            this.FacultyRequestsData.AllowUserToResizeRows = false;
+            this.FacultyRequestsData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.FacultyRequestsData.BackgroundColor = System.Drawing.Color.White;
+            this.FacultyRequestsData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FacultyRequestsData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FacultyRequestsData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.FacultyRequestsData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FacultyRequestsData.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FacultyRequestsData.DefaultCellStyle = dataGridViewCellStyle4;
+            this.FacultyRequestsData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FacultyRequestsData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.FacultyRequestsData.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FacultyRequestsData.Location = new System.Drawing.Point(10, 40);
+            this.FacultyRequestsData.MultiSelect = false;
+            this.FacultyRequestsData.Name = "FacultyRequestsData";
+            this.FacultyRequestsData.ReadOnly = true;
+            this.FacultyRequestsData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.FacultyRequestsData.RowHeadersVisible = false;
+            this.FacultyRequestsData.RowHeadersWidth = 20;
+            this.FacultyRequestsData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FacultyRequestsData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.FacultyRequestsData.ShowEditingIcon = false;
+            this.FacultyRequestsData.Size = new System.Drawing.Size(669, 182);
+            this.FacultyRequestsData.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
+            this.label4.Location = new System.Drawing.Point(10, 10);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(669, 30);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Recent Faculty Requests";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ResourcesChart
             // 
             this.ResourcesChart.Controls.Add(this.label23);
-            this.ResourcesChart.Controls.Add(this.chart1);
+            this.ResourcesChart.Controls.Add(this.RequestChart);
             this.ResourcesChart.Location = new System.Drawing.Point(17, 1117);
             this.ResourcesChart.Margin = new System.Windows.Forms.Padding(7, 15, 7, 15);
             this.ResourcesChart.Name = "ResourcesChart";
             this.ResourcesChart.Size = new System.Drawing.Size(680, 309);
-            this.ResourcesChart.TabIndex = 6;
+            this.ResourcesChart.TabIndex = 8;
             // 
             // label23
             // 
@@ -825,110 +859,29 @@
             this.label23.Text = "Visual Reperesentation of Requested Resources";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // chart1
+            // RequestChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(0, 44);
-            this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(680, 265);
-            this.chart1.TabIndex = 7;
-            this.chart1.Text = "chart1";
+            this.RequestChart.BorderlineColor = System.Drawing.Color.Black;
+            this.RequestChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.RequestChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.Name = "ChartArea1";
+            this.RequestChart.ChartAreas.Add(chartArea1);
+            this.RequestChart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend1.Name = "Legend1";
+            this.RequestChart.Legends.Add(legend1);
+            this.RequestChart.Location = new System.Drawing.Point(0, 44);
+            this.RequestChart.Name = "RequestChart";
+            this.RequestChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.RequestChart.Size = new System.Drawing.Size(680, 265);
+            this.RequestChart.TabIndex = 7;
+            this.RequestChart.Text = "RequestChart";
             // 
-            // panel13
+            // panel5
             // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.panel13.Controls.Add(this.label30);
-            this.panel13.Controls.Add(this.pictureBox11);
-            this.panel13.Controls.Add(this.label31);
-            this.panel13.Location = new System.Drawing.Point(17, 443);
-            this.panel13.Margin = new System.Windows.Forms.Padding(7);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(219, 128);
-            this.panel13.TabIndex = 0;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(13, 76);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(174, 46);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Total Pending Faculty \r\nRequests";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox11.Location = new System.Drawing.Point(139, 9);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 2;
-            this.pictureBox11.TabStop = false;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(3, 3);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(97, 78);
-            this.label31.TabIndex = 1;
-            this.label31.Text = "10";
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(62)))), ((int)(((byte)(132)))));
-            this.panel14.Controls.Add(this.label32);
-            this.panel14.Controls.Add(this.pictureBox12);
-            this.panel14.Controls.Add(this.label33);
-            this.panel14.Location = new System.Drawing.Point(250, 301);
-            this.panel14.Margin = new System.Windows.Forms.Padding(7);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(219, 128);
-            this.panel14.TabIndex = 0;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(13, 76);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(174, 46);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "Total Pending Faculty \r\nRequests";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Image = global::DBS25P023.Properties.Resources.people;
-            this.pictureBox12.Location = new System.Drawing.Point(139, 9);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 2;
-            this.pictureBox12.TabStop = false;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.Transparent;
-            this.label33.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(3, 3);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(97, 78);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "10";
+            this.panel5.Location = new System.Drawing.Point(13, 1444);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(693, 30);
+            this.panel5.TabIndex = 9;
             // 
             // Dashboard
             // 
@@ -940,49 +893,47 @@
             this.Size = new System.Drawing.Size(780, 635);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Card1.ResumeLayout(false);
             this.Card1.PerformLayout();
-            this.Main.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.Main.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.ResourcesChart.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.WorkLoadHours)).EndInit();
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FacultyRequestsData)).EndInit();
+            this.ResourcesChart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RequestChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -991,68 +942,61 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label TotalApprovedRequests;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TotalCourses;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Card1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label FacultyMembersValue;
+        private System.Windows.Forms.Label TotalFacultyMembers;
         private System.Windows.Forms.Label FacultyMembers;
         private System.Windows.Forms.FlowLayoutPanel Main;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label TotalAssignedSupervisors;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label TotalCoursesWithoutAssignedFaculty;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label TotalAdminRolesAssigned;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label TotalFulfilledRequests;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label TotalApprovedFaculty;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label TotalPendingRequests;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Panel ResourcesChart;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label TotalCoursesWithAssignedFaculty;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label TotalNotAssignedSupervisors;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label TotalRejectedRequests;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView WorkLoadHours;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.DataGridView FacultyRequestsData;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel ResourcesChart;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataVisualization.Charting.Chart RequestChart;
+        private System.Windows.Forms.Panel panel5;
     }
 }

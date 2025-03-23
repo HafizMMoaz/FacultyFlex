@@ -8,11 +8,11 @@ using MySql.Data.MySqlClient;
 namespace DBS25P023.Models {
     public class DB {
 
-        private string serverName = Session.DBCred.ServerName;
-        private string port = Session.DBCred.Port;
-        private string databaseName = Session.DBCred.DatabaseName;
-        private string databaseUser = Session.DBCred.DatabaseUser;
-        private string databasePassword = Session.DBCred.DatabasePassword;
+        private string serverName = Session.DBCred?.ServerName ?? "127.0.0.1";
+        private string port = Session.DBCred?.Port ?? "3307";
+        private string databaseName = Session.DBCred?.DatabaseName ?? "midprojectdb";
+        private string databaseUser = Session.DBCred?.DatabaseUser ?? "root";
+        private string databasePassword = Session.DBCred?.DatabasePassword ?? "Hafiz...1452";
 
         private static DB _instance;
 
@@ -31,12 +31,12 @@ namespace DBS25P023.Models {
             var connection = new MySqlConnection(connectionString);
             try {
                 connection.Open();
+                return connection;
             }
             catch (Exception) {
                 System.Windows.Forms.MessageBox.Show($"Check Your Network", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
-            return connection;
         }
 
         public MySqlDataReader GetData(string query, out MySqlConnection connection) {

@@ -34,6 +34,7 @@ namespace DBS25P023.Views.MainScreens {
             new FacultyWorkload().RefreshData();
             new UserManagement().RefreshData();
             new FacultyRequests().RefreshData();
+            new Dashboard().RefreshData();
         }
 
         private void AddRoomBtn_Click(object sender, EventArgs e) {
