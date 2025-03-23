@@ -106,6 +106,10 @@ namespace DBS25P023.Dialogs {
             };
 
             if (Action == "ADD") {
+                if (!CourseScheduleControl.Instance.IsScheduleAvailable(courseSchedule, 'a')) {
+                    MessageBox.Show("Room or Faculty is not available at this time!", "Schedule Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 if (CourseScheduleControl.Instance.AddSchedule(courseSchedule)) {
                     MessageBox.Show("Schedule Added Successfully!", "Schedule", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -116,6 +120,11 @@ namespace DBS25P023.Dialogs {
             }
             else {
                 courseSchedule.Id = selected_course_schedule;
+
+                if (!CourseScheduleControl.Instance.IsScheduleAvailable(courseSchedule, 'u')) {
+                    MessageBox.Show("Room or Faculty is not available at this time!", "Schedule Conflict", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 if (CourseScheduleControl.Instance.UpdateSchedule(courseSchedule)) {
                     MessageBox.Show("Updated Successfully!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);

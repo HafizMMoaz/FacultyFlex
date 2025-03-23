@@ -96,6 +96,25 @@ namespace DBS25P023.Controllers {
             return schedules;
         }
 
+        public bool IsScheduleAvailable(CourseSchedule schedule, char type) {
+            string query = $@"
+            SELECT COUNT(*) FROM faculty_course_schedule 
+            WHERE day_of_week = '{schedule.DayofWeek}'
+            AND (
+                (start_time < '{schedule.EndTime}' AND end_time > '{schedule.StartTime}')
+            )
+            AND (
+                faculty_course_id IN (SELECT faculty_course_id FROM faculty_courses WHERE faculty_id = '{schedule.FacultyCourse.Faculty.Id}')
+                OR room_id = '{schedule.Room.Id}'
+            )";
+
+            if (type == 'u')
+                query += $" AND schedule_id <> {schedule.Id}";
+
+            object result = DB.Instance.Scalar(query);
+
+            return result != null && Convert.ToInt32(result) == 0;
+        }
 
 
     }
