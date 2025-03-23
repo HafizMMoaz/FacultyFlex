@@ -97,8 +97,10 @@ Here are some screenshots of the application:
 - 🛒 Consumables Inventory Management (track available resources). [DONE]
 - 👥 Multi-User Feature Distribution (better handling of simultaneous logins).
 - 📜 Faculty Request Fixes (some requests are not being processed correctly). [DONE]
+- 📜 Faculty Workload Management. [DONE]
+- 📜 Faculty Resources Allocation Management. [DONE]
 - 🗓️ Faculty Course Scheduling (automated timetable generation). [DONE]
-- 🗓️ Time Table Conflicts
+- 🗓️ Time Table Conflicts [DONE]
 - 📜 Database Creation through Software [DONE]
 
 ## 📄 License
