@@ -71,19 +71,14 @@ Here are some screenshots of the application:
    cd DBS25P023
 
 2. **Set Up Database**
-    - Import database_schema.sql into MySQL.
-    - Update DB.cs with your MySQL credentials.
     - Run the Project
 
     - Open DBS25P023.sln in Visual Studio.
     - Build and run the project.
 
-    ```sh
-    private readonly string serverName = "127.0.0.1";
-    private readonly string port = "3306"; 
-    private readonly string databaseName = "midprojectdb";
-    private readonly string databaseUser = "root";
-    private readonly string databasePassword = "YourPasswordHere";
+    - Create Database in MySQL server
+    - Run App Add Databse Credentials
+    - You are good to Go!
 
 3. **Run the Project**
     - Open DBS25P023.sln in Visual Studio.
@@ -93,11 +88,12 @@ Here are some screenshots of the application:
 ## 📝 To-Do (Remaining Work)
 
 - ✅ Core features are implemented! However, a few tasks remain:
-- 🛒 Consumables Inventory Management (track available resources).
+- 🛒 Consumables Inventory Management (track available resources). [DONE]
 - 👥 Multi-User Feature Distribution (better handling of simultaneous logins).
-- 📜 Faculty Request Fixes (some requests are not being processed correctly).
-- 🗓️ Faculty Course Scheduling (automated timetable generation).
-- 📜 Database Creation through Software
+- 📜 Faculty Request Fixes (some requests are not being processed correctly). [DONE]
+- 🗓️ Faculty Course Scheduling (automated timetable generation). [DONE]
+- 🗓️ Time Table Conflicts
+- 📜 Database Creation through Software [DONE]
 
 ## 📄 License
 
