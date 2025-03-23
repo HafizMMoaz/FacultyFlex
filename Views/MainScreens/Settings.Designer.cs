@@ -155,6 +155,7 @@
             this.UpdateProfile.TabIndex = 28;
             this.UpdateProfile.Text = "UPDATE";
             this.UpdateProfile.UseVisualStyleBackColor = false;
+            this.UpdateProfile.Click += new System.EventHandler(this.UpdateProfile_Click);
             // 
             // panel26
             // 

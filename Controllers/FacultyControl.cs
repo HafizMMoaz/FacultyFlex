@@ -244,7 +244,7 @@ namespace DBS25P023.Controllers
                 query = $"UPDATE users SET username = '{faculty.Username}', email = '{faculty.Email}' WHERE user_id = {faculty.User_id}";
 
             if (DB.Instance.Update(query) == 1) {
-                query = $"UPDATE faculty SET name = '{faculty.Name}', email = '{faculty.Email}, contact = '{faculty.Contact}' WHERE faculty_id = {faculty.Id}";
+                query = $"UPDATE faculty SET name = '{faculty.Name}', email = '{faculty.Email}', contact = '{faculty.Contact}' WHERE faculty_id = {faculty.Id}";
                 if (DB.Instance.Update(query) == 1) {
                     return true;
                 }

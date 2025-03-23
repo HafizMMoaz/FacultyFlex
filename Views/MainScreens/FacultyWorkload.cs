@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DBS25P023.Dialogs;
 using DBS25P023.Models;
 using DBS25P023.Controllers;
+using System.Net;
 
 namespace DBS25P023.Views.MainScreens {
     public partial class FacultyWorkload: UserControl
@@ -30,6 +31,14 @@ namespace DBS25P023.Views.MainScreens {
             SemesterDataRender(null);
             AdminRoleDataRender(null);
             AssignProjectDataRender(null);
+            ScheduleDataRender(null);
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e) {
+            RefreshData();
+            new FacultyRequests().RefreshData();
+            new UserManagement().RefreshData();
+            new ResourceAllocation().RefreshData();
         }
 
         #region Course
@@ -406,6 +415,35 @@ namespace DBS25P023.Views.MainScreens {
             }
         }
 
+        private void CourseSchedule_Click(object sender, EventArgs e) {
+            if (AssignedCoursesData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = AssignedCoursesData.SelectedRows[0];
+
+                int course_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                string facultyName = selectedRow.Cells["faculty"].Value.ToString();
+                Faculty faculty = FacultyControl.Instance.GetFaculty(null, 'a').FirstOrDefault(f => f.Name == facultyName);
+
+                string courseName = selectedRow.Cells["course"].Value.ToString();
+                Course course = CourseControl.Instance.GetCourse(null).FirstOrDefault(c => $"{c.Name} - {c.Type}" == courseName);
+
+                string semesterVal = selectedRow.Cells["semester"].Value.ToString();
+                Semester semester = SemesterControl.Instance.GetSemester(null).FirstOrDefault(s => $"{s.Term} - {s.Year}" == semesterVal);
+
+                var faculty_course = new FacultyCourse
+                {
+                    Id = course_id,
+                    Faculty = faculty,
+                    Course = course,
+                    Semester = semester
+                };
+
+                new CourseScheduleDialog(faculty_course, "ADD").ShowDialog();
+                AssignedCoursesRender(null);
+            }
+        }
+
         private void DeleteAssignedCourse_Click(object sender, EventArgs e) {
             if (AssignedCoursesData.SelectedRows.Count > 0) {
 
@@ -742,13 +780,96 @@ namespace DBS25P023.Views.MainScreens {
                 }
             }
         }
+
+
         #endregion
 
-        private void RefreshBtn_Click(object sender, EventArgs e) {
-            RefreshData();
-            new FacultyRequests().RefreshData();
-            new UserManagement().RefreshData();
-            new ResourceAllocation().RefreshData();
+        private void ScheduleDataRender(string search) {
+            List<CourseSchedule> schedules = CourseScheduleControl.Instance.GetSchedule(search);
+            ScheduleData.DataSource = schedules;
+
+            ScheduleData.Columns["SrNo"].HeaderText = "#";
+            ScheduleData.Columns["FacultyCourse"].HeaderText = "FACULTY COURSE";
+            ScheduleData.Columns["Room"].HeaderText = "ROOM";
+            ScheduleData.Columns["DayofWeek"].HeaderText = "DAY";
+            ScheduleData.Columns["StartTime"].HeaderText = "START TIME";
+            ScheduleData.Columns["EndTime"].HeaderText = "END TIME";
+
+            ScheduleData.Columns["Id"].Visible = false;
+
+            ScheduleData.DefaultCellStyle.Font = new Font("Arial", 10);
+            ScheduleData.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            ScheduleData.RowTemplate.Height = 30;
+            ScheduleData.EnableHeadersVisualStyles = false;
+            ScheduleData.ColumnHeadersHeight = 50;
+        }
+
+        private void ScheduleDataSearch_TextChanged(object sender, EventArgs e) {
+            string search = ScheduleDataSearch.Text;
+            ScheduleDataRender(search);
+        }
+
+        private void ScheduleDataSearchBtn_Click(object sender, EventArgs e) {
+            string search = ScheduleDataSearch.Text;
+            ScheduleDataRender(search);
+        }
+
+        private void ScheduleData_CellMouseEnter(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex >= 0) {
+                ScheduleData.Rows[e.RowIndex].Selected = true;
+            }
+        }
+
+        private void EditSchedule_Click(object sender, EventArgs e) {
+            if (ScheduleData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = ScheduleData.SelectedRows[0];
+
+                int schedule_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+
+                string facultyCoursValue = selectedRow.Cells["FacultyCourse"].Value.ToString();
+
+                FacultyCourse facultyCourse = CourseControl.Instance.GetAssignedCourses(null).FirstOrDefault(fc => $"{fc.Faculty} - {fc.Course}" == facultyCoursValue);
+
+                string roomName = selectedRow.Cells["Room"].Value.ToString();
+                Room room = RoomControl.Instance.GetRoom(null).FirstOrDefault(r => r.Name == roomName);
+
+                string day_of_week = selectedRow.Cells["DayofWeek"].Value.ToString();
+                string start_time = selectedRow.Cells["StartTime"].Value.ToString();
+                string end_time = selectedRow.Cells["EndTime"].Value.ToString();
+
+                var schedule = new CourseSchedule
+                {
+                    Id = schedule_id,
+                    FacultyCourse = facultyCourse,
+                    Room = room,
+                    DayofWeek = day_of_week,
+                    StartTime = start_time,
+                    EndTime = end_time
+                };
+
+                new CourseScheduleDialog(schedule, "UPDATE").ShowDialog();
+                ScheduleDataRender(null);
+            }
+        }
+
+        private void DeleteSchedule_Click(object sender, EventArgs e) {
+            if (ScheduleData.SelectedRows.Count > 0) {
+
+                DataGridViewRow selectedRow = ScheduleData.SelectedRows[0];
+
+                int schedule_id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                if (CourseScheduleControl.Instance.DeleteSchedule(schedule_id)) {
+                    MessageBox.Show("Schedule Deleted Successfully", "Schedule Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ScheduleDataRender(null);
+                }
+                else {
+                    MessageBox.Show("Something Went Wrong! Please Try Again", "Schedule Deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
         }
     }
 }

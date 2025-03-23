@@ -131,7 +131,7 @@ namespace DBS25P023.Controllers {
         public List<FacultyCourse> GetAssignedCourses(string search) { 
             List<FacultyCourse> courses = new List<FacultyCourse>();
             MySqlConnection con;
-            string query = "SELECT FC.*, F.Name, C.course_name, C.course_type, S.Term, S.Year FROM faculty_courses FC LEFT JOIN faculty F using (faculty_id) JOIN courses C using (course_id) JOIN semesters S using (semester_id)";
+            string query = "SELECT FC.*, F.Name, C.course_name, C.course_type, C.contact_hours, S.Term, S.Year FROM faculty_courses FC LEFT JOIN faculty F using (faculty_id) JOIN courses C using (course_id) JOIN semesters S using (semester_id)";
 
             if (!string.IsNullOrEmpty(search))
                 query += $" WHERE F.Name LIKE '%{search}%' OR C.course_name LIKE '%{search}%' OR C.course_type LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%'";
@@ -155,6 +155,7 @@ namespace DBS25P023.Controllers {
                             Id = Convert.ToInt32(reader["course_id"]),
                             Name = reader["course_name"].ToString(),
                             Type = reader["course_type"].ToString(),
+                            ContactHours = Convert.ToInt32(reader["contact_hours"])
                         },
                         Semester = new Semester
                         {

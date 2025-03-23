@@ -23,25 +23,6 @@ namespace DBS25P023.Models
         public string ResearchArea { get; set; }
         public int TeachingHours { get; set; }
 
-        public Faculty() { }
-
-        //public Faculty(string Username, string Password, string Email, Role Role) { 
-        //    this.Username = Username;
-        //    this.Password = Password;
-        //    this.Email = Email;
-        //    this.Role = Role;
-        //}
-
-        //public Faculty(int User_id, string Name, string Email, string Contact, Designation Designation, string ResearchArea, int TeachingHours) { 
-        //    this.User_id = User_id;
-        //    this.Name = Name;
-        //    this.Email = Email;
-        //    this.Contact = Contact;
-        //    this.Designation = Designation;
-        //    this.ResearchArea = ResearchArea;
-        //    this.TeachingHours = TeachingHours;
-        //}
-
         public override string ToString() {
             return Name;
         }
@@ -86,6 +67,20 @@ namespace DBS25P023.Models
         public Faculty Faculty { get; set; }
         public Course Course { get; set; }
         public Semester Semester { get; set; }
+
+        public override string ToString() {
+            return $"{Faculty} - {Course}";
+        }
+    }
+
+    public class CourseSchedule {
+        public int SrNo { get; set; }
+        public int Id { get; set; }
+        public FacultyCourse FacultyCourse { get; set; }
+        public Room Room { get; set; }
+        public string DayofWeek { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
     }
 
     public class Semester {
@@ -133,6 +128,10 @@ namespace DBS25P023.Models
         public string Name { get; set; }
         public string Type { get; set; }
         public int Capacity { get; set; }
+
+        public override string ToString() {
+            return $"{Name}";
+        }
     }
 
     public class FacultyRoom {
@@ -174,4 +173,11 @@ namespace DBS25P023.Models
         public string TimeStamp { get; set; }
     }
 
+    public class DBCred {
+        public string ServerName;
+        public string Port;
+        public string DatabaseName;
+        public string DatabaseUser;
+        public string DatabasePassword;
+    }
 }

@@ -1,36 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\facultyuserdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\facultyuserdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\assigncoursedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\assigncoursedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\controllers\\coursecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:controllers\\coursecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\views\\mainscreens\\facultyworkload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:views\\mainscreens\\facultyworkload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\controllers\\courseschedulecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:controllers\\courseschedulecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|e:\\university\\semester-2\\database\\midproject\\dbs25p023\\dialogs\\coursescheduledialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{672A1200-1FF8-4EE5-B43D-2C05C86214D8}|DBS25P023.csproj|solutionrelative:dialogs\\coursescheduledialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -38,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1572,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,96 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FacultyWorkload.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\FacultyWorkload.cs",
-              "RelativeDocumentMoniker": "Views\\MainScreens\\FacultyWorkload.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Views\\MainScreens\\FacultyWorkload.cs*",
-              "RelativeToolTip": "Views\\MainScreens\\FacultyWorkload.cs*",
-              "ViewState": "AgIAAH0BAAAAAAAAAAAAAJABAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:06:28.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AssignCourseDialog.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\AssignCourseDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\AssignCourseDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\AssignCourseDialog.cs*",
-              "RelativeToolTip": "Dialogs\\AssignCourseDialog.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:06:16.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CourseControl.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\CourseControl.cs",
-              "RelativeDocumentMoniker": "Controllers\\CourseControl.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\CourseControl.cs*",
-              "RelativeToolTip": "Controllers\\CourseControl.cs*",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAAFsAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:06:04.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FacultyUserDialog.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\FacultyUserDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\FacultyUserDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\FacultyUserDialog.cs",
-              "RelativeToolTip": "Dialogs\\FacultyUserDialog.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAAAGsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:04:48.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Models.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Models\\Models.cs",
-              "RelativeDocumentMoniker": "Models\\Models.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Models\\Models.cs",
-              "RelativeToolTip": "Models\\Models.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAAFcAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:04:23.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CourseScheduleControl.cs",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\CourseScheduleControl.cs",
-              "RelativeDocumentMoniker": "Controllers\\CourseScheduleControl.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Controllers\\CourseScheduleControl.cs",
-              "RelativeToolTip": "Controllers\\CourseScheduleControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:04:20.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CourseScheduleDialog.cs [Design]",
-              "DocumentMoniker": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\CourseScheduleDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\CourseScheduleDialog.cs",
-              "ToolTip": "E:\\University\\Semester-2\\DataBase\\MidProject\\DBS25P023\\Dialogs\\CourseScheduleDialog.cs [Design]",
-              "RelativeToolTip": "Dialogs\\CourseScheduleDialog.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T22:03:07.54Z",
-              "EditorCaption": " [Design]"
             }
           ]
         },

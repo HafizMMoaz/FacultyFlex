@@ -128,7 +128,9 @@
     <Compile Include="Controllers\ConsumableControl.cs" />
     <Compile Include="Controllers\CourseControl.cs" />
     <Compile Include="Controllers\CourseScheduleControl.cs" />
+    <Compile Include="Controllers\DashboardControl.cs" />
     <Compile Include="Controllers\FacultyControl.cs" />
+    <Compile Include="Controllers\InstallControl.cs" />
     <Compile Include="Controllers\LookUpControl.cs" />
     <Compile Include="Controllers\ProjectControl.cs" />
     <Compile Include="Controllers\RequestControl.cs" />
@@ -215,6 +217,12 @@
     </Compile>
     <Compile Include="Models\Models.cs" />
     <Compile Include="Models\Session.cs" />
+    <Compile Include="Views\Installer\Install.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Installer\Install.Designer.cs">
+      <DependentUpon>Install.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainScreens\FacultyRequests.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -333,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\SemesterDialog.resx">
       <DependentUpon>SemesterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Installer\Install.resx">
+      <DependentUpon>Install.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainScreens\FacultyRequests.resx">
       <DependentUpon>FacultyRequests.cs</DependentUpon>

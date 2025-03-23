@@ -15,18 +15,20 @@ namespace DBS25P023.Views.MainScreens
 {
     public partial class Settings: UserControl
     {
-        int faculty_id = -1;
-        int faculty_user_id = -1;
+        private int faculty_id = -1;
+        private int faculty_user_id = -1;
         public Settings()
         {
             InitializeComponent();
 
-            faculty_id = Session.LoggedInFaculty.Id;
-            faculty_user_id = Session.LoggedInFaculty.User_id;
-            name.Text= Session.LoggedInFaculty.Name;
-            Username.Text = Session.LoggedInFaculty.Username;
-            Email.Text = Session.LoggedInFaculty.Email;
-            Contact.Text = Session.LoggedInFaculty.Contact;
+            if(Session.LoggedInFaculty != null) {
+                faculty_id = Session.LoggedInFaculty.Id;
+                faculty_user_id = Session.LoggedInFaculty.User_id;
+                name.Text= Session.LoggedInFaculty.Name;
+                Username.Text = Session.LoggedInFaculty.Username;
+                Email.Text = Session.LoggedInFaculty.Email;
+                Contact.Text = Session.LoggedInFaculty.Contact;
+            }
 
         }
 

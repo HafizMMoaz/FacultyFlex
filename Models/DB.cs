@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -7,11 +8,11 @@ using MySql.Data.MySqlClient;
 namespace DBS25P023.Models {
     public class DB {
 
-        private readonly string serverName = "127.0.0.1";
-        private readonly string port = "3307";
-        private readonly string databaseName = "midprojectdb";
-        private readonly string databaseUser = "root";
-        private readonly string databasePassword = "Hafiz...1452";
+        private string serverName = Session.DBCred.ServerName;
+        private string port = Session.DBCred.Port;
+        private string databaseName = Session.DBCred.DatabaseName;
+        private string databaseUser = Session.DBCred.DatabaseUser;
+        private string databasePassword = Session.DBCred.DatabasePassword;
 
         private static DB _instance;
 

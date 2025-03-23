@@ -39,9 +39,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.SearchRequest = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.RefreshBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.RefreshBtn = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Requests)).BeginInit();
             this.RequestControls.SuspendLayout();
@@ -233,6 +233,20 @@
             this.panel1.Size = new System.Drawing.Size(760, 117);
             this.panel1.TabIndex = 12;
             // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RefreshBtn.AutoSize = true;
+            this.RefreshBtn.BackColor = System.Drawing.Color.White;
+            this.RefreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshBtn.Image = global::DBS25P023.Properties.Resources.reset;
+            this.RefreshBtn.Location = new System.Drawing.Point(705, 12);
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(40, 40);
+            this.RefreshBtn.TabIndex = 3;
+            this.RefreshBtn.UseVisualStyleBackColor = false;
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -256,20 +270,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Register Consumables. Wait untill request is approved by Admin";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.RefreshBtn.AutoSize = true;
-            this.RefreshBtn.BackColor = System.Drawing.Color.White;
-            this.RefreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RefreshBtn.Image = global::DBS25P023.Properties.Resources.reset;
-            this.RefreshBtn.Location = new System.Drawing.Point(705, 12);
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(40, 40);
-            this.RefreshBtn.TabIndex = 3;
-            this.RefreshBtn.UseVisualStyleBackColor = false;
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // FacultyRequests
             // 
