@@ -44,7 +44,7 @@ FacultyFlex is a Windows Forms Application built using **C# and MySQL** to strea
 
 ## Download FacultyFlex Now!
 
-You can find the latest releases of this project here: [Release Link](https://github.com/HafizMMoaz/DBS25P023/releases)
+You can find the latest releases of this project here: [DOWNLAOD LINK](https://github.com/HafizMMoaz/DBS25P023/releases)
 
 ---
 
