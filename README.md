@@ -48,24 +48,39 @@ You can find the latest releases of this project here: [DOWNLAOD LINK](https://g
 
 ---
 
-## 📷 Screenshots
+## 📝 UserRoles and Permission
+There are 3 user roles
+### Admin
+- Approve & Manage Admins, Department Heads and Faculty
+- Manage Courses, Projects, Semesters, Rooms, Consumables
+- Assign Courses and Projects
+- Create Course Schedules
+- Allocate Rooms
+- Approve / Reject / Fulfill Faculty Requests
+- Manage Database & Reinstall Database
+- Profile Setup
 
-Here are some screenshots of the application:
+### Department Head
+- Manage Department Heads and Faculty
+- Manage Courses, Projects, Semesters, Rooms, Consumables
+- Assign Courses and Projects
+- Create Course Schedules
+- Allocate Rooms
+- Approve / Reject / Fulfill Faculty Requests
+- Profile Setup
 
-### Dashboard
-![Dashboard](Screenshots/1.png)
+### Faculty
+- View Assigned Courses and Projects
+- View Course Schedules
+- View Allocated Rooms
+- Create Request and View Status of Previous Requests
+- Profile Setup
 
-### Faculty Management
-![Faculty Management](Screenshots/2.png)
+---
 
-### Workload Assignment
-![Workload Assignment](Screenshots/3.png)
+## 📷 Screenshot
 
-### Resource Allocation
-![Resource Allocation](Screenshots/4.png)
-
-### Settings
-![Settings](Screenshots/5.png)
+![Dashboard](Screenshots/screenshot.png)
 
 ---
 
@@ -95,7 +110,7 @@ Here are some screenshots of the application:
 
 - ✅ Core features are implemented! However, a few tasks remain:
 - 🛒 Consumables Inventory Management (track available resources). [DONE]
-- 👥 Multi-User Feature Distribution (better handling of simultaneous logins).
+- 👥 Multi-User Feature Distribution (better handling of simultaneous logins). [DONE]
 - 📜 Faculty Request Fixes (some requests are not being processed correctly). [DONE]
 - 📜 Faculty Workload Management. [DONE]
 - 📜 Faculty Resources Allocation Management. [DONE]
