@@ -11,11 +11,15 @@ using DBS25P023.Models;
 using DBS25P023.Controllers;
 using System.Net.Mail;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace DBS25P023.Views.MainScreens 
 {
     public partial class Settings: UserControl
     {
+        // current login user
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+
         private int faculty_id = -1;
         private int faculty_user_id = -1;
         public Settings()
@@ -39,6 +43,9 @@ namespace DBS25P023.Views.MainScreens
                 DatabasePassword.Text = Session.DBCred.DatabasePassword;
             }
 
+            if(user_role != "Admin") {
+                Tabs.TabPages.Remove(DBCredentials);
+            }
         }
 
         private void UpdateProfile_Click(object sender, EventArgs e) {
@@ -104,16 +111,40 @@ namespace DBS25P023.Views.MainScreens
             Directory.CreateDirectory(appDataPath);
             string filePath = Path.Combine(appDataPath, "dbConfig.txt");
 
-            try {
-                string credentials = $"{Server.Text},{Port.Text},{DatabaseName.Text},{DatabaseUsername.Text},{DatabasePassword.Text}";
+            string credentials = $"{Server.Text},{Port.Text},{DatabaseName.Text},{DatabaseUsername.Text},{DatabasePassword.Text}";
 
-                File.WriteAllText(filePath, credentials);
+            File.WriteAllText(filePath, credentials);
 
-                Console.WriteLine("Database credentials saved successfully.");
+            Console.WriteLine("Database credentials saved successfully.");
 
+            MessageBox.Show("Database credentials saved successfully.", "Database Credentials", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Application.Exit();
+        }
+
+        private void ReinstallDB_Click(object sender, EventArgs e) {
+            string serverName = Server.Text;
+            string port = Port.Text;
+            string databaseName = DatabaseName.Text;
+            string databaseUser = DatabaseUsername.Text;
+            string databasePassword = DatabasePassword.Text;
+
+            DBCred dBCred = new DBCred
+            {
+                ServerName = serverName,
+                Port = port,
+                DatabaseName = databaseName,
+                DatabaseUser = databaseUser,
+                DatabasePassword = databasePassword
+            };
+
+            bool status = InstallControl.Instance.Install(dBCred);
+
+            if (status) {
+                MessageBox.Show("INSTALLED SUCCESSFULLY!\nUSERNAME : 'administration'\nPASSWORD : 12345678", "INSTALLATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
             }
-            catch (Exception ex) {
-                Console.WriteLine($"An error occurred while saving the credentials or executing the script: {ex.Message}");
+            else {
+                MessageBox.Show("Something Went Wrong! Check Your Network!", "INSTALLATION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -122,11 +153,13 @@ namespace DBS25P023.Views.MainScreens
         }
 
         private void ViewDBPassword_Click(object sender, EventArgs e) {
-            DatabasePassword.PasswordChar = Password.PasswordChar == '*' ? '\0' : '*';
+            DatabasePassword.PasswordChar = DatabasePassword.PasswordChar == '*' ? '\0' : '*';
         }
 
         private void ViewConfirmPassword_Click(object sender, EventArgs e) {
-            ConfirmPassword.PasswordChar = Password.PasswordChar == '*' ? '\0' : '*';
+            ConfirmPassword.PasswordChar = ConfirmPassword.PasswordChar == '*' ? '\0' : '*';
         }
+
+        
     }
 }

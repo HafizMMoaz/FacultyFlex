@@ -10,10 +10,14 @@ using System.Windows.Forms;
 using DBS25P023.Dialogs;
 using DBS25P023.Models;
 using DBS25P023.Controllers;
+using DBS25P023.Views.Auth;
 
 namespace DBS25P023.Views.MainScreens {
     public partial class UserManagement: UserControl
     {
+        // current login user
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+
         public UserManagement()
         {
             InitializeComponent();
@@ -92,11 +96,23 @@ namespace DBS25P023.Views.MainScreens {
                 ApproveFaculty.Click -= ApproveFaculty_Click;
                 ApproveFaculty.Click -= EditFaculty_Click;
 
+                if (user_role == "Department Head") {
+                    DeleteUser.Visible = false;
+                }
+
                 if (name == "Not Approved" && id == 0) {
                     AssignCourse.Visible = false;
                     AssignProject.Visible = false;
                     AllocateRoom.Visible = false;
                     AssignAdminRole.Visible = false;
+
+                    if (user_role == "Department Head") {
+                        ApproveFaculty.Visible = false;
+                    }
+                    else {
+                        ApproveFaculty.Visible = true;
+                    }
+
                     ApproveFaculty.Text = "Approve Faculty";
                     ApproveFaculty.Click += ApproveFaculty_Click;
                     ApproveFaculty.Image = DBS25P023.Properties.Resources.approve;
@@ -106,6 +122,7 @@ namespace DBS25P023.Views.MainScreens {
                     AssignProject.Visible = true;
                     AllocateRoom.Visible = true;
                     AssignAdminRole.Visible = true;
+                    ApproveFaculty.Visible = true;
                     ApproveFaculty.Text = "Update Faculty";
                     ApproveFaculty.Image = DBS25P023.Properties.Resources.edit;
                     ApproveFaculty.Click += EditFaculty_Click;

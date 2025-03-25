@@ -5,6 +5,10 @@ using DBS25P023.Models;
 
 namespace DBS25P023.Controllers {
     public class RequestControl {
+
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+        int user_id = Session.LoggedInFaculty?.Id ?? 0;
+
         private static RequestControl _instance;
 
         public RequestControl() { }
@@ -44,13 +48,25 @@ namespace DBS25P023.Controllers {
         public List<FacultyRequest> GetRequests(string search) {
             List<FacultyRequest> requests = new List<FacultyRequest>();
             MySqlConnection con;
-            string query = "SELECT r.*, f.Name, c.item_name, l.value AS status FROM faculty_requests r " +
-                           "JOIN faculty f ON r.faculty_id = f.faculty_id " +
-                           "JOIN consumables c ON r.item_id = c.consumable_id " +
-                           "JOIN lookup l ON r.status_id = l.lookup_id";
+            string query = "SELECT r.*, f.Name, c.item_name, l.value AS status FROM faculty_requests r JOIN faculty f ON r.faculty_id = f.faculty_id JOIN consumables c ON r.item_id = c.consumable_id JOIN lookup l ON r.status_id = l.lookup_id JOIN users U USING(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id"; ;
 
-            if (!string.IsNullOrEmpty(search))
+            if (!string.IsNullOrEmpty(search)){
                 query += $" WHERE f.Name LIKE '%{search}%' OR c.item_name LIKE '%{search}%' OR l.value LIKE '%{search}%' OR r.request_date LIKE '%{search}%'";
+                if (user_role == "Department Head") {
+                    query += " AND L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" AND F.faculty_id = '{user_id}'";
+                }
+            }
+            else {
+                if (user_role == "Department Head") {
+                    query += " WHERE L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" WHERE F.faculty_id = '{user_id}'";
+                }
+            }
 
             query += " ORDER BY r.request_id DESC";
 

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 namespace DBS25P023.Controllers {
     public class ProjectControl {
 
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+        int user_id = Session.LoggedInFaculty?.Id ?? 0;
+
         private static ProjectControl _instance;
 
         public ProjectControl() { }
@@ -126,10 +129,25 @@ namespace DBS25P023.Controllers {
         public List<FacultyProject> GetAssignedProjects(string search) {
             List<FacultyProject> projects = new List<FacultyProject>();
             MySqlConnection con;
-            string query = "SELECT FP.*, F.Name, P.title, S.Term, S.Year FROM faculty_projects FP LEFT JOIN faculty F using (faculty_id) JOIN projects P using (project_id) JOIN semesters S using (semester_id)";
+            string query = "SELECT FP.*, F.Name, P.title, S.Term, S.Year FROM faculty_projects FP LEFT JOIN faculty F using (faculty_id) JOIN projects P using (project_id) JOIN semesters S using (semester_id) JOIN users U using(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id";
 
-            if (!string.IsNullOrEmpty(search))
+            if (!string.IsNullOrEmpty(search)) { 
                 query += $" WHERE F.Name LIKE '%{search}%' OR P.title LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%' OR supervision_hours LIKE '%{search}%'";
+                if (user_role == "Department Head") {
+                    query += " AND L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" AND F.faculty_id = '{user_id}'";
+                }
+            }
+            else {
+                if (user_role == "Department Head") {
+                    query += " WHERE L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" WHERE F.faculty_id = '{user_id}'";
+                }
+            }
 
             query += " ORDER BY faculty_project_id ASC";
 

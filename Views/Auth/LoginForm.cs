@@ -42,10 +42,5 @@ namespace DBS25P023.Views.Auth {
                 MessageBox.Show("Invalid credentials. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void DebugLogin_Click(object sender, EventArgs e) {
-            Username.Text = "administration";
-            Password.Text = "12345678";
-        }
     }
 }

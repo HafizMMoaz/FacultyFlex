@@ -14,6 +14,10 @@ using DBS25P023.Controllers;
 namespace DBS25P023.Views.MainScreens {
     public partial class FacultyRequests: UserControl
     {
+        // current login user
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+        string user_name = Session.LoggedInFaculty?.Name?? "";
+
         public FacultyRequests()
         {
             InitializeComponent();
@@ -68,27 +72,23 @@ namespace DBS25P023.Views.MainScreens {
 
                 var status = Requests.Rows[e.RowIndex].Cells["Status"].Value?.ToString();
                 var name = Requests.Rows[e.RowIndex].Cells["Faculty"].Value?.ToString();
-                string role = Session.LoggedInFaculty.Role.Value;
-                string FacultyName = Session.LoggedInFaculty.Name;
+                
 
-                if (role == "Admin" || role == "Department Head") {
-                    EditRequest.Visible = false;
-                    DeleteRequest.Visible = false;
-                    if (name == FacultyName && status == "Pending") {
-                        EditRequest.Visible = true;
-                        DeleteRequest.Visible = true;
-                    }
+                ChangeStatus.Visible = false;
+                EditRequest.Visible = false;
+                DeleteRequest.Visible = false;
+
+                if (user_role == "Admin" || user_role == "Department Head") {
                     ChangeStatus.Visible = true;
                 }
                 else {
-                    if(status == "Pending"){
-                        EditRequest.Visible = true;
-                        DeleteRequest.Visible = true;
-                    }
                     ChangeStatus.Visible = false;
                 }
 
-                
+                if (name == user_name && status == "Pending") {
+                    EditRequest.Visible = true;
+                    DeleteRequest.Visible = true;
+                }
             }
         }
 

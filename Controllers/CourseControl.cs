@@ -10,6 +10,9 @@ using System.Windows.Input;
 namespace DBS25P023.Controllers {
     public class CourseControl {
 
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+        int user_id = Session.LoggedInFaculty?.Id ?? 0;
+
         private static CourseControl _instance;
 
         public CourseControl() { }
@@ -131,10 +134,25 @@ namespace DBS25P023.Controllers {
         public List<FacultyCourse> GetAssignedCourses(string search) { 
             List<FacultyCourse> courses = new List<FacultyCourse>();
             MySqlConnection con;
-            string query = "SELECT FC.*, F.Name, C.course_name, C.course_type, C.contact_hours, S.Term, S.Year FROM faculty_courses FC LEFT JOIN faculty F using (faculty_id) JOIN courses C using (course_id) JOIN semesters S using (semester_id)";
+            string query = "SELECT FC.*, F.Name, C.course_name, C.course_type, C.contact_hours, S.Term, S.Year FROM faculty_courses FC LEFT JOIN faculty F using (faculty_id) JOIN courses C using (course_id) JOIN semesters S using (semester_id) JOIN users U using(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id";
 
-            if (!string.IsNullOrEmpty(search))
+            if (!string.IsNullOrEmpty(search)) { 
                 query += $" WHERE F.Name LIKE '%{search}%' OR C.course_name LIKE '%{search}%' OR C.course_type LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%'";
+                if (user_role == "Department Head") {
+                    query += " AND L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" AND F.faculty_id = '{user_id}'";
+                }
+            }
+            else {
+                if (user_role == "Department Head") {
+                    query += " WHERE L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" WHERE F.faculty_id = '{user_id}'";
+                }
+            }
 
             query += " ORDER BY faculty_course_id ASC";
 

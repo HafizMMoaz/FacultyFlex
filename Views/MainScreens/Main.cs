@@ -15,34 +15,61 @@ namespace DBS25P023.Views.MainScreens
 {
     public partial class Main: Form
     {
+        // current login user
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+
         public string CurrentActivity = "Dashboard";
         private List<Button> menuButtons;
-        private bool isMenuCollapsed = true;
+        private bool isMenuCollapsed = false;
         private Dictionary<Button, string> buttonText;
         public Main()
         {
             InitializeComponent();
 
-            menuButtons = new List<Button> { DashboardBtn, UserBtn, WorkloadBtn, ResourcesBtn, FacultyRequestBtn,ReportBtn, SettingBtn, LogoutBtn };
-            buttonText = new Dictionary<Button, string>();
-            foreach (Button btn in menuButtons) {
-                buttonText[btn] = btn.Text;
-            }
+            if (user_role != "Admin") {
+                DashboardBtn.Visible = false;
+                Dashboard.Visible = false;
+                ReportBtn.Visible = false;
+                Reports.Visible = false;
 
+                if (user_role != "Department Head") {
+                    UserBtn.Visible = false;
+                    UserManagement.Visible = false;
+
+                    menuButtons = new List<Button> { WorkloadBtn, ResourcesBtn, FacultyRequestBtn, SettingBtn, LogoutBtn };
+                    buttonText = new Dictionary<Button, string>();
+                    foreach (Button btn in menuButtons) {
+                        buttonText[btn] = btn.Text;
+                    }
+
+                    SetActiveButton(WorkloadBtn, "Workload");
+                    FacultyWorkload.BringToFront();
+                }
+                else {
+                    menuButtons = new List<Button> { UserBtn, WorkloadBtn, ResourcesBtn, FacultyRequestBtn, SettingBtn, LogoutBtn };
+                    buttonText = new Dictionary<Button, string>();
+                    foreach (Button btn in menuButtons) {
+                        buttonText[btn] = btn.Text;
+                    }
+
+                    SetActiveButton(UserBtn, "Users");
+                    UserManagement.BringToFront();
+                }
+            }
+            else {
+                menuButtons = new List<Button> { DashboardBtn, UserBtn, WorkloadBtn, ResourcesBtn, FacultyRequestBtn, ReportBtn, SettingBtn, LogoutBtn };
+                buttonText = new Dictionary<Button, string>();
+                foreach (Button btn in menuButtons) {
+                    buttonText[btn] = btn.Text;
+                }
+
+                SetActiveButton(DashboardBtn, "Dashboard");
+                Dashboard.BringToFront();
+            }
         }
 
-
         private void Main_Load(object sender, EventArgs e) {
-            SideBar.Width = 90;
-            SofwareTitle.Text = "F";
-            foreach (var btn in menuButtons) {
-                btn.Text = "";
-                btn.TextAlign = ContentAlignment.MiddleCenter;
-            }
-
-            SetActiveButton(DashboardBtn, "Dashboard");
-            Dashboard.BringToFront();
-
+            ToggleMenu();
             LoggedInUser.Text = $"WELCOME, {Session.LoggedInFaculty.Name}";
         }
 
@@ -96,8 +123,7 @@ namespace DBS25P023.Views.MainScreens
             bool userResponse = (result == DialogResult.Yes);
             if (userResponse) {
                 Session.CloseSession();
-                this.Close();
-                new Login().Show();
+                Application.Exit();
             }
         }
 
@@ -116,7 +142,6 @@ namespace DBS25P023.Views.MainScreens
         }
 
         private void SetActiveButton(Button activeButton, string activity) {
-
             foreach (Button btn in menuButtons) {
                 btn.BackColor = Color.FromArgb(2, 62, 132);
             }
@@ -125,11 +150,14 @@ namespace DBS25P023.Views.MainScreens
             ActivityIndicator.Height = activeButton.Height;
             ActivityIndicator.Top = activeButton.Top;
             ActivityIndicator.Left = activeButton.Left;
-
             CurrentActivity = activity;
         }
 
         private void MenuToggle_Click(object sender, EventArgs e) {
+            ToggleMenu();
+        }
+
+        private void ToggleMenu() {
             if (isMenuCollapsed) {
                 SideBar.Width = 300;
                 SofwareTitle.Text = "FACULTY  FLEX";
@@ -146,7 +174,6 @@ namespace DBS25P023.Views.MainScreens
                     btn.TextAlign = ContentAlignment.MiddleCenter;
                 }
             }
-
             isMenuCollapsed = !isMenuCollapsed;
         }
 

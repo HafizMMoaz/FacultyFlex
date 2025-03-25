@@ -10,6 +10,9 @@ using System.Windows.Input;
 namespace DBS25P023.Controllers {
     public class RoomControl {
 
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+        int user_id = Session.LoggedInFaculty?.Id ?? 0;
+
         private static RoomControl _instance;
 
         public RoomControl() { }
@@ -116,11 +119,25 @@ namespace DBS25P023.Controllers {
         public List<FacultyRoom> GetAssignedRooms(string search) {
             List<FacultyRoom> rooms = new List<FacultyRoom>();
             MySqlConnection con;
-            string query = "SELECT FA.*, F.Name, C.room_name, C.room_type, S.Term, S.Year FROM faculty_room_allocations FA LEFT JOIN faculty F using (faculty_id) JOIN rooms C using (room_id) JOIN semesters S using (semester_id)";
+            string query = "SELECT FA.*, F.Name, C.room_name, C.room_type, S.Term, S.Year FROM faculty_room_allocations FA LEFT JOIN faculty F using (faculty_id) JOIN rooms C using (room_id) JOIN semesters S using (semester_id) JOIN users U using(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id";
 
-            if (!string.IsNullOrEmpty(search))
+            if (!string.IsNullOrEmpty(search)) { 
                 query += $" WHERE F.Name LIKE '%{search}%' OR C.room_name LIKE '%{search}%' OR C.room_type LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%' OR FA.reserved_hours LIKE '%{search}%'";
-
+                if (user_role == "Department Head") {
+                    query += " AND L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" AND F.faculty_id = '{user_id}'";
+                }
+            }
+            else {
+                if (user_role == "Department Head") {
+                    query += " WHERE L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" WHERE F.faculty_id = '{user_id}'";
+                }
+            }
             query += " ORDER BY allocation_id ASC";
 
             using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {

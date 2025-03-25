@@ -24,30 +24,23 @@ namespace DBS25P023.Controllers {
         }
 
         public bool Install(DBCred dBCred) {
-            // Get the AppData folder path
             string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FacultyFlex");
 
-            // Ensure the directory exists
             Directory.CreateDirectory(appDataPath);
 
-            // Define the file path for saving the credentials
             string filePath = Path.Combine(appDataPath, "dbConfig.txt");
             string installedFilePath = Path.Combine(appDataPath, "INSTALLED");
 
             try {
-                // Format the DBCred object values into a comma-separated string
                 string credentials = $"{dBCred.ServerName},{dBCred.Port},{dBCred.DatabaseName},{dBCred.DatabaseUser},{dBCred.DatabasePassword}";
 
-                // Write the formatted credentials to the file
                 File.WriteAllText(filePath, credentials);
 
                 Console.WriteLine("Database credentials saved successfully.");
 
-                // Execute the SQL script after saving the credentials
                 bool scriptExecuted = ExecuteSqlScript(ReadDBConfig());
 
                 if (scriptExecuted) {
-                    // After successful script execution, create the 'INSTALLED' file
                     File.WriteAllText(installedFilePath, "Installation completed successfully.");
 
                     Console.WriteLine("Installation completed successfully.");
@@ -70,10 +63,8 @@ namespace DBS25P023.Controllers {
             string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FacultyFlex");
             string configFilePath = Path.Combine(appDataPath, "dbConfig.txt");
 
-            // Read the config file and split by commas
             string[] credentials = File.ReadAllText(configFilePath).Split(',');
 
-            // Return a DBCred object
             return new DBCred
             {
                 ServerName = credentials[0],
@@ -86,14 +77,11 @@ namespace DBS25P023.Controllers {
 
         public bool ExecuteSqlScript(DBCred dbCred) {
             try {
-                // Build the connection string from dbCred
                 string connString = $"server={dbCred.ServerName};port={dbCred.Port};user={dbCred.DatabaseUser};database={dbCred.DatabaseName};password={dbCred.DatabasePassword};SslMode=Preferred;";
 
-                // Create a MySQL connection
                 using (var connection = new MySqlConnection(connString)) {
                     connection.Open();
 
-                    // Read the SQL script from a file (you can save the script into a file or keep it as a string)
                     string sqlScript = @"-- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
                                         --
                                         -- Host: 127.0.0.1    Database: projectb
@@ -525,17 +513,16 @@ namespace DBS25P023.Controllers {
                                         -- Dump completed on 2025-02-24  0:00:14
                                         ";
 
-                    // Create a command to execute the SQL script
                     using (var cmd = new MySqlCommand(sqlScript, connection)) {
-                        cmd.ExecuteNonQuery();  // Execute the SQL script
+                        cmd.ExecuteNonQuery();
                     }
                 }
 
-                return true; // Script executed successfully
+                return true;
             }
             catch (Exception ex) {
                 Console.WriteLine($"Error executing SQL script: {ex.Message}");
-                return false; // Script execution failed
+                return false;
             }
         }
     }

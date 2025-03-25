@@ -70,6 +70,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.Server = new System.Windows.Forms.TextBox();
             this.NavBarImages = new System.Windows.Forms.ImageList(this.components);
+            this.ReinstallDB = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Tabs.SuspendLayout();
             this.Account.SuspendLayout();
@@ -175,9 +176,9 @@
             this.UpdateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateProfile.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateProfile.ForeColor = System.Drawing.Color.White;
-            this.UpdateProfile.Location = new System.Drawing.Point(296, 328);
+            this.UpdateProfile.Location = new System.Drawing.Point(305, 328);
             this.UpdateProfile.Name = "UpdateProfile";
-            this.UpdateProfile.Size = new System.Drawing.Size(175, 55);
+            this.UpdateProfile.Size = new System.Drawing.Size(135, 55);
             this.UpdateProfile.TabIndex = 28;
             this.UpdateProfile.Text = "UPDATE";
             this.UpdateProfile.UseVisualStyleBackColor = false;
@@ -413,6 +414,7 @@
             // 
             // DBCredentials
             // 
+            this.DBCredentials.Controls.Add(this.ReinstallDB);
             this.DBCredentials.Controls.Add(this.panel5);
             this.DBCredentials.Controls.Add(this.ViewDBPassword);
             this.DBCredentials.Controls.Add(this.label9);
@@ -490,7 +492,7 @@
             this.UpdateDBCreds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateDBCreds.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateDBCreds.ForeColor = System.Drawing.Color.White;
-            this.UpdateDBCreds.Location = new System.Drawing.Point(297, 270);
+            this.UpdateDBCreds.Location = new System.Drawing.Point(32, 268);
             this.UpdateDBCreds.Name = "UpdateDBCreds";
             this.UpdateDBCreds.Size = new System.Drawing.Size(142, 55);
             this.UpdateDBCreds.TabIndex = 38;
@@ -633,6 +635,21 @@
             this.NavBarImages.Images.SetKeyName(0, "role.png");
             this.NavBarImages.Images.SetKeyName(1, "db.png");
             // 
+            // ReinstallDB
+            // 
+            this.ReinstallDB.BackColor = System.Drawing.Color.Red;
+            this.ReinstallDB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReinstallDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReinstallDB.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReinstallDB.ForeColor = System.Drawing.Color.White;
+            this.ReinstallDB.Location = new System.Drawing.Point(207, 268);
+            this.ReinstallDB.Name = "ReinstallDB";
+            this.ReinstallDB.Size = new System.Drawing.Size(135, 55);
+            this.ReinstallDB.TabIndex = 41;
+            this.ReinstallDB.Text = "REINSTALL";
+            this.ReinstallDB.UseVisualStyleBackColor = false;
+            this.ReinstallDB.Click += new System.EventHandler(this.ReinstallDB_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,5 +743,6 @@
         private System.Windows.Forms.TextBox Port;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox Server;
+        private System.Windows.Forms.Button ReinstallDB;
     }
 }

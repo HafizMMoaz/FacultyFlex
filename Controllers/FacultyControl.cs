@@ -11,6 +11,10 @@ namespace DBS25P023.Controllers
 {
     public class FacultyControl
     {
+        // current login user
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+        int user_id = Session.LoggedInFaculty?.Id ?? 0;
+
         private static FacultyControl _instance;
 
         private FacultyControl() { }
@@ -62,9 +66,24 @@ namespace DBS25P023.Controllers
                 ext = " LEFT ";
 
             string query = $"SELECT U.user_id, U.username, F.faculty_id, F.Name, U.email, F.contact, U.role_id , L1.value as role, F.designation_id, L2.value as designation, F.total_teaching_hours, F.research_area FROM users U{ext}JOIN faculty F using(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id LEFT JOIN lookup L2 ON L2.lookup_id = F.designation_id";
-            
-            if (!string.IsNullOrEmpty(search))
+
+            if (!string.IsNullOrEmpty(search)) {
                 query = query + $" WHERE U.username LIKE '%{search}%' OR U.email LIKE '%{search}%' OR L1.value LIKE '%{search}%' OR L2.value LIKE '%{search}%' OR F.Name LIKE '%{search}%' OR F.contact LIKE '%{search}%'";
+                if (user_role == "Department Head") {
+                    query += " AND L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" AND F.faculty_id = '{user_id}'";
+                }
+            }
+            else {
+                if (user_role == "Department Head") {
+                    query += " WHERE L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" WHERE F.faculty_id = '{user_id}'";
+                }
+            }
 
             query = query + " ORDER BY user_id ASC";
 
@@ -193,11 +212,25 @@ namespace DBS25P023.Controllers
         public List<AdminRole> GetAdminRoles(string search) {
             List<AdminRole> roles = new List<AdminRole>();
             MySqlConnection con;
-            string query = "SELECT FR.*, F.Name, S.Term, S.Year FROM faculty_admin_roles FR LEFT JOIN faculty F using (faculty_id) JOIN semesters S using (semester_id)";
+            string query = "SELECT FR.*, F.Name, S.Term, S.Year FROM faculty_admin_roles FR LEFT JOIN faculty F using (faculty_id) JOIN semesters S using (semester_id) JOIN users U using(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id";
 
-            if (!string.IsNullOrEmpty(search))
-                query += $" WHERE F.Name LIKE '%{search}%' OR FR.role_name LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%'";
-
+            if (!string.IsNullOrEmpty(search)){
+                query += $" WHERE F.Name LIKE '%{search}%' OR FR.role_name LIKE '%{search}%' OR S.Term LIKE '%{search}%' OR S.Year LIKE '%{search}%'"; 
+                if (user_role == "Department Head") {
+                    query += " AND L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" AND F.faculty_id = '{user_id}'";
+                }
+            }
+            else {
+                if (user_role == "Department Head") {
+                    query += " WHERE L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" WHERE F.faculty_id = '{user_id}'";
+                }
+            }
             query += " ORDER BY admin_role_id ASC";
 
             using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {

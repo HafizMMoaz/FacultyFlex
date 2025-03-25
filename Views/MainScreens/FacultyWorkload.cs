@@ -15,9 +15,25 @@ using System.Net;
 namespace DBS25P023.Views.MainScreens {
     public partial class FacultyWorkload: UserControl
     {
+        // current login user
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+
         public FacultyWorkload()
         {
             InitializeComponent();
+
+            if (user_role == "Faculty") {
+                AssignCourseBtn.Visible = false;
+                AssignProjectBtn.Visible = false;
+                AssignRoleBtn.Visible = false;
+                Tabs.TabPages.Remove(Courses);
+                Tabs.TabPages.Remove(Project);
+                Tabs.TabPages.Remove(Semester);
+                AssignedCoursesControls.Items.Clear();
+                AssignProjectControls.Items.Clear();
+                AdminRoleControls.Items.Clear();
+                ScheduleControls.Items.Clear();
+            }
         }
 
         private void FacultyWorkload_Load(object sender, EventArgs e) {
@@ -26,12 +42,15 @@ namespace DBS25P023.Views.MainScreens {
 
         public void RefreshData() {
             AssignedCoursesRender(null);
-            CourseDataRender(null);
-            ProjectDataRender(null);
-            SemesterDataRender(null);
             AdminRoleDataRender(null);
             AssignProjectDataRender(null);
             ScheduleDataRender(null);
+
+            if(user_role != "Faculty"){
+                CourseDataRender(null);
+                ProjectDataRender(null);
+                SemesterDataRender(null);
+            }
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e) {
@@ -785,6 +804,7 @@ namespace DBS25P023.Views.MainScreens {
 
         #endregion
 
+        #region Schedule
         private void ScheduleDataRender(string search) {
             List<CourseSchedule> schedules = CourseScheduleControl.Instance.GetSchedule(search);
             ScheduleData.DataSource = schedules;
@@ -872,5 +892,6 @@ namespace DBS25P023.Views.MainScreens {
 
             }
         }
+        #endregion
     }
 }

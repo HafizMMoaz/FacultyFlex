@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace DBS25P023.Controllers {
     public class CourseScheduleControl {
+
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+        int user_id = Session.LoggedInFaculty?.Id ?? 0;
+
         private static CourseScheduleControl _instance;
 
         public CourseScheduleControl() { }
@@ -40,21 +44,25 @@ namespace DBS25P023.Controllers {
             List<CourseSchedule> schedules = new List<CourseSchedule>();
             MySqlConnection con;
 
-            string query = @"
-        SELECT 
-            fcs.schedule_id, fcs.day_of_week, fcs.start_time, fcs.end_time, 
-            fc.faculty_course_id, 
-            f.faculty_id, f.name AS faculty_name, 
-            c.course_id, c.course_name, c.course_type, c.contact_hours, 
-            r.room_id, r.room_name, r.room_type 
-        FROM faculty_course_schedule fcs
-        JOIN faculty_courses fc ON fcs.faculty_course_id = fc.faculty_course_id
-        JOIN faculty f ON fc.faculty_id = f.faculty_id
-        JOIN courses c ON fc.course_id = c.course_id
-        LEFT JOIN rooms r ON fcs.room_id = r.room_id";
+            string query = "SELECT fcs.schedule_id, fcs.day_of_week, fcs.start_time, fcs.end_time, fc.faculty_course_id, f.faculty_id, f.name AS faculty_name, c.course_id, c.course_name, c.course_type, c.contact_hours, r.room_id, r.room_name, r.room_type FROM faculty_course_schedule fcs JOIN faculty_courses fc ON fcs.faculty_course_id = fc.faculty_course_id JOIN faculty f ON fc.faculty_id = f.faculty_id JOIN courses c ON fc.course_id = c.course_id LEFT JOIN rooms r ON fcs.room_id = r.room_id JOIN users U USING(user_id) JOIN lookup L1 ON L1.lookup_id = U.role_id";
 
-            if (!string.IsNullOrEmpty(search))
+            if (!string.IsNullOrEmpty(search)) { 
                 query += $" WHERE fcs.day_of_week LIKE '%{search}%' OR fcs.start_time LIKE '%{search}%' OR fcs.end_time LIKE '%{search}%' OR c.course_name LIKE '%{search}%' OR f.name LIKE '%{search}%'";
+                if (user_role == "Department Head") {
+                    query += " AND L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" AND F.faculty_id = '{user_id}'";
+                }
+            }
+            else {
+                if (user_role == "Department Head") {
+                    query += " WHERE L1.value <> 'Admin'";
+                }
+                else if (user_role == "Faculty") {
+                    query += $" WHERE F.faculty_id = '{user_id}'";
+                }
+            }
 
             using (MySqlDataReader reader = DB.Instance.GetData(query, out con)) {
                 int idx = 1;

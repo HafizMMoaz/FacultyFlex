@@ -14,9 +14,19 @@ using DBS25P023.Controllers;
 namespace DBS25P023.Views.MainScreens {
     public partial class ResourceAllocation: UserControl
     {
+        // current login user
+        string user_role = Session.LoggedInFaculty?.Role?.Value ?? "";
+
         public ResourceAllocation()
         {
             InitializeComponent();
+            if (user_role == "Faculty") {
+                AssignRoomBtn.Visible = false;
+                Tabs.TabPages.Remove(Rooms);
+                Tabs.TabPages.Remove(Consumables);
+                RoomControls.Items.Clear();
+                ConsumablesControls.Items.Clear();
+            }
         }
 
         private void ResourceAllocation_Load(object sender, EventArgs e) {
@@ -24,9 +34,11 @@ namespace DBS25P023.Views.MainScreens {
         }
 
         public void RefreshData() {
-            RoomDataRender(null);
             AssignRoomsDataRender(null);
-            ConsumablesDataRender(null);
+            if(user_role != "Faculty"){
+                RoomDataRender(null);
+                ConsumablesDataRender(null);
+            }
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e) {
