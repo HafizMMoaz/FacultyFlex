@@ -8,7 +8,7 @@ FacultyFlex is a Windows Forms Application built using **C# and MySQL** to strea
 
 ### 🔐 User Authentication & Role Management
 - Secure **login system** with **hashed passwords**.
-- **Role-based access control (RBAC)** for department head, faculty members, and administrative staff.
+- **Secure **login system** with **hashed passwords**.
 - **Forgot password & account recovery system**.
 
 ### 🏫 Faculty Management
@@ -78,9 +78,8 @@ There are 3 user roles
 
 ---
 
-## 📷 Screenshot
-
-![Dashboard](Screenshots/screenshot.png)
+## 📷 Demo
+[![Demo Video](Screenshots/screenshot.png)](Screenshots/demo.mp4)
 
 ---
 
